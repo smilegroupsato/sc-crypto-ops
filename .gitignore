@@ -1,0 +1,25 @@
+# Local/editor files
+.DS_Store
+.env
+.env.*
+*.local
+
+# Secrets and credentials
+*secret*
+*secrets*
+*private-key*
+*seed*
+*mnemonic*
+*api-key*
+*.pem
+*.key
+
+# Raw exports and evidence should live in Drive/Dropbox, not GitHub
+exports/
+evidence/
+raw/
+*.csv
+*.xlsx
+*.xls
+*.pdf
+*.zip
