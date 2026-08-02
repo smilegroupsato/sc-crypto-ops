@@ -1,7 +1,7 @@
 # SC Crypto Ops
 
 ページ作成日時：2026-08-02 08:04 JST
-最終更新日時：2026-08-02 08:04 JST
+最終更新日時：2026-08-02 10:19 JST
 
 SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理する private repository。
 
@@ -19,7 +19,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | 会計作業元帳 | [暗号資産会計元帳](https://docs.google.com/spreadsheets/d/1-CwaMmE4RBFk7lCk1KPUPlitnybQIXczeeoYy4o1p3U/edit) | 取引明細、JPY換算、保有残高、実現損益、期末評価 |
 | ルール・仕様 | このrepository | 売買ルール、元帳仕様、月次チェック、運用履歴 |
 | 証憑原本 | Google Drive / Dropbox | 取引所CSV、スクリーンショット、Tx控え、価格ソース控え |
-| リサーチ記録 | Notion DB想定 | 銘柄調査、X情報、判断ログ、ステータス管理 |
+| リサーチ記録 | Notion DB想定 / GitHub重要記録 | 銘柄調査、X情報、判断ログ、ステータス管理 |
 | 会計反映 | freee / 税理士資料 | 法人会計への反映、期末評価、税務判断 |
 
 ## 初期条件
@@ -32,7 +32,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | 基準通貨 | JPY |
 | 時刻基準 | JST |
 | 会計方針 | 移動平均法を前提。最終判断は税理士確認を優先 |
-| 運用ステータス | v0.1 計算補助ロジック追加済 |
+| 運用ステータス | v0.1 計算補助ロジック追加済、Research Routine追加済 |
 
 ## ファイル構成
 
@@ -43,8 +43,10 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | `docs/accounting_notes_v0.1.md` | 法人会計・税務確認メモ |
 | `docs/monthly_close_checklist.md` | 月次締めチェックリスト |
 | `docs/research_workflow_v0.1.md` | 銘柄調査・判断ログの運用 |
+| `docs/research_routine_v0.1.md` | CoinGecko等を使った日次/候補検証ルーティン |
 | `templates/trade_plan_template.md` | 取引前プラン |
 | `templates/research_note_template.md` | リサーチメモ |
+| `templates/daily_research_log_template.md` | 日次リサーチログ |
 | `records/operations/` | 運用ログ置き場 |
 | `records/research/` | GitHubに残す必要がある調査メモ置き場 |
 
@@ -59,10 +61,12 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 
 ## 次の一手
 
-1. 税理士へ `docs/accounting_notes_v0.1.md` とGoogle Sheet元帳を共有して、記録形式を確認する。
-2. 1回目の取引前に `templates/trade_plan_template.md` で取引プランを作る。
-3. 取引後、Google Sheet `01_取引明細` と `06_証憑管理` に同日中に記録する。
+1. `docs/research_routine_v0.1.md` に沿って、1回だけ日次15分リサーチを実施する。
+2. `templates/daily_research_log_template.md` で候補なし/候補ありを記録する。
+3. Entry候補が出た場合だけ、`templates/trade_plan_template.md` で取引前プランを作る。
+4. 税理士へ `docs/accounting_notes_v0.1.md` とGoogle Sheet元帳を共有して、記録形式を確認する。
 
 ## 更新履歴
 
+- 2026-08-02 10:19 JST：Research Routineと日次リサーチログテンプレートを追加。
 - 2026-08-02 08:04 JST：初期文書一式を作成。
