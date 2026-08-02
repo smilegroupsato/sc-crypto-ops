@@ -1,7 +1,7 @@
 # 暗号資産リサーチ運用 v0.1
 
 ページ作成日時：2026-08-02 08:04 JST
-最終更新日時：2026-08-02 10:19 JST
+最終更新日時：2026-08-02 10:57 JST
 
 ## 目的
 
@@ -11,10 +11,17 @@ Xの熱狂をそのまま売買理由にしない。Xは早期警報として扱
 
 日次・候補検証の具体的な手順は `docs/research_routine_v0.1.md` を正本とする。
 
+複数の選定基準を比較する実験は `docs/research_experiment_design_v0.1.md` と `docs/research_profiles_v0.1.md` を正本とする。
+
+MetaMask/DEX取引の証憑は `docs/onchain_tx_evidence_v0.1.md` を優先する。
+
 ## リサーチ台帳の推奨フィールド
 
 | フィールド | 内容 |
 |---|---|
+| profile_id | 銘柄を拾ったResearch Profile |
+| batch_id | 候補バッチID |
+| plan_id | Paper Plan / 取引前プランID |
 | 銘柄 | トークンシンボル |
 | プロジェクト名 | 正式名称 |
 | チェーン | Ethereum / Solana等 |
@@ -25,9 +32,9 @@ Xの熱狂をそのまま売買理由にしない。Xは早期警報として扱
 | 出来高確認 | 増加/横ばい/不明 |
 | BTC/ETH環境 | 良い/中立/悪い |
 | アンロック確認 | 問題なし/要注意/不明 |
-| 取引判断 | Watch / Entry候補 / 見送り / 終了 |
+| 取引判断 | Watch / Entry候補 / Paper Plan / 見送り / 終了 |
 | 取引プランURL | GitHubまたはNotionの取引前プラン |
-| 結果 | 勝ち/負け/未取引/見送り |
+| 結果 | 勝ち/負け/未取引/見送り/検証中 |
 | 反省 | 事実ベースで記録 |
 
 ## Entry候補にする条件
@@ -43,6 +50,7 @@ Xの熱狂をそのまま売買理由にしない。Xは早期警報として扱
 | 5 | アンロックが近すぎない |
 | 6 | 損切り価格と利確価格を先に書ける |
 | 7 | 1回の最大損失が10,000円以内 |
+| 8 | profile_id、batch_id、plan_idで後から検証できる |
 
 ## Xリスト分類
 
@@ -55,7 +63,11 @@ Xの熱狂をそのまま売買理由にしない。Xは早期警報として扱
 
 ## GitHubに残すもの
 
-- 取引前プラン
+- 取引前プラン / Paper Plan
+- Research Profile定義
+- Candidate Batch
+- Watch Log
+- Outcome Review
 - ルール変更
 - 月次運用レビュー
 - 税理士確認で決まった仕様変更
@@ -64,5 +76,6 @@ Xの熱狂をそのまま売買理由にしない。Xは早期警報として扱
 
 ## 更新履歴
 
+- 2026-08-02 10:57 JST：Research Experiment、profile_id、batch_id、plan_id、On-chain証憑ルールへの接続を追加。
 - 2026-08-02 10:19 JST：Research Routine文書への接続を追加。
 - 2026-08-02 08:04 JST：初期版を作成。
