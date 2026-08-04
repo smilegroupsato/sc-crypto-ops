@@ -73,6 +73,8 @@ const state = {
 };
 
 let dashboardData = null;
+let entryEvaluation = null;
+let predictionImprovement = null;
 
 function renderDashboardData() {
   const fixedCash = document.getElementById("fixedCash");
@@ -103,6 +105,8 @@ async function loadDashboardData() {
     positions = Array.isArray(data.positions) ? data.positions : positions;
     fallbackPrices = data.fallbackPrices || fallbackPrices;
     recs = Array.isArray(data.recommendations) ? data.recommendations : recs;
+    entryEvaluation = data.entryEvaluation || null;
+    predictionImprovement = data.predictionImprovement || null;
     if (Array.isArray(data.newEntryWatch) && data.newEntryWatch.length) {
       recs = [...recs, ...data.newEntryWatch];
     }
@@ -310,6 +314,83 @@ function renderDecision(summary, enriched) {
     .join("");
 }
 
+
+function tagClassForDecision(label) {
+  if (!label) return "";
+  if (label.includes("Entry")) return "buy";
+  if (label.includes("小さく") || label.includes("Watch")) return "caution";
+  return "stop";
+}
+
+function renderEntryMatrix() {
+  const el = document.getElementById("entryMatrix");
+  if (!el) return;
+  if (!entryEvaluation?.matrix?.length) {
+    el.innerHTML = '<p class="empty">Entry Matrixは次回PDCAで更新。</p>';
+    return;
+  }
+  const rows = [...entryEvaluation.matrix].sort((a, b) => b.totalScore - a.totalScore);
+  el.innerHTML = `
+    <div class="matrix-summary">
+      <span>${entryEvaluation.scoreScale || "0-5点評価"}</span>
+      <span>更新: ${entryEvaluation.updatedAtJst || "--"}</span>
+    </div>
+    <div class="table-wrap">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>銘柄</th>
+            <th>点数</th>
+            <th>判定</th>
+            <th>流動性</th>
+            <th>勢い</th>
+            <th>材料</th>
+            <th>供給Risk</th>
+            <th>根拠</th>
+            <th>次アクション</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows
+            .map(
+              (r) => `
+                <tr>
+                  <td><b>${r.symbol}</b><span>${r.type}</span></td>
+                  <td><strong>${r.totalScore}</strong></td>
+                  <td><em class="tag ${tagClassForDecision(r.band || r.decision)}">${r.band || r.decision}</em></td>
+                  <td>${r.scores?.liquidity ?? "--"}</td>
+                  <td>${r.scores?.momentum ?? "--"}</td>
+                  <td>${r.scores?.narrative ?? "--"}</td>
+                  <td>${r.scores?.supplyRisk ?? "--"}</td>
+                  <td class="text-cell">${r.positives}<br /><span>${r.risks}</span></td>
+                  <td class="text-cell">${r.action}</td>
+                </tr>
+              `,
+            )
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderPredictionImprovement() {
+  const el = document.getElementById("predictionImprovement");
+  if (!el) return;
+  const items = entryEvaluation?.improvementLoop || [];
+  if (!items.length && !predictionImprovement) {
+    el.innerHTML = '<p class="empty">次回PDCAで改善ループを更新。</p>';
+    return;
+  }
+  el.innerHTML = `
+    <p class="prediction-summary">${predictionImprovement?.summary || "Entry仮説と結果を同じ形式で蓄積する。"}</p>
+    <ol class="improvement-list">
+      ${items.slice(0, 6).map((item) => `<li>${item}</li>`).join("")}
+    </ol>
+  `;
+}
+
+
 function drawAssetChart(summary) {
   const canvas = document.getElementById("assetCanvas");
   const ctx = canvas.getContext("2d");
@@ -417,6 +498,8 @@ function render() {
   renderPositions(enriched);
   renderRecommendations();
   renderDecision(summary, enriched);
+  renderEntryMatrix();
+  renderPredictionImprovement();
   drawAssetChart(summary);
   drawMoveChart(enriched);
   const source = (dashboardData ? "data.json / " : "embedded / ") + (state.loadedFromApi ? "CoinGecko live" : "local fallback");
