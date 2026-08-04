@@ -1,11 +1,27 @@
 # SC Crypto Dashboard
 
 ページ作成日時：2026-08-04 18:44 JST
-最終更新日時：2026-08-04 18:44 JST
+最終更新日時：2026-08-04 18:49 JST
 
-ローカルで見るための暗号資産 Paper / Watch ダッシュボードです。
+暗号資産 Paper / Watch ダッシュボードです。ローカル、devbox HTTPサーバ、GitHub Pages、FTP配布のどれでも静的ファイルとして表示できます。
 
-## 起動
+## GitHub Pages
+
+標準URLは次です。
+
+```text
+https://smilegroupsato.github.io/sc-crypto-ops/
+```
+
+`main` に更新が入ると、`.github/workflows/deploy-crypto-dashboard-pages.yml` が `dashboard/crypto-pdca/` をPagesへデプロイします。
+
+GitHub側で初回だけ確認する設定：
+
+1. Repository Settings → Pages を開く。
+2. Source が `GitHub Actions` になっていることを確認する。
+3. Actions の `Deploy Crypto Dashboard Pages` を手動実行、または次回pushで実行する。
+
+## ローカル起動
 
 ```bash
 cd /srv/sgos/repos/sc-crypto-ops/dashboard/crypto-pdca
@@ -32,4 +48,5 @@ Meme BasketのEntry価格は、`records/pdca/2026.08.04_02_speculative_meme_para
 
 ## 更新履歴
 
+- 2026-08-04 18:49 JST：GitHub Pagesデプロイ手順と公開URLを追記。
 - 2026-08-04 18:44 JST：GitHub / FTP 配布とdevbox起動を前提にREADMEを更新。Meme Entry価格の正本ログ参照を明記。
