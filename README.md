@@ -1,7 +1,7 @@
 # SC Crypto Ops
 
 ページ作成日時：2026-08-02 08:04 JST
-最終更新日時：2026-08-04 18:49 JST
+最終更新日時：2026-08-04 19:16 JST
 
 SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理する private repository。
 
@@ -41,6 +41,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 |---|---|---|
 | Crypto PDCA Dashboard | https://smilegroupsato.github.io/sc-crypto-ops/ | GitHub Pagesで公開する1画面ダッシュボード |
 | Dashboard source | `dashboard/crypto-pdca/` | 現在ポートフォリオ、推奨銘柄、値動き、資産変動を表示する静的ファイル |
+| Dashboard data | `dashboard/crypto-pdca/data.json` | 日次PDCAルーティンが更新する画面用データ |
 | Pages workflow | `.github/workflows/deploy-crypto-dashboard-pages.yml` | `dashboard/crypto-pdca/` をGitHub Pagesへデプロイ |
 
 ## ファイル構成
@@ -67,6 +68,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | `records/watch/` | Watch Log |
 | `records/reviews/` | Outcome Review |
 | `dashboard/crypto-pdca/` | 現在ポートフォリオ、推奨銘柄、値動き、資産変動を1画面で見るダッシュボード |
+| `dashboard/crypto-pdca/data.json` | GitHub Pages画面へ反映する日次PDCAデータ |
 
 ## 絶対に置かないもの
 
@@ -79,15 +81,17 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 
 ## 次の一手
 
-1. Repository Settings → Pages で Source が `GitHub Actions` になっているか確認する。
-2. Actions の `Deploy Crypto Dashboard Pages` を実行し、`https://smilegroupsato.github.io/sc-crypto-ops/` でダッシュボードを確認する。
-3. `records/research/2026.08.02_02_multi_profile_candidate_batch.md` をT+1/T+3/T+7/T+14/T+30でwatchする。
-4. `templates/watch_log_template.md` を使い、各profileの最大順行・最大逆行・Success/Failed/No Tradeを記録する。
-5. 実取引に進める場合は、Paper Planを再確認し、価格・ガス代・証憑・最大損失10,000円以内を更新してから実行する。
-6. 税理士へ `docs/onchain_tx_evidence_v0.1.md` とGoogle Sheet元帳を共有して、MetaMask/DEX取引の記録形式を確認する。
+1. 日次PDCA後に `dashboard/crypto-pdca/data.json` を更新し、Pages画面へ最新状態を反映する。
+2. Repository Settings → Pages で Source が `GitHub Actions` になっているか確認する。
+3. Actions の `Deploy Crypto Dashboard Pages` を実行し、`https://smilegroupsato.github.io/sc-crypto-ops/` でダッシュボードを確認する。
+4. `records/research/2026.08.02_02_multi_profile_candidate_batch.md` をT+1/T+3/T+7/T+14/T+30でwatchする。
+5. `templates/watch_log_template.md` を使い、各profileの最大順行・最大逆行・Success/Failed/No Tradeを記録する。
+6. 実取引に進める場合は、Paper Planを再確認し、価格・ガス代・証憑・最大損失10,000円以内を更新してから実行する。
+7. 税理士へ `docs/onchain_tx_evidence_v0.1.md` とGoogle Sheet元帳を共有して、MetaMask/DEX取引の記録形式を確認する。
 
 ## 更新履歴
 
+- 2026-08-04 19:16 JST：Dashboard data.jsonを追加し、日次PDCAからPagesへ反映する運用を追記。
 - 2026-08-04 18:49 JST：GitHub Pages workflowと公開URLを追記。
 - 2026-08-04 18:44 JST：Crypto PDCA Dashboardを `dashboard/crypto-pdca/` に追加。
 - 2026-08-02 10:57 JST：Research Experiment、Research Profiles、On-chain Tx証憑ルール、初回multi-profile batchを追加。
