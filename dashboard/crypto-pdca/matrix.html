@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SC Crypto Entry Matrix</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell matrix-page">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">SC Crypto Paper / Watch</p>
+          <h1>Entry判定マトリクス</h1>
+        </div>
+        <div class="top-actions">
+          <nav class="page-nav" aria-label="pages">
+            <a href="./">Dashboard</a>
+            <a class="active" href="./matrix.html">Entry Matrix</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="panel wide matrix-hero">
+        <div class="panel-head">
+          <div>
+            <h2>判定基準</h2>
+            <p id="matrixUpdated">data.json 読込待ち</p>
+          </div>
+          <span id="matrixStatus" class="pill">standby</span>
+        </div>
+        <div id="decisionBands" class="band-grid"></div>
+      </section>
+
+      <section class="matrix-layout">
+        <section class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2>基準と重み</h2>
+              <p>各項目0から5点。重み付きで100点満点に換算</p>
+            </div>
+          </div>
+          <div id="criteriaGrid" class="criteria-grid"></div>
+        </section>
+
+        <section class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2>銘柄別採点</h2>
+              <p>Entry候補と見送り候補を同じ表で残す</p>
+            </div>
+          </div>
+          <div id="matrixTable"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>予測精度を上げる方法</h2>
+              <p>当たり外れをPDCAで分解する</p>
+            </div>
+          </div>
+          <div id="improvementLoop"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>検証指標</h2>
+              <p>T+1 / T+3 / T+7で見る</p>
+            </div>
+          </div>
+          <div id="metricsList"></div>
+        </section>
+
+        <section class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2>正本リンク</h2>
+              <p>日次PDCAで更新する対象</p>
+            </div>
+          </div>
+          <div id="sourceLinks" class="source-links"></div>
+        </section>
+      </section>
+    </main>
+    <script src="./matrix.js"></script>
+  </body>
+</html>
