@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SC Crypto Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">SC Crypto Paper / Watch</p>
+          <h1>暗号資産PDCA Dashboard</h1>
+        </div>
+        <div class="actions">
+          <button id="refreshBtn" type="button">更新</button>
+          <button id="lockSpecBtn" type="button">Meme Entry固定</button>
+        </div>
+      </header>
+
+      <section class="status-grid" aria-label="summary">
+        <article class="metric primary">
+          <span>Core総資産</span>
+          <strong id="coreTotal">--</strong>
+          <em id="corePnl">--</em>
+        </article>
+        <article class="metric accent">
+          <span>Meme総資産</span>
+          <strong id="memeTotal">--</strong>
+          <em id="memePnl">--</em>
+        </article>
+        <article class="metric">
+          <span>現金固定</span>
+          <strong>550,000円</strong>
+          <em>総資金の55%</em>
+        </article>
+        <article class="metric">
+          <span>ルーティン保存</span>
+          <strong>有効</strong>
+          <em>毎日13:00 JST</em>
+        </article>
+      </section>
+
+      <section class="dashboard">
+        <section class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2>ポートフォリオ比較</h2>
+              <p id="lastUpdated">価格取得待ち</p>
+            </div>
+            <span id="apiStatus" class="pill">standby</span>
+          </div>
+          <div class="split">
+            <div>
+              <canvas id="assetCanvas" width="720" height="300" aria-label="asset chart"></canvas>
+            </div>
+            <div class="scenario-list" id="scenarioList"></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>今日の判断</h2>
+              <p>Paper / Watch。実取引はしない</p>
+            </div>
+          </div>
+          <div id="decisionBox" class="decision-box"></div>
+        </section>
+
+        <section class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2>保有・Paperポジション</h2>
+              <p>Core 45 / Cash 55 と Speculative / Meme Parallel</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>枠</th>
+                  <th>銘柄</th>
+                  <th>Paper額</th>
+                  <th>Entry</th>
+                  <th>現在</th>
+                  <th>評価額</th>
+                  <th>損益率</th>
+                  <th>判断</th>
+                </tr>
+              </thead>
+              <tbody id="positionsBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>推奨・新規Entry探索</h2>
+              <p>毎日ルーティンで候補更新</p>
+            </div>
+          </div>
+          <div id="recommendations"></div>
+        </section>
+
+        <section class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2>値動き</h2>
+              <p>24h変化率と出来高</p>
+            </div>
+          </div>
+          <canvas id="moveCanvas" width="1100" height="280" aria-label="movement chart"></canvas>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>PDCA</h2>
+              <p>日次ルーティンの確認項目</p>
+            </div>
+          </div>
+          <ul class="pdca">
+            <li><b>Plan</b><span>現金55%固定。投資枠45%内でCoreとMemeを比較。</span></li>
+            <li><b>Do</b><span>Paper保有をHold / Reduce / Stopで評価。</span></li>
+            <li><b>Check</b><span>総資産損益、投資部分損益、24h出来高、7d勢いを確認。</span></li>
+            <li><b>Act</b><span>新規Entry候補を最低3件抽出し、Entry条件とStop条件を更新。</span></li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
