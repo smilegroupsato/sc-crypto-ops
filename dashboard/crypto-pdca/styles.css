@@ -396,3 +396,50 @@ th {
   align-items: center;
   flex-wrap: wrap;
 }
+
+
+.matrix-summary {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.matrix-table td:first-child span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.matrix-table .text-cell {
+  min-width: 220px;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.matrix-table .text-cell span {
+  color: var(--muted);
+}
+
+.prediction-summary,
+.empty {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.improvement-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.improvement-list li + li {
+  margin-top: 7px;
+}
