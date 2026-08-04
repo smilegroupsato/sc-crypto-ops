@@ -32,13 +32,13 @@
         </article>
         <article class="metric">
           <span>現金固定</span>
-          <strong>550,000円</strong>
-          <em>総資金の55%</em>
+          <strong id="fixedCash">--</strong>
+          <em id="fixedCashNote">総資金の55%</em>
         </article>
         <article class="metric">
           <span>ルーティン保存</span>
-          <strong>有効</strong>
-          <em>毎日13:00 JST</em>
+          <strong id="routineState">--</strong>
+          <em id="routineSchedule">--</em>
         </article>
       </section>
 
@@ -49,7 +49,7 @@
               <h2>ポートフォリオ比較</h2>
               <p id="lastUpdated">価格取得待ち</p>
             </div>
-            <span id="apiStatus" class="pill">standby</span>
+            <div class="pill-row"><span id="dataStatus" class="pill">data</span><span id="apiStatus" class="pill">standby</span></div>
           </div>
           <div class="split">
             <div>
