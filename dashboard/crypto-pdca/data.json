@@ -1,8 +1,8 @@
 {
   "schemaVersion": "2026.08.04.dashboard.v1",
-  "updatedAtJst": "2026-08-04 19:16 JST",
+  "updatedAtJst": "2026-08-04 19:27 JST",
   "source": {
-    "currentDailyLog": "records/pdca/2026.08.04_02_speculative_meme_parallel_entry_log.md",
+    "currentDailyLog": "records/pdca/2026.08.04_03_speculative_meme_parallel_paper_buy_now.md",
     "note": "日次PDCAルーティンが毎回このJSONを更新し、GitHub Pages画面へ反映する。"
   },
   "capital": {
@@ -24,272 +24,52 @@
     ]
   },
   "positions": [
-    {
-      "scenario": "Core",
-      "symbol": "AAVE",
-      "id": "aave",
-      "amountJpy": 75000,
-      "entryUsd": 91.85,
-      "rank": 2
-    },
-    {
-      "scenario": "Core",
-      "symbol": "UNI",
-      "id": "uniswap",
-      "amountJpy": 75000,
-      "entryUsd": 4.14,
-      "rank": 14
-    },
-    {
-      "scenario": "Core",
-      "symbol": "AERO",
-      "id": "aerodrome-finance",
-      "amountJpy": 75000,
-      "entryUsd": 0.4056,
-      "rank": 9
-    },
-    {
-      "scenario": "Core",
-      "symbol": "ONDO",
-      "id": "ondo-finance",
-      "amountJpy": 75000,
-      "entryUsd": 0.3925,
-      "rank": 12
-    },
-    {
-      "scenario": "Core",
-      "symbol": "ENA",
-      "id": "ethena",
-      "amountJpy": 75000,
-      "entryUsd": 0.08482,
-      "rank": 13
-    },
-    {
-      "scenario": "Core",
-      "symbol": "SOL",
-      "id": "solana",
-      "amountJpy": 75000,
-      "entryUsd": 73.12,
-      "rank": 1
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "PUMP",
-      "id": "pump-fun",
-      "amountJpy": 80000,
-      "entryUsd": 0.002236,
-      "rank": 3
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "PEPE",
-      "id": "pepe",
-      "amountJpy": 70000,
-      "entryUsd": 0.000002912,
-      "rank": 4
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "PENGU",
-      "id": "pudgy-penguins",
-      "amountJpy": 60000,
-      "entryUsd": 0.006143,
-      "rank": 5
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "BONK",
-      "id": "bonk",
-      "amountJpy": 50000,
-      "entryUsd": 0.000002858,
-      "rank": 6
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "WIF",
-      "id": "dogwifcoin",
-      "amountJpy": 35000,
-      "entryUsd": 0.1408,
-      "rank": 7
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "FARTCOIN",
-      "id": "fartcoin",
-      "amountJpy": 25000,
-      "entryUsd": 0.1311,
-      "rank": 8
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "ANSEM",
-      "id": "the-black-bull",
-      "amountJpy": 15000,
-      "entryUsd": 0.1764,
-      "rank": 10
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "USELESS",
-      "id": "useless-3",
-      "amountJpy": 15000,
-      "entryUsd": 0.04869,
-      "rank": 11
-    }
+    { "scenario": "Core", "symbol": "AAVE", "id": "aave", "amountJpy": 75000, "entryUsd": 91.85, "rank": 2 },
+    { "scenario": "Core", "symbol": "UNI", "id": "uniswap", "amountJpy": 75000, "entryUsd": 4.14, "rank": 14 },
+    { "scenario": "Core", "symbol": "AERO", "id": "aerodrome-finance", "amountJpy": 75000, "entryUsd": 0.4056, "rank": 9 },
+    { "scenario": "Core", "symbol": "ONDO", "id": "ondo-finance", "amountJpy": 75000, "entryUsd": 0.3925, "rank": 12 },
+    { "scenario": "Core", "symbol": "ENA", "id": "ethena", "amountJpy": 75000, "entryUsd": 0.08482, "rank": 13 },
+    { "scenario": "Core", "symbol": "SOL", "id": "solana", "amountJpy": 75000, "entryUsd": 73.12, "rank": 1 },
+    { "scenario": "Meme", "symbol": "PUMP", "id": "pump-fun", "amountJpy": 80000, "entryUsd": 0.002233, "rank": 3 },
+    { "scenario": "Meme", "symbol": "PEPE", "id": "pepe", "amountJpy": 70000, "entryUsd": 0.0000029, "rank": 4 },
+    { "scenario": "Meme", "symbol": "PENGU", "id": "pudgy-penguins", "amountJpy": 60000, "entryUsd": 0.006088, "rank": 5 },
+    { "scenario": "Meme", "symbol": "BONK", "id": "bonk", "amountJpy": 50000, "entryUsd": 0.0000028, "rank": 6 },
+    { "scenario": "Meme", "symbol": "WIF", "id": "dogwifcoin", "amountJpy": 35000, "entryUsd": 0.1399, "rank": 7 },
+    { "scenario": "Meme", "symbol": "FARTCOIN", "id": "fartcoin", "amountJpy": 25000, "entryUsd": 0.1312, "rank": 8 },
+    { "scenario": "Meme", "symbol": "ANSEM", "id": "the-black-bull", "amountJpy": 15000, "entryUsd": 0.184, "rank": 10 },
+    { "scenario": "Meme", "symbol": "USELESS", "id": "useless-3", "amountJpy": 15000, "entryUsd": 0.0493, "rank": 11 }
   ],
   "fallbackPrices": {
-    "aave": {
-      "usd": 91.77,
-      "jpy": 14461,
-      "usd_24h_change": -0.2,
-      "usd_24h_vol": 180000000
-    },
-    "uniswap": {
-      "usd": 2.83,
-      "jpy": 446,
-      "usd_24h_change": -6.5,
-      "usd_24h_vol": 90000000
-    },
-    "aerodrome-finance": {
-      "usd": 0.390367,
-      "jpy": 62,
-      "usd_24h_change": 0.8,
-      "usd_24h_vol": 25000000
-    },
-    "ondo-finance": {
-      "usd": 0.330863,
-      "jpy": 52,
-      "usd_24h_change": -4.2,
-      "usd_24h_vol": 60000000
-    },
-    "ethena": {
-      "usd": 0.07605,
-      "jpy": 12,
-      "usd_24h_change": -3.7,
-      "usd_24h_vol": 50000000
-    },
-    "solana": {
-      "usd": 77.97,
-      "jpy": 12299,
-      "usd_24h_change": 3.4,
-      "usd_24h_vol": 1500000000
-    },
-    "pump-fun": {
-      "usd": 0.002236,
-      "jpy": 0.352729,
-      "usd_24h_change": 7.8,
-      "usd_24h_vol": 85918329
-    },
-    "pepe": {
-      "usd": 0.000002912,
-      "jpy": 0.000459368,
-      "usd_24h_change": 3,
-      "usd_24h_vol": 130397128
-    },
-    "pudgy-penguins": {
-      "usd": 0.006143,
-      "jpy": 0.969058,
-      "usd_24h_change": 1.6,
-      "usd_24h_vol": 32084544
-    },
-    "bonk": {
-      "usd": 0.000002858,
-      "jpy": 0.00045085,
-      "usd_24h_change": 0.59,
-      "usd_24h_vol": 22205809
-    },
-    "dogwifcoin": {
-      "usd": 0.1408,
-      "jpy": 22.2112,
-      "usd_24h_change": 1.9,
-      "usd_24h_vol": 27184954
-    },
-    "fartcoin": {
-      "usd": 0.1311,
-      "jpy": 20.681025,
-      "usd_24h_change": 3.7,
-      "usd_24h_vol": 14862626
-    },
-    "the-black-bull": {
-      "usd": 0.1764,
-      "jpy": 27.8271,
-      "usd_24h_change": -8.6,
-      "usd_24h_vol": 11911489
-    },
-    "useless-3": {
-      "usd": 0.04869,
-      "jpy": 7.680848,
-      "usd_24h_change": -3.5,
-      "usd_24h_vol": 5469835
-    }
+    "aave": { "usd": 91.77, "jpy": 14461, "usd_24h_change": -0.2, "usd_24h_vol": 180000000 },
+    "uniswap": { "usd": 2.83, "jpy": 446, "usd_24h_change": -6.5, "usd_24h_vol": 90000000 },
+    "aerodrome-finance": { "usd": 0.390367, "jpy": 62, "usd_24h_change": 0.8, "usd_24h_vol": 25000000 },
+    "ondo-finance": { "usd": 0.330863, "jpy": 52, "usd_24h_change": -4.2, "usd_24h_vol": 60000000 },
+    "ethena": { "usd": 0.07605, "jpy": 12, "usd_24h_change": -3.7, "usd_24h_vol": 50000000 },
+    "solana": { "usd": 77.97, "jpy": 12299, "usd_24h_change": 3.4, "usd_24h_vol": 1500000000 },
+    "pump-fun": { "usd": 0.002233, "jpy": 0.35225575, "usd_24h_change": 7.1, "usd_24h_vol": 90830783 },
+    "pepe": { "usd": 0.0000029, "jpy": 0.000457475, "usd_24h_change": 2.1, "usd_24h_vol": 131459543 },
+    "pudgy-penguins": { "usd": 0.006088, "jpy": 0.960382, "usd_24h_change": 0.3, "usd_24h_vol": 32204870 },
+    "bonk": { "usd": 0.0000028, "jpy": 0.0004417, "usd_24h_change": -0.8, "usd_24h_vol": 22121033 },
+    "dogwifcoin": { "usd": 0.1399, "jpy": 22.069225, "usd_24h_change": 2.4, "usd_24h_vol": 26476000 },
+    "fartcoin": { "usd": 0.1312, "jpy": 20.6968, "usd_24h_change": 2.1, "usd_24h_vol": 15004411 },
+    "the-black-bull": { "usd": 0.184, "jpy": 29.026, "usd_24h_change": -5.5, "usd_24h_vol": 11135390 },
+    "useless-3": { "usd": 0.0493, "jpy": 7.777075, "usd_24h_change": -2.2, "usd_24h_vol": 5433689 }
   },
   "recommendations": [
-    {
-      "symbol": "AAVE",
-      "type": "Core",
-      "action": "Entry可",
-      "note": "90 USD維持ならCore候補。大きく追わず分割。"
-    },
-    {
-      "symbol": "SOL",
-      "type": "Core",
-      "action": "Entry可",
-      "note": "Entry基準の再設計対象。強いが過熱確認。"
-    },
-    {
-      "symbol": "AERO",
-      "type": "Core",
-      "action": "小さく",
-      "note": "高リスクだがDeFi回転枠として監視。"
-    },
-    {
-      "symbol": "PUMP",
-      "type": "Meme",
-      "action": "Entry可",
-      "note": "勢い枠。出来高低下なら即Reduce。"
-    },
-    {
-      "symbol": "PEPE",
-      "type": "Meme",
-      "action": "Entry可",
-      "note": "大型ミームの流動性枠。"
-    },
-    {
-      "symbol": "PENGU",
-      "type": "Meme",
-      "action": "Entry可",
-      "note": "ブランド・Solana Meme枠。"
-    },
-    {
-      "symbol": "BONK",
-      "type": "Meme",
-      "action": "小さく",
-      "note": "回転枠。弱ければ入替候補。"
-    },
-    {
-      "symbol": "UNI",
-      "type": "Core",
-      "action": "見送り",
-      "note": "T+1 Stop Hit。Post-mortem優先。"
-    }
+    { "symbol": "PUMP", "type": "Meme", "action": "Paper Buy", "note": "主軸。24h/7dの勢いと出来高を優先。" },
+    { "symbol": "PEPE", "type": "Meme", "action": "Paper Buy", "note": "大型ミームの流動性枠。" },
+    { "symbol": "PENGU", "type": "Meme", "action": "Paper Buy", "note": "ブランド・認知・出来高が残る枠。" },
+    { "symbol": "BONK", "type": "Meme", "action": "Paper Buy Small", "note": "直近注意材料あり。Stop幅を浅めにする。" },
+    { "symbol": "WIF", "type": "Meme", "action": "Paper Buy Small", "note": "高ベータ回転枠。" },
+    { "symbol": "FARTCOIN", "type": "Meme", "action": "Paper Buy Tiny", "note": "値幅検証用。" },
+    { "symbol": "ANSEM", "type": "Meme", "action": "Paper Buy Tiny", "note": "下落中だが7dは強い。集中懸念あり。" },
+    { "symbol": "USELESS", "type": "Meme", "action": "Paper Buy Tiny", "note": "小型・下落中。検証枠のみ。" }
   ],
   "newEntryWatch": [],
   "pdca": [
-    {
-      "phase": "Plan",
-      "text": "現金55%固定。投資枠45%内でCoreとMemeを比較。"
-    },
-    {
-      "phase": "Do",
-      "text": "Paper保有をHold / Reduce / Stopで評価。"
-    },
-    {
-      "phase": "Check",
-      "text": "総資産損益、投資部分損益、24h出来高、7d勢いを確認。"
-    },
-    {
-      "phase": "Act",
-      "text": "新規Entry候補を最低3件抽出し、Entry条件とStop条件を更新。"
-    }
+    { "phase": "Plan", "text": "現金55%固定。投資枠45万円のうち35万円をSpeculative / Meme BasketへPaper投入。" },
+    { "phase": "Do", "text": "2026-08-04 19:27 JSTにPUMP/PEPE/PENGU/BONK/WIF/FARTCOIN/ANSEM/USELESSをPaper Buy。" },
+    { "phase": "Check", "text": "明日以降、総資産損益、投資部分損益、24h出来高、7d勢い、危険材料を確認。" },
+    { "phase": "Act", "text": "Hold / Reduce / Stop / Add Watchを判断し、新規Entry候補を最低3件抽出する。" }
   ]
 }
