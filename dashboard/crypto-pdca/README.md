@@ -1,7 +1,7 @@
 # SC Crypto Dashboard
 
 ページ作成日時：2026-08-04 18:44 JST
-最終更新日時：2026-08-04 18:49 JST
+最終更新日時：2026-08-04 19:16 JST
 
 暗号資産 Paper / Watch ダッシュボードです。ローカル、devbox HTTPサーバ、GitHub Pages、FTP配布のどれでも静的ファイルとして表示できます。
 
@@ -36,17 +36,31 @@ devbox内のブラウザなら `http://localhost:8787/`、別PCから見る場�
 
 devbox側にFTPで配置したあと、devboxのHTTPサーバから同じディレクトリを公開すれば表示できます。
 
+## 日次PDCA反映
+
+定例PDCAを回した後は、通常のMarkdownログに加えて `dashboard/crypto-pdca/data.json` も更新します。GitHub PagesはこのJSONを読み込むため、`main` に反映されると画面のポートフォリオ、推奨銘柄、新規Entry Watch、PDCA欄も最新化できます。
+
+最低限更新する項目：
+
+- `updatedAtJst`
+- `positions`
+- `fallbackPrices`
+- `recommendations`
+- `newEntryWatch`
+- `pdca`
+
 ## 前提
 
 - 総資金: 1,000,000円
 - Core 45 / Cash 55: 現金550,000円、投資450,000円
 - Speculative / Meme Parallel: 現金550,000円、戦術現金100,000円、Meme投資350,000円
 - 価格取得: CoinGecko API
-- 取得失敗時: ローカルフォールバック値で表示
+- 取得失敗時: `data.json` 内のフォールバック値で表示
 
 Meme BasketのEntry価格は、`records/pdca/2026.08.04_02_speculative_meme_parallel_entry_log.md` のT+0価格を初期値として固定しています。`Meme Entry固定` ボタンは、画面を見ながら別の時点をローカル保存したい場合だけ使います。
 
 ## 更新履歴
 
+- 2026-08-04 19:16 JST：画面データ正本としてdata.jsonを追加し、日次PDCA後のPages反映手順を追記。
 - 2026-08-04 18:49 JST：GitHub Pagesデプロイ手順と公開URLを追記。
 - 2026-08-04 18:44 JST：GitHub / FTP 配布とdevbox起動を前提にREADMEを更新。Meme Entry価格の正本ログ参照を明記。
