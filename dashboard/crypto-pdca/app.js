@@ -21,7 +21,7 @@ const MEME_BASE_CASH = 550_000;
 const MEME_TACTICAL_CASH = 100_000;
 const FALLBACK_USD_JPY = 157.75;
 
-const positions = [
+let positions = [
   { scenario: "Core", symbol: "AAVE", id: "aave", amountJpy: 75_000, entryUsd: 91.85, rank: 2 },
   { scenario: "Core", symbol: "UNI", id: "uniswap", amountJpy: 75_000, entryUsd: 4.14, rank: 14 },
   { scenario: "Core", symbol: "AERO", id: "aerodrome-finance", amountJpy: 75_000, entryUsd: 0.4056, rank: 9 },
@@ -38,7 +38,7 @@ const positions = [
   { scenario: "Meme", symbol: "USELESS", id: "useless-3", amountJpy: 15_000, entryUsd: 0.04869, rank: 11 },
 ];
 
-const fallbackPrices = {
+let fallbackPrices = {
   aave: { usd: 91.77, jpy: 14461, usd_24h_change: -0.2, usd_24h_vol: 180000000 },
   uniswap: { usd: 2.83, jpy: 446, usd_24h_change: -6.5, usd_24h_vol: 90000000 },
   "aerodrome-finance": { usd: 0.390367, jpy: 62, usd_24h_change: 0.8, usd_24h_vol: 25000000 },
@@ -55,7 +55,7 @@ const fallbackPrices = {
   "useless-3": { usd: 0.04869, jpy: 7.680848, usd_24h_change: -3.5, usd_24h_vol: 5469835 },
 };
 
-const recs = [
+let recs = [
   { symbol: "AAVE", type: "Core", action: "Entry可", note: "90 USD維持ならCore候補。大きく追わず分割。" },
   { symbol: "SOL", type: "Core", action: "Entry可", note: "Entry基準の再設計対象。強いが過熱確認。" },
   { symbol: "AERO", type: "Core", action: "小さく", note: "高リスクだがDeFi回転枠として監視。" },
@@ -71,6 +71,55 @@ const state = {
   usdJpy: FALLBACK_USD_JPY,
   loadedFromApi: false,
 };
+
+let dashboardData = null;
+
+function renderDashboardData() {
+  const fixedCash = document.getElementById("fixedCash");
+  const fixedCashNote = document.getElementById("fixedCashNote");
+  const routineState = document.getElementById("routineState");
+  const routineSchedule = document.getElementById("routineSchedule");
+  const pdca = document.querySelector(".pdca");
+
+  if (!dashboardData) return;
+  if (fixedCash) fixedCash.textContent = yen(dashboardData.capital?.fixedCashJpy || CORE_CASH);
+  if (fixedCashNote) fixedCashNote.textContent = "総資金の55%";
+  if (routineState) routineState.textContent = dashboardData.routine?.enabled ? "有効" : "停止";
+  if (routineSchedule) routineSchedule.textContent = dashboardData.routine?.scheduleText || "毎日13:00 JST";
+  if (pdca && Array.isArray(dashboardData.pdca)) {
+    pdca.innerHTML = dashboardData.pdca
+      .map((item) => `<li><b>${item.phase}</b><span>${item.text}</span></li>`)
+      .join("");
+  }
+}
+
+async function loadDashboardData() {
+  const dataStatus = document.getElementById("dataStatus");
+  try {
+    const res = await fetch("./data.json?ts=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("data.json " + res.status);
+    const data = await res.json();
+    dashboardData = data;
+    positions = Array.isArray(data.positions) ? data.positions : positions;
+    fallbackPrices = data.fallbackPrices || fallbackPrices;
+    recs = Array.isArray(data.recommendations) ? data.recommendations : recs;
+    if (Array.isArray(data.newEntryWatch) && data.newEntryWatch.length) {
+      recs = [...recs, ...data.newEntryWatch];
+    }
+    state.prices = { ...fallbackPrices };
+    state.usdJpy = data.capital?.usdJpyFallback || state.usdJpy;
+    if (dataStatus) {
+      dataStatus.textContent = "data.json";
+      dataStatus.className = "pill good";
+    }
+  } catch (error) {
+    if (dataStatus) {
+      dataStatus.textContent = "embedded";
+      dataStatus.className = "pill bad";
+    }
+  }
+  renderDashboardData();
+}
 
 function yen(value) {
   return JPY.format(Math.round(value || 0));
@@ -370,7 +419,7 @@ function render() {
   renderDecision(summary, enriched);
   drawAssetChart(summary);
   drawMoveChart(enriched);
-  const source = state.loadedFromApi ? "CoinGecko live" : "local fallback";
+  const source = (dashboardData ? "data.json / " : "embedded / ") + (state.loadedFromApi ? "CoinGecko live" : "local fallback");
   const now = new Date();
   document.getElementById("lastUpdated").textContent = `${source} / ${now.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo", hour12: false })} JST`;
 }
@@ -378,5 +427,10 @@ function render() {
 document.getElementById("refreshBtn").addEventListener("click", loadPrices);
 document.getElementById("lockSpecBtn").addEventListener("click", lockSpecEntries);
 
-render();
-loadPrices();
+async function init() {
+  render();
+  await loadDashboardData();
+  await loadPrices();
+}
+
+init();
