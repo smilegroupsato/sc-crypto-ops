@@ -1,7 +1,7 @@
 # SC Crypto Ops
 
 ページ作成日時：2026-08-02 08:04 JST
-最終更新日時：2026-08-02 10:57 JST
+最終更新日時：2026-08-04 18:44 JST
 
 SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理する private repository。
 
@@ -58,6 +58,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | `records/trade_plans/` | Paper Plan / 取引前プラン |
 | `records/watch/` | Watch Log |
 | `records/reviews/` | Outcome Review |
+| `dashboard/crypto-pdca/` | 現在ポートフォリオ、推奨銘柄、値動き、資産変動を1画面で見るローカルダッシュボード |
 
 ## 絶対に置かないもの
 
@@ -77,6 +78,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 
 ## 更新履歴
 
+- 2026-08-04 18:44 JST：Crypto PDCA Dashboardを `dashboard/crypto-pdca/` に追加。
 - 2026-08-02 10:57 JST：Research Experiment、Research Profiles、On-chain Tx証憑ルール、初回multi-profile batchを追加。
 - 2026-08-02 10:19 JST：Research Routineと日次リサーチログテンプレートを追加。
 - 2026-08-02 08:04 JST：初期文書一式を作成。
