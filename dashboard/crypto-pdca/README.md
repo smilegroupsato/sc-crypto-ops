@@ -1,7 +1,7 @@
 # SC Crypto Dashboard
 
 ページ作成日時：2026-08-04 18:44 JST
-最終更新日時：2026-08-04 20:48 JST
+最終更新日時：2026-08-04 21:01 JST
 
 暗号資産 Paper / Watch ダッシュボードです。ローカル、devbox HTTPサーバ、GitHub Pages、FTP配布のどれでも静的ファイルとして表示できます。
 
@@ -11,6 +11,12 @@
 
 ```text
 https://smilegroupsato.github.io/sc-crypto-ops/
+```
+
+Entry判定マトリクス専用Pageは次です。
+
+```text
+https://smilegroupsato.github.io/sc-crypto-ops/matrix.html
 ```
 
 `main` に更新が入ると、`.github/workflows/deploy-crypto-dashboard-pages.yml` が `dashboard/crypto-pdca/` をPagesへデプロイします。
@@ -63,6 +69,8 @@ devbox側にFTPで配置したあと、devboxのHTTPサーバから同じディ�
 
 詳細ログ：`records/pdca/2026.08.04_04_entry_matrix_prediction_improvement.md`
 
+別Page：`matrix.html` は `data.json` の `entryEvaluation` を読み込み、判定帯、12項目の重み、銘柄別採点、予測精度改善ループ、検証指標を一覧表示します。
+
 ## 前提
 
 - 総資金: 1,000,000円
@@ -75,6 +83,7 @@ Meme BasketのEntry価格は、`records/pdca/2026.08.04_02_speculative_meme_para
 
 ## 更新履歴
 
+- 2026-08-04 21:01 JST：Entry判定マトリクス専用Page `matrix.html` を追加し、Dashboardからの導線を追加。
 - 2026-08-04 20:48 JST：Entry Matrixと予測精度改善ループを追加し、data.json更新対象にentryEvaluation/predictionImprovementを追加。
 - 2026-08-04 19:16 JST：画面データ正本としてdata.jsonを追加し、日次PDCA後のPages反映手順を追記。
 - 2026-08-04 18:49 JST：GitHub Pagesデプロイ手順と公開URLを追記。
