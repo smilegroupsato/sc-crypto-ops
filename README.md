@@ -1,7 +1,7 @@
 # SC Crypto Ops
 
 ページ作成日時：2026-08-02 08:04 JST
-最終更新日時：2026-08-04 19:16 JST
+最終更新日時：2026-08-04 21:01 JST
 
 SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理する private repository。
 
@@ -42,6 +42,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | Crypto PDCA Dashboard | https://smilegroupsato.github.io/sc-crypto-ops/ | GitHub Pagesで公開する1画面ダッシュボード |
 | Dashboard source | `dashboard/crypto-pdca/` | 現在ポートフォリオ、推奨銘柄、値動き、資産変動を表示する静的ファイル |
 | Dashboard data | `dashboard/crypto-pdca/data.json` | 日次PDCAルーティンが更新する画面用データ |
+| Entry Matrix Page | https://smilegroupsato.github.io/sc-crypto-ops/matrix.html | Entry判定基準、重み、銘柄別採点、予測改善ループを表示 |
 | Pages workflow | `.github/workflows/deploy-crypto-dashboard-pages.yml` | `dashboard/crypto-pdca/` をGitHub Pagesへデプロイ |
 
 ## ファイル構成
@@ -69,6 +70,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | `records/reviews/` | Outcome Review |
 | `dashboard/crypto-pdca/` | 現在ポートフォリオ、推奨銘柄、値動き、資産変動を1画面で見るダッシュボード |
 | `dashboard/crypto-pdca/data.json` | GitHub Pages画面へ反映する日次PDCAデータ |
+| `dashboard/crypto-pdca/matrix.html` | Entry判定基準マトリクス専用Page |
 
 ## 絶対に置かないもの
 
@@ -91,6 +93,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 
 ## 更新履歴
 
+- 2026-08-04 21:01 JST：Entry判定マトリクス専用Pageを追加し、公開画面一覧に追記。
 - 2026-08-04 19:16 JST：Dashboard data.jsonを追加し、日次PDCAからPagesへ反映する運用を追記。
 - 2026-08-04 18:49 JST：GitHub Pages workflowと公開URLを追記。
 - 2026-08-04 18:44 JST：Crypto PDCA Dashboardを `dashboard/crypto-pdca/` に追加。
