@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/smilegroupsato/sc-crypto-ops/templates/intent_schema_v0.1.json",
+  "title": "SC Crypto Ops Intent Schema v0.1",
+  "description": "ChatGPT/Paper Plan/Web UIからOrder Gatewayへ渡す取引・送金・DeFi・DApp操作Intentのschema。秘密鍵、seed phrase、API Secret、2FA情報を含めてはならない。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "intent_id",
+    "created_at_jst",
+    "created_by",
+    "intent_type",
+    "execution_mode",
+    "venue_type",
+    "venue",
+    "asset_flow",
+    "risk",
+    "safety",
+    "ledger",
+    "reason"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "intent_id": {
+      "type": "string",
+      "pattern": "^INT-[0-9]{8}-[0-9]{3,6}$"
+    },
+    "created_at_jst": {
+      "type": "string",
+      "description": "YYYY-MM-DD HH:MM JST"
+    },
+    "created_by": {
+      "type": "string",
+      "enum": ["sato", "chatgpt", "paper_plan", "web_ui", "manual_import", "system"]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chat_title": { "type": ["string", "null"] },
+        "record_path": { "type": ["string", "null"] },
+        "related_plan_id": { "type": ["string", "null"] },
+        "related_url": { "type": ["string", "null"] }
+      }
+    },
+    "intent_type": {
+      "type": "string",
+      "enum": ["trade", "transfer", "approve", "swap", "bridge", "claim", "dapp_call", "cancel", "record_manual_execution"]
+    },
+    "execution_mode": {
+      "type": "string",
+      "enum": ["paper", "shadow", "live_confirmed", "live_auto"]
+    },
+    "venue_type": {
+      "type": "string",
+      "enum": ["cex", "wallet", "defi", "dapp", "manual"]
+    },
+    "venue": {
+      "type": "string",
+      "minLength": 1,
+      "examples": ["bitflyer", "coincheck", "metamask", "uniswap", "0x", "manual_metamask"]
+    },
+    "chain": {
+      "type": ["string", "null"],
+      "enum": ["ethereum", "base", "arbitrum", "optimism", "polygon", "solana", "bitcoin", "none", null]
+    },
+    "network_id": {
+      "type": ["string", "integer", "null"],
+      "description": "EVM chainId等。該当しない場合はnull。"
+    },
+    "asset_flow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["side", "from_asset", "to_asset", "amount_type"],
+      "properties": {
+        "side": {
+          "type": "string",
+          "enum": ["BUY", "SELL", "SWAP", "TRANSFER", "APPROVE", "CLAIM", "NONE"]
+        },
+        "from_asset": { "type": ["string", "null"] },
+        "to_asset": { "type": ["string", "null"] },
+        "from_contract_address": {
+          "type": ["string", "null"],
+          "pattern": "^(0x[a-fA-F0-9]{40})?$"
+        },
+        "to_contract_address": {
+          "type": ["string", "null"],
+          "pattern": "^(0x[a-fA-F0-9]{40})?$"
+        },
+        "amount_type": {
+          "type": "string",
+          "enum": ["jpy_budget", "asset_quantity", "full_balance", "quote_only", "none"]
+        },
+        "amount_jpy": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "from_amount": {
+          "type": ["string", "number", "null"]
+        },
+        "to_amount_min": {
+          "type": ["string", "number", "null"]
+        },
+        "price_limit": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "price_limit_currency": {
+          "type": ["string", "null"],
+          "enum": ["JPY", "USD", "USDT", "USDC", "BTC", "ETH", "none", null]
+        }
+      }
+    },
+    "transfer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "from_wallet_label": { "type": ["string", "null"] },
+        "to_address_label": { "type": ["string", "null"] },
+        "to_address": { "type": ["string", "null"] },
+        "memo": { "type": ["string", "null"] }
+      }
+    },
+    "defi": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "protocol": { "type": ["string", "null"] },
+        "router_address": {
+          "type": ["string", "null"],
+          "pattern": "^(0x[a-fA-F0-9]{40})?$"
+        },
+        "requires_approval": { "type": ["boolean", "null"] },
+        "approval_spender_address": {
+          "type": ["string", "null"],
+          "pattern": "^(0x[a-fA-F0-9]{40})?$"
+        },
+        "approval_amount_type": {
+          "type": ["string", "null"],
+          "enum": ["exact", "limited", "unlimited", "none", null]
+        }
+      }
+    },
+    "dapp": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "app_name": { "type": ["string", "null"] },
+        "contract_address": {
+          "type": ["string", "null"],
+          "pattern": "^(0x[a-fA-F0-9]{40})?$"
+        },
+        "function_name": { "type": ["string", "null"] },
+        "calldata_summary": { "type": ["string", "null"] },
+        "raw_calldata_allowed": { "type": "boolean", "default": false }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_loss_jpy",
+        "slippage_bps_max",
+        "gas_jpy_max",
+        "fee_jpy_max",
+        "cash_reserve_ratio_min",
+        "requires_manual_confirm"
+      ],
+      "properties": {
+        "max_loss_jpy": { "type": "number", "minimum": 0, "maximum": 10000 },
+        "slippage_bps_max": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "gas_jpy_max": { "type": "number", "minimum": 0 },
+        "fee_jpy_max": { "type": "number", "minimum": 0 },
+        "daily_limit_jpy_group": { "type": ["string", "null"] },
+        "cash_reserve_ratio_min": { "type": "number", "minimum": 0, "maximum": 1 },
+        "requires_manual_confirm": { "type": "boolean" },
+        "stop_loss_condition": { "type": ["string", "null"] },
+        "take_profit_condition": { "type": ["string", "null"] }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["safety_profile", "toggles"],
+      "properties": {
+        "safety_profile": {
+          "type": "string",
+          "enum": ["strict", "normal", "custom", "danger"]
+        },
+        "toggles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "require_manual_confirm",
+            "enable_market_order",
+            "enforce_max_order_jpy",
+            "enforce_daily_limit_jpy",
+            "enforce_max_loss_jpy",
+            "enforce_slippage_bps",
+            "enforce_gas_jpy_max",
+            "enforce_cash_reserve_ratio",
+            "require_asset_whitelist",
+            "require_chain_whitelist",
+            "require_venue_whitelist",
+            "require_address_whitelist",
+            "block_private_key_handling",
+            "require_audit_log",
+            "require_evidence",
+            "require_dapp_calldata_review"
+          ],
+          "properties": {
+            "require_manual_confirm": { "type": "boolean" },
+            "enable_market_order": { "type": "boolean" },
+            "enforce_max_order_jpy": { "type": "boolean" },
+            "enforce_daily_limit_jpy": { "type": "boolean" },
+            "enforce_max_loss_jpy": { "type": "boolean" },
+            "enforce_slippage_bps": { "type": "boolean" },
+            "enforce_gas_jpy_max": { "type": "boolean" },
+            "enforce_cash_reserve_ratio": { "type": "boolean" },
+            "require_asset_whitelist": { "type": "boolean" },
+            "require_chain_whitelist": { "type": "boolean" },
+            "require_venue_whitelist": { "type": "boolean" },
+            "require_address_whitelist": { "type": "boolean", "const": true },
+            "block_private_key_handling": { "type": "boolean", "const": true },
+            "require_audit_log": { "type": "boolean", "const": true },
+            "require_evidence": { "type": "boolean", "const": true },
+            "require_dapp_calldata_review": { "type": "boolean", "const": true }
+          }
+        }
+      }
+    },
+    "ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ledger_target", "evidence_required", "jpy_basis", "check_status_default"],
+      "properties": {
+        "ledger_target": {
+          "type": "string",
+          "enum": ["google_sheet_sc_crypto_ledger", "paper_ledger", "manual_review"]
+        },
+        "evidence_required": { "type": "boolean", "const": true },
+        "jpy_basis": {
+          "type": "string",
+          "enum": ["execution_time", "quote_time", "manual_source"]
+        },
+        "evidence_id": {
+          "type": ["string", "null"],
+          "pattern": "^(EV-[0-9]{8}-.+)?$"
+        },
+        "check_status_default": {
+          "type": "string",
+          "enum": ["未確認", "OK", "要確認", "対象外"]
+        }
+      }
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": ["string", "null"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "execution_mode": { "const": "live_auto" } }
+      },
+      "then": {
+        "properties": {
+          "risk": {
+            "properties": {
+              "requires_manual_confirm": { "const": false }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "intent_type": { "const": "transfer" } }
+      },
+      "then": {
+        "required": ["transfer"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "venue_type": { "const": "defi" } }
+      },
+      "then": {
+        "required": ["defi"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "venue_type": { "const": "dapp" } }
+      },
+      "then": {
+        "required": ["dapp"]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "schema_version": "0.1",
+      "intent_id": "INT-20260805-001",
+      "created_at_jst": "2026-08-05 09:43 JST",
+      "created_by": "chatgpt",
+      "source": {
+        "chat_title": "SC crypto paper trade",
+        "record_path": null,
+        "related_plan_id": null,
+        "related_url": null
+      },
+      "intent_type": "swap",
+      "execution_mode": "paper",
+      "venue_type": "defi",
+      "venue": "uniswap",
+      "chain": "base",
+      "network_id": 8453,
+      "asset_flow": {
+        "side": "SWAP",
+        "from_asset": "USDC",
+        "to_asset": "WETH",
+        "from_contract_address": null,
+        "to_contract_address": null,
+        "amount_type": "jpy_budget",
+        "amount_jpy": 50000,
+        "from_amount": null,
+        "to_amount_min": null,
+        "price_limit": null,
+        "price_limit_currency": "none"
+      },
+      "defi": {
+        "protocol": "uniswap",
+        "router_address": null,
+        "requires_approval": null,
+        "approval_spender_address": null,
+        "approval_amount_type": "none"
+      },
+      "risk": {
+        "max_loss_jpy": 10000,
+        "slippage_bps_max": 100,
+        "gas_jpy_max": 3000,
+        "fee_jpy_max": 1000,
+        "daily_limit_jpy_group": "default",
+        "cash_reserve_ratio_min": 0.55,
+        "requires_manual_confirm": true,
+        "stop_loss_condition": "entry後-5%から-8%で撤退",
+        "take_profit_condition": "+15%から+30%で一部利確"
+      },
+      "safety": {
+        "safety_profile": "strict",
+        "toggles": {
+          "require_manual_confirm": true,
+          "enable_market_order": false,
+          "enforce_max_order_jpy": true,
+          "enforce_daily_limit_jpy": true,
+          "enforce_max_loss_jpy": true,
+          "enforce_slippage_bps": true,
+          "enforce_gas_jpy_max": true,
+          "enforce_cash_reserve_ratio": true,
+          "require_asset_whitelist": true,
+          "require_chain_whitelist": true,
+          "require_venue_whitelist": true,
+          "require_address_whitelist": true,
+          "block_private_key_handling": true,
+          "require_audit_log": true,
+          "require_evidence": true,
+          "require_dapp_calldata_review": true
+        }
+      },
+      "ledger": {
+        "ledger_target": "paper_ledger",
+        "evidence_required": true,
+        "jpy_basis": "quote_time",
+        "evidence_id": null,
+        "check_status_default": "対象外"
+      },
+      "reason": "Paper運用でEntry条件を検証する。",
+      "notes": null
+    }
+  ]
+}
