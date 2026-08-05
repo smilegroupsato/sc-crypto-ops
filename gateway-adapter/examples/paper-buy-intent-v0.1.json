@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "intent_id": "INT-20260805-001",
+  "created_at_jst": "2026-08-05 12:02 JST",
+  "created_by": "web_ui",
+  "source": {
+    "chat_title": "SC Crypto Gateway Web Tool",
+    "record_path": null,
+    "related_plan_id": null,
+    "related_url": null
+  },
+  "intent_type": "trade",
+  "execution_mode": "paper",
+  "venue_type": "cex",
+  "venue": "paper",
+  "chain": "none",
+  "network_id": null,
+  "asset_flow": {
+    "side": "BUY",
+    "from_asset": "JPY",
+    "to_asset": "BTC",
+    "from_contract_address": null,
+    "to_contract_address": null,
+    "amount_type": "jpy_budget",
+    "amount_jpy": 50000,
+    "from_amount": null,
+    "to_amount_min": null,
+    "price_limit": null,
+    "price_limit_currency": "JPY"
+  },
+  "risk": {
+    "max_loss_jpy": 10000,
+    "slippage_bps_max": 100,
+    "gas_jpy_max": 0,
+    "fee_jpy_max": 1000,
+    "daily_limit_jpy_group": "default",
+    "cash_reserve_ratio_min": 0.55,
+    "requires_manual_confirm": true,
+    "stop_loss_condition": "最大損失10,000円以内で撤退",
+    "take_profit_condition": "Paper検証後に判断"
+  },
+  "safety": {
+    "safety_profile": "strict",
+    "toggles": {
+      "require_manual_confirm": true,
+      "enable_market_order": false,
+      "enforce_max_order_jpy": true,
+      "enforce_daily_limit_jpy": true,
+      "enforce_max_loss_jpy": true,
+      "enforce_slippage_bps": true,
+      "enforce_gas_jpy_max": true,
+      "enforce_cash_reserve_ratio": true,
+      "require_asset_whitelist": true,
+      "require_chain_whitelist": true,
+      "require_venue_whitelist": true,
+      "require_address_whitelist": true,
+      "block_private_key_handling": true,
+      "require_audit_log": true,
+      "require_evidence": true,
+      "require_dapp_calldata_review": true
+    }
+  },
+  "ledger": {
+    "ledger_target": "paper_ledger",
+    "evidence_required": true,
+    "jpy_basis": "quote_time",
+    "evidence_id": null,
+    "check_status_default": "対象外"
+  },
+  "reason": "Gateway Adapterのpaper実行テスト。",
+  "notes": null
+}
