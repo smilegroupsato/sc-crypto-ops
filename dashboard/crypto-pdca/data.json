@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "2026.08.04.dashboard.v2",
-  "updatedAtJst": "2026-08-04 20:48 JST",
+  "schemaVersion": "2026.08.05.dashboard.v3",
+  "updatedAtJst": "2026-08-05 13:04 JST",
   "source": {
-    "currentDailyLog": "records/pdca/2026.08.04_03_speculative_meme_parallel_paper_buy_now.md",
+    "currentDailyLog": "records/pdca/2026.08.05_01_daily_crypto_pdca_simulation.md",
     "note": "日次PDCAルーティンが毎回このJSONを更新し、GitHub Pages画面へ反映する。Entry判定はentryEvaluationを基準にする。",
     "entryMatrixLog": "records/pdca/2026.08.04_04_entry_matrix_prediction_improvement.md"
   },
@@ -25,572 +25,112 @@
     ]
   },
   "positions": [
-    {
-      "scenario": "Core",
-      "symbol": "AAVE",
-      "id": "aave",
-      "amountJpy": 75000,
-      "entryUsd": 91.85,
-      "rank": 2
-    },
-    {
-      "scenario": "Core",
-      "symbol": "UNI",
-      "id": "uniswap",
-      "amountJpy": 75000,
-      "entryUsd": 4.14,
-      "rank": 14
-    },
-    {
-      "scenario": "Core",
-      "symbol": "AERO",
-      "id": "aerodrome-finance",
-      "amountJpy": 75000,
-      "entryUsd": 0.4056,
-      "rank": 9
-    },
-    {
-      "scenario": "Core",
-      "symbol": "ONDO",
-      "id": "ondo-finance",
-      "amountJpy": 75000,
-      "entryUsd": 0.3925,
-      "rank": 12
-    },
-    {
-      "scenario": "Core",
-      "symbol": "ENA",
-      "id": "ethena",
-      "amountJpy": 75000,
-      "entryUsd": 0.08482,
-      "rank": 13
-    },
-    {
-      "scenario": "Core",
-      "symbol": "SOL",
-      "id": "solana",
-      "amountJpy": 75000,
-      "entryUsd": 73.12,
-      "rank": 1
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "PUMP",
-      "id": "pump-fun",
-      "amountJpy": 80000,
-      "entryUsd": 0.002233,
-      "rank": 3
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "PEPE",
-      "id": "pepe",
-      "amountJpy": 70000,
-      "entryUsd": 0.0000029,
-      "rank": 4
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "PENGU",
-      "id": "pudgy-penguins",
-      "amountJpy": 60000,
-      "entryUsd": 0.006088,
-      "rank": 5
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "BONK",
-      "id": "bonk",
-      "amountJpy": 50000,
-      "entryUsd": 0.0000028,
-      "rank": 6
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "WIF",
-      "id": "dogwifcoin",
-      "amountJpy": 35000,
-      "entryUsd": 0.1399,
-      "rank": 7
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "FARTCOIN",
-      "id": "fartcoin",
-      "amountJpy": 25000,
-      "entryUsd": 0.1312,
-      "rank": 8
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "ANSEM",
-      "id": "the-black-bull",
-      "amountJpy": 15000,
-      "entryUsd": 0.184,
-      "rank": 10
-    },
-    {
-      "scenario": "Meme",
-      "symbol": "USELESS",
-      "id": "useless-3",
-      "amountJpy": 15000,
-      "entryUsd": 0.0493,
-      "rank": 11
-    }
+    {"scenario":"Core","symbol":"AAVE","id":"aave","amountJpy":75000,"entryUsd":91.85,"rank":2},
+    {"scenario":"Core","symbol":"UNI","id":"uniswap","amountJpy":75000,"entryUsd":4.14,"rank":14},
+    {"scenario":"Core","symbol":"AERO","id":"aerodrome-finance","amountJpy":75000,"entryUsd":0.4056,"rank":9},
+    {"scenario":"Core","symbol":"ONDO","id":"ondo-finance","amountJpy":75000,"entryUsd":0.3925,"rank":12},
+    {"scenario":"Core","symbol":"ENA","id":"ethena","amountJpy":75000,"entryUsd":0.08482,"rank":13},
+    {"scenario":"Core","symbol":"SOL","id":"solana","amountJpy":75000,"entryUsd":73.12,"rank":1},
+    {"scenario":"Meme","symbol":"PUMP","id":"pump-fun","amountJpy":80000,"entryUsd":0.002236,"rank":3},
+    {"scenario":"Meme","symbol":"PEPE","id":"pepe","amountJpy":70000,"entryUsd":0.000002912,"rank":4},
+    {"scenario":"Meme","symbol":"PENGU","id":"pudgy-penguins","amountJpy":60000,"entryUsd":0.006143,"rank":5},
+    {"scenario":"Meme","symbol":"BONK","id":"bonk","amountJpy":50000,"entryUsd":0.000002858,"rank":6},
+    {"scenario":"Meme","symbol":"WIF","id":"dogwifcoin","amountJpy":35000,"entryUsd":0.1408,"rank":7},
+    {"scenario":"Meme","symbol":"FARTCOIN","id":"fartcoin","amountJpy":25000,"entryUsd":0.1311,"rank":8},
+    {"scenario":"Meme","symbol":"ANSEM","id":"the-black-bull","amountJpy":15000,"entryUsd":0.1764,"rank":10},
+    {"scenario":"Meme","symbol":"USELESS","id":"useless-3","amountJpy":15000,"entryUsd":0.04869,"rank":11}
   ],
   "fallbackPrices": {
-    "aave": {
-      "usd": 91.77,
-      "jpy": 14461,
-      "usd_24h_change": -0.2,
-      "usd_24h_vol": 180000000
-    },
-    "uniswap": {
-      "usd": 2.83,
-      "jpy": 446,
-      "usd_24h_change": -6.5,
-      "usd_24h_vol": 90000000
-    },
-    "aerodrome-finance": {
-      "usd": 0.390367,
-      "jpy": 62,
-      "usd_24h_change": 0.8,
-      "usd_24h_vol": 25000000
-    },
-    "ondo-finance": {
-      "usd": 0.330863,
-      "jpy": 52,
-      "usd_24h_change": -4.2,
-      "usd_24h_vol": 60000000
-    },
-    "ethena": {
-      "usd": 0.07605,
-      "jpy": 12,
-      "usd_24h_change": -3.7,
-      "usd_24h_vol": 50000000
-    },
-    "solana": {
-      "usd": 77.97,
-      "jpy": 12299,
-      "usd_24h_change": 3.4,
-      "usd_24h_vol": 1500000000
-    },
-    "pump-fun": {
-      "usd": 0.002233,
-      "jpy": 0.35225575,
-      "usd_24h_change": 7.1,
-      "usd_24h_vol": 90830783
-    },
-    "pepe": {
-      "usd": 0.0000029,
-      "jpy": 0.000457475,
-      "usd_24h_change": 2.1,
-      "usd_24h_vol": 131459543
-    },
-    "pudgy-penguins": {
-      "usd": 0.006088,
-      "jpy": 0.960382,
-      "usd_24h_change": 0.3,
-      "usd_24h_vol": 32204870
-    },
-    "bonk": {
-      "usd": 0.0000028,
-      "jpy": 0.0004417,
-      "usd_24h_change": -0.8,
-      "usd_24h_vol": 22121033
-    },
-    "dogwifcoin": {
-      "usd": 0.1399,
-      "jpy": 22.069225,
-      "usd_24h_change": 2.4,
-      "usd_24h_vol": 26476000
-    },
-    "fartcoin": {
-      "usd": 0.1312,
-      "jpy": 20.6968,
-      "usd_24h_change": 2.1,
-      "usd_24h_vol": 15004411
-    },
-    "the-black-bull": {
-      "usd": 0.184,
-      "jpy": 29.026,
-      "usd_24h_change": -5.5,
-      "usd_24h_vol": 11135390
-    },
-    "useless-3": {
-      "usd": 0.0493,
-      "jpy": 7.777075,
-      "usd_24h_change": -2.2,
-      "usd_24h_vol": 5433689
-    }
+    "aave":{"usd":91.00,"jpy":14355.25,"usd_24h_change":-1.6,"usd_7d_change":-8.9,"usd_24h_vol":175970972.89,"source":"https://www.coingecko.com/en/coins/aave"},
+    "uniswap":{"usd":3.91,"jpy":616.8025,"usd_24h_change":0.7,"usd_7d_change":1.8,"usd_24h_vol":203411760.70,"source":"https://www.coingecko.com/en/coins/uniswap"},
+    "aerodrome-finance":{"usd":0.4116,"jpy":64.9179,"usd_24h_change":0.4,"usd_7d_change":-3.5,"usd_24h_vol":14807143.27,"source":"https://www.coingecko.com/en/coins/aerodrome-finance"},
+    "ondo-finance":{"usd":0.3762,"jpy":59.33655,"usd_24h_change":1.1,"usd_7d_change":-5.3,"usd_24h_vol":115896334.20,"source":"https://www.coingecko.com/en/coins/ondo-finance"},
+    "ethena":{"usd":0.09016,"jpy":14.22149,"usd_24h_change":-1.6,"usd_7d_change":9.1,"usd_24h_vol":108406528.55,"source":"https://www.coingecko.com/en/coins/ethena"},
+    "solana":{"usd":73.75,"jpy":11631.5625,"usd_24h_change":0.1,"usd_7d_change":0.2,"usd_24h_vol":1431316559.10,"source":"https://www.coingecko.com/en/coins/solana"},
+    "pump-fun":{"usd":0.002424,"jpy":0.382386,"usd_24h_change":11.7,"usd_7d_change":6.8,"usd_24h_vol":87240102.32,"source":"https://www.coingecko.com/en/coins/pump-fun"},
+    "pepe":{"usd":0.000002847,"jpy":0.00044911425,"usd_24h_change":-1.6,"usd_7d_change":-4.8,"usd_24h_vol":133959197.64,"source":"https://www.coingecko.com/en/coins/pepe"},
+    "pudgy-penguins":{"usd":0.006053,"jpy":0.95486075,"usd_24h_change":-2.7,"usd_7d_change":-15.1,"usd_24h_vol":34492044.14,"source":"https://www.coingecko.com/en/coins/pudgy-penguins"},
+    "bonk":{"usd":0.000002804,"jpy":0.000442331,"usd_24h_change":-1.9,"usd_7d_change":-14.4,"usd_24h_vol":22766939.52,"source":"https://www.coingecko.com/en/coins/bonk"},
+    "dogwifcoin":{"usd":0.1481,"jpy":23.362775,"usd_24h_change":4.4,"usd_7d_change":-7.4,"usd_24h_vol":29734305.80,"source":"https://www.coingecko.com/en/coins/dogwifhat"},
+    "fartcoin":{"usd":0.1347,"jpy":21.248925,"usd_24h_change":2.4,"usd_7d_change":-0.2,"usd_24h_vol":13381501.47,"source":"https://www.coingecko.com/en/coins/fartcoin"},
+    "the-black-bull":{"usd":0.1721,"jpy":27.145775,"usd_24h_change":-6.3,"usd_7d_change":26.9,"usd_24h_vol":10727370.28,"source":"https://www.coingecko.com/en/coins/the-black-bull"},
+    "useless-3":{"usd":0.04737,"jpy":7.4711175,"usd_24h_change":-2.1,"usd_7d_change":-13.2,"usd_24h_vol":5086572.60,"source":"https://www.coingecko.com/en/coins/useless-3"},
+    "hyperliquid":{"usd":35.15,"jpy":5544.9125,"usd_24h_change":2.3,"usd_7d_change":3.3,"usd_24h_vol":207055136,"source":"https://www.coingecko.com/en/coins/hyperliquid"},
+    "lorenzo-protocol":{"usd":0.2607,"jpy":41.117925,"usd_24h_change":-12.0,"usd_7d_change":57.3,"usd_24h_vol":215372802.79,"source":"https://www.coingecko.com/en/coins/lorenzo-protocol"},
+    "skyai":{"usd":0.02884,"jpy":4.54801,"usd_24h_change":3.0,"usd_7d_change":2.7,"usd_24h_vol":6774444.05,"source":"https://www.coingecko.com/en/coins/skyai"},
+    "plume":{"usd":0.094352,"jpy":14.878028,"usd_24h_change":-2.535,"usd_7d_change":15.3,"usd_24h_vol":24697395,"source":"https://www.coingecko.com/en/api/plume-network"},
+    "spx6900":{"usd":0.3335,"jpy":52.599625,"usd_24h_change":-0.3,"usd_7d_change":-8.0,"usd_24h_vol":4516720.91,"source":"https://www.coingecko.com/en/coins/spx6900"},
+    "cash-cat":{"usd":0.03552,"jpy":5.60232,"usd_24h_change":-12.0,"usd_7d_change":-57.2,"usd_24h_vol":10726756.80,"source":"https://www.coingecko.com/en/coins/cash-cat"}
   },
   "recommendations": [
-    {
-      "symbol": "PUMP",
-      "type": "Meme",
-      "action": "Paper Buy",
-      "note": "主軸。24h/7dの勢いと出来高を優先。"
-    },
-    {
-      "symbol": "PEPE",
-      "type": "Meme",
-      "action": "Paper Buy",
-      "note": "大型ミームの流動性枠。"
-    },
-    {
-      "symbol": "PENGU",
-      "type": "Meme",
-      "action": "Paper Buy",
-      "note": "ブランド・認知・出来高が残る枠。"
-    },
-    {
-      "symbol": "BONK",
-      "type": "Meme",
-      "action": "Paper Buy Small",
-      "note": "直近注意材料あり。Stop幅を浅めにする。"
-    },
-    {
-      "symbol": "WIF",
-      "type": "Meme",
-      "action": "Paper Buy Small",
-      "note": "高ベータ回転枠。"
-    },
-    {
-      "symbol": "FARTCOIN",
-      "type": "Meme",
-      "action": "Paper Buy Tiny",
-      "note": "値幅検証用。"
-    },
-    {
-      "symbol": "ANSEM",
-      "type": "Meme",
-      "action": "Paper Buy Tiny",
-      "note": "下落中だが7dは強い。集中懸念あり。"
-    },
-    {
-      "symbol": "USELESS",
-      "type": "Meme",
-      "action": "Paper Buy Tiny",
-      "note": "小型・下落中。検証枠のみ。"
-    }
+    {"symbol":"PUMP","type":"Meme","action":"Hold","note":"Basketの勝ち頭。出来高80M USD超維持ならHold。+25%まで利確は待つ。"},
+    {"symbol":"WIF","type":"Meme","action":"Hold","note":"高ベータ枠。0.145 USD維持ならHold。"},
+    {"symbol":"PENGU","type":"Meme","action":"Reduce Watch","note":"7d -15.1%。出来高は残るが追加禁止。"},
+    {"symbol":"BONK","type":"Meme","action":"Reduce Watch","note":"7d -14.4%。Solana Meme弱含み。"},
+    {"symbol":"HYPE","type":"Infra","action":"Add Watch","note":"大型流動性。35 USD維持なら小口候補。"},
+    {"symbol":"BANK","type":"DeFi","action":"Add Watch","note":"出来高大、7d強いが24h急落。0.27 USD回復待ち。"},
+    {"symbol":"SKYAI","type":"AI","action":"Watch","note":"AI小型。出来高10M USD超を待つ。"},
+    {"symbol":"PLUME","type":"RWA","action":"Watch","note":"RWA候補。FDV重く、0.098 USD回復待ち。"},
+    {"symbol":"CASHCAT","type":"Meme","action":"見送り","note":"7d -57.2%。Control群。"},
+    {"symbol":"SPX","type":"Meme","action":"見送り","note":"物語は強いが足元の出来高/7dが弱い。"}
   ],
-  "newEntryWatch": [],
+  "newEntryWatch": [
+    {"symbol":"HYPE","type":"Infra","action":"小さく/Watch","note":"perp/infraの大型流動性。Entry: 35 USD維持、24h出来高150M USD以上、BTC/ETH急落なし / Stop: 33 USD割れ、または出来高100M USD割れ","url":"https://www.coingecko.com/en/coins/hyperliquid","nextCheck":"2026-08-06"},
+    {"symbol":"BANK","type":"DeFi","action":"Watch継続","note":"出来高と7d勢いは強いが24h -12%。Entry: 0.27 USD再奪回、24h下落停止、出来高100M USD以上維持 / Stop: 0.235 USD割れ、急騰後清算ニュース継続","url":"https://www.coingecko.com/en/coins/lorenzo-protocol","nextCheck":"2026-08-06"},
+    {"symbol":"SKYAI","type":"AI","action":"Watch継続","note":"AI枠だが小型で出来高が薄い。Entry: 0.029 USD上抜け、出来高10M USD超 / Stop: 0.027 USD割れ、出来高5M USD割れ","url":"https://www.coingecko.com/en/coins/skyai","nextCheck":"2026-08-06"},
+    {"symbol":"PLUME","type":"RWA","action":"Watch継続","note":"RWAテーマ。FDVが重い。Entry: 0.098 USD回復、出来高20M USD維持 / Stop: 0.090 USD割れ","url":"https://www.coingecko.com/en/api/plume-network","nextCheck":"2026-08-06"},
+    {"symbol":"SPX","type":"Meme","action":"見送り","note":"物語は強いが足元の出来高と7dが弱い。Entry: 0.34 USD回復、出来高10M USD超 / Stop: 0.316 USD割れ","url":"https://www.coingecko.com/en/coins/spx6900","nextCheck":"2026-08-06"},
+    {"symbol":"CASHCAT","type":"Meme","action":"見送り","note":"ATHから大幅下落、7d -57.2%。Control群。Entry: 7d下落停止、0.040 USD回復 / Stop: 現時点はEntryしない","url":"https://www.coingecko.com/en/coins/cash-cat","nextCheck":"2026-08-06"}
+  ],
   "pdca": [
-    {
-      "phase": "Plan",
-      "text": "現金55%固定。投機候補は12項目Entry Matrixで採点し、75点以上をEntry可、60点以上を小口/Watchにする。"
-    },
-    {
-      "phase": "Do",
-      "text": "2026-08-04の2本のPaper実践ログを基準データとして、PUMP/PEPE/PENGU等の採点を開始。"
-    },
-    {
-      "phase": "Check",
-      "text": "T+1/T+3/T+7で損益、最大逆行、出来高、相対強度、材料継続、Stop到達を確認。"
-    },
-    {
-      "phase": "Act",
-      "text": "週次で重みを見直し、見送り候補の上昇もFalse Negativeとして記録する。"
-    }
+    {"phase":"Plan","text":"現金55%固定。追加Entryは戦術現金10万円または入替のみ。Matrix 75点以上でも分割前提。"},
+    {"phase":"Do","text":"2026-08-05はCoreとMemeを同じ総資金100万円で評価し、HYPE/BANK/SKYAI/PLUME/SPX/CASHCATをControl群込みで採点。"},
+    {"phase":"Check","text":"Core総資産998,502円、Meme総資産1,005,069円。Memeが小幅優位だがPUMP/WIF偏重。"},
+    {"phase":"Act","text":"2026-08-06はPUMP出来高80M維持、WIF 0.145維持、BANK 0.27回復、HYPE 35維持を確認。"}
   ],
   "entryEvaluation": {
-    "updatedAtJst": "2026-08-04 20:48 JST",
+    "updatedAtJst": "2026-08-05 13:04 JST",
     "practiceData": [
       "records/pdca/2026.08.04_02_speculative_meme_parallel_entry_log.md",
-      "records/pdca/2026.08.04_03_speculative_meme_parallel_paper_buy_now.md"
+      "records/pdca/2026.08.04_03_speculative_meme_parallel_paper_buy_now.md",
+      "records/pdca/2026.08.05_01_daily_crypto_pdca_simulation.md"
     ],
     "scoreScale": "各項目0から5点。重み付き合計100点満点。",
     "decisionBands": [
-      {
-        "min": 75,
-        "label": "Entry可",
-        "rule": "主軸または通常サイズ。ただし分割Entry。"
-      },
-      {
-        "min": 60,
-        "max": 74.9,
-        "label": "小さく/Watch",
-        "rule": "小口または候補維持。次回確認で追加判断。"
-      },
-      {
-        "min": 45,
-        "max": 59.9,
-        "label": "Watch継続",
-        "rule": "Paper検証のみ。新規追加は原則しない。"
-      },
-      {
-        "max": 44.9,
-        "label": "見送り",
-        "rule": "実弾禁止。候補から落とすか極小Paperのみ。"
-      }
+      {"min":75,"label":"Entry可","rule":"主軸または通常サイズ。ただし分割Entry。"},
+      {"min":60,"max":74.9,"label":"小さく/Watch","rule":"小口または候補維持。次回確認で追加判断。"},
+      {"min":45,"max":59.9,"label":"Watch継続","rule":"Paper検証のみ。新規追加は原則しない。"},
+      {"max":44.9,"label":"見送り","rule":"実弾禁止。候補から落とすか極小Paperのみ。"}
     ],
     "criteria": [
-      {
-        "key": "marketGate",
-        "label": "市場ゲート",
-        "weight": 8,
-        "description": "BTC/ETH/SOL、Memeカテゴリ全体、リスクオン/オフ"
-      },
-      {
-        "key": "liquidity",
-        "label": "流動性",
-        "weight": 12,
-        "description": "24h出来高、板・取引所・出口の確保"
-      },
-      {
-        "key": "volumeAcceleration",
-        "label": "出来高加速",
-        "weight": 8,
-        "description": "出来高が増えているか、減っているか"
-      },
-      {
-        "key": "momentum",
-        "label": "価格モメンタム",
-        "weight": 10,
-        "description": "24h/7dの値動き、上昇の継続性"
-      },
-      {
-        "key": "relativeStrength",
-        "label": "相対強度",
-        "weight": 8,
-        "description": "同カテゴリ内で相対的に強いか"
-      },
-      {
-        "key": "narrative",
-        "label": "材料/物語",
-        "weight": 10,
-        "description": "なぜ今見られているか、材料が継続しそうか"
-      },
-      {
-        "key": "listingExit",
-        "label": "上場/出口",
-        "weight": 8,
-        "description": "主要取引所・DEX流動性・Exit可能性"
-      },
-      {
-        "key": "supplyRisk",
-        "label": "供給/集中リスク",
-        "weight": 8,
-        "description": "保有集中、解除、FDV、インサイダー懸念。高得点ほど安全"
-      },
-      {
-        "key": "chartLocation",
-        "label": "Entry位置",
-        "weight": 8,
-        "description": "急騰天井掴みではないか、Stopを置けるか"
-      },
-      {
-        "key": "riskReward",
-        "label": "損益設計",
-        "weight": 8,
-        "description": "Stop幅と利確余地の比率"
-      },
-      {
-        "key": "executionFit",
-        "label": "執行適合",
-        "weight": 6,
-        "description": "サイズ、スプレッド、税務記録、運用負荷"
-      },
-      {
-        "key": "pdcaEvidenceFit",
-        "label": "PDCA一致",
-        "weight": 6,
-        "description": "過去ログで当たりやすかった条件に合うか"
-      }
+      {"key":"marketGate","label":"市場ゲート","weight":8,"description":"BTC/ETH/SOL、Memeカテゴリ全体、リスクオン/オフ"},
+      {"key":"liquidity","label":"流動性","weight":12,"description":"24h出来高、板・取引所・出口の確保"},
+      {"key":"volumeAcceleration","label":"出来高加速","weight":8,"description":"出来高が増えているか、減っているか"},
+      {"key":"momentum","label":"価格モメンタム","weight":10,"description":"24h/7dの値動き、上昇の継続性"},
+      {"key":"relativeStrength","label":"相対強度","weight":8,"description":"同カテゴリ内で相対的に強いか"},
+      {"key":"narrative","label":"材料/物語","weight":10,"description":"なぜ今見られているか、材料が継続しそうか"},
+      {"key":"listingExit","label":"上場/出口","weight":8,"description":"主要取引所・DEX流動性・Exit可能性"},
+      {"key":"supplyRisk","label":"供給/集中リスク","weight":8,"description":"保有集中、解除、FDV、インサイダー懸念。高得点ほど安全"},
+      {"key":"chartLocation","label":"Entry位置","weight":8,"description":"急騰天井掴みではないか、Stopを置けるか"},
+      {"key":"riskReward","label":"損益設計","weight":8,"description":"Stop幅と利確余地の比率"},
+      {"key":"executionFit","label":"執行適合","weight":6,"description":"サイズ、スプレッド、税務記録、運用負荷"},
+      {"key":"pdcaEvidenceFit","label":"PDCA一致","weight":6,"description":"過去ログで当たりやすかった条件に合うか"}
     ],
     "matrix": [
-      {
-        "symbol": "PUMP",
-        "type": "Meme",
-        "scores": {
-          "marketGate": 4,
-          "liquidity": 4,
-          "volumeAcceleration": 4,
-          "momentum": 4,
-          "relativeStrength": 4,
-          "narrative": 4,
-          "listingExit": 4,
-          "supplyRisk": 3,
-          "chartLocation": 3,
-          "riskReward": 4,
-          "executionFit": 4,
-          "pdcaEvidenceFit": 3
-        },
-        "positives": "勢い、出来高、Pump.fun本体性",
-        "risks": "急騰後の反落、出来高急減",
-        "decision": "Entry可",
-        "action": "主軸。ただし分割/浅めStop",
-        "totalScore": 75.6,
-        "band": "Entry可"
-      },
-      {
-        "symbol": "PEPE",
-        "type": "Meme",
-        "scores": {
-          "marketGate": 4,
-          "liquidity": 5,
-          "volumeAcceleration": 3,
-          "momentum": 3,
-          "relativeStrength": 4,
-          "narrative": 3,
-          "listingExit": 5,
-          "supplyRisk": 4,
-          "chartLocation": 3,
-          "riskReward": 3,
-          "executionFit": 5,
-          "pdcaEvidenceFit": 3
-        },
-        "positives": "大型ミームの流動性と出口",
-        "risks": "物語の新規性は弱い",
-        "decision": "Entry可",
-        "action": "流動性枠。深追いしない",
-        "totalScore": 75.2,
-        "band": "Entry可"
-      },
-      {
-        "symbol": "PENGU",
-        "type": "Meme",
-        "scores": {
-          "marketGate": 4,
-          "liquidity": 4,
-          "volumeAcceleration": 3,
-          "momentum": 3,
-          "relativeStrength": 3,
-          "narrative": 4,
-          "listingExit": 4,
-          "supplyRisk": 3,
-          "chartLocation": 3,
-          "riskReward": 3,
-          "executionFit": 4,
-          "pdcaEvidenceFit": 3
-        },
-        "positives": "ブランド認知、一定の出来高",
-        "risks": "材料剥落時の弱さ",
-        "decision": "小さく/Watch",
-        "action": "中核補助。出来高維持ならHold",
-        "totalScore": 68.8,
-        "band": "小さく/Watch"
-      },
-      {
-        "symbol": "WIF",
-        "type": "Meme",
-        "scores": {
-          "marketGate": 3,
-          "liquidity": 4,
-          "volumeAcceleration": 3,
-          "momentum": 3,
-          "relativeStrength": 3,
-          "narrative": 3,
-          "listingExit": 4,
-          "supplyRisk": 3,
-          "chartLocation": 3,
-          "riskReward": 3,
-          "executionFit": 3,
-          "pdcaEvidenceFit": 2
-        },
-        "positives": "Solana Meme高ベータ",
-        "risks": "相対優位が弱い時は崩れやすい",
-        "decision": "小さく/Watch",
-        "action": "回転枠。勝っても増やしすぎない",
-        "totalScore": 62.8,
-        "band": "小さく/Watch"
-      },
-      {
-        "symbol": "FARTCOIN",
-        "type": "Meme",
-        "scores": {
-          "marketGate": 3,
-          "liquidity": 3,
-          "volumeAcceleration": 3,
-          "momentum": 3,
-          "relativeStrength": 3,
-          "narrative": 3,
-          "listingExit": 3,
-          "supplyRisk": 2,
-          "chartLocation": 3,
-          "riskReward": 3,
-          "executionFit": 3,
-          "pdcaEvidenceFit": 2
-        },
-        "positives": "値幅、話題性",
-        "risks": "ボラティリティと出口劣化",
-        "decision": "Watch",
-        "action": "極小検証。Stop優先",
-        "totalScore": 57.2,
-        "band": "Watch継続"
-      },
-      {
-        "symbol": "BONK",
-        "type": "Meme",
-        "scores": {
-          "marketGate": 3,
-          "liquidity": 4,
-          "volumeAcceleration": 2,
-          "momentum": 2,
-          "relativeStrength": 3,
-          "narrative": 3,
-          "listingExit": 4,
-          "supplyRisk": 2,
-          "chartLocation": 2,
-          "riskReward": 3,
-          "executionFit": 3,
-          "pdcaEvidenceFit": 2
-        },
-        "positives": "Solana Meme代表枠、出口",
-        "risks": "注意材料、勢い鈍化",
-        "decision": "Watch/Reduce候補",
-        "action": "既存Paperは小さく。新規追加は慎重",
-        "totalScore": 56,
-        "band": "Watch継続"
-      },
-      {
-        "symbol": "ANSEM",
-        "type": "Meme",
-        "scores": {
-          "marketGate": 2,
-          "liquidity": 3,
-          "volumeAcceleration": 2,
-          "momentum": 2,
-          "relativeStrength": 2,
-          "narrative": 3,
-          "listingExit": 2,
-          "supplyRisk": 1,
-          "chartLocation": 2,
-          "riskReward": 2,
-          "executionFit": 2,
-          "pdcaEvidenceFit": 1
-        },
-        "positives": "話題性、短期値幅",
-        "risks": "集中/FDV/下落継続",
-        "decision": "見送り寄り",
-        "action": "極小Paperのみ。実弾は原則見送り",
-        "totalScore": 41.6,
-        "band": "見送り"
-      },
-      {
-        "symbol": "USELESS",
-        "type": "Meme",
-        "scores": {
-          "marketGate": 2,
-          "liquidity": 2,
-          "volumeAcceleration": 2,
-          "momentum": 2,
-          "relativeStrength": 2,
-          "narrative": 2,
-          "listingExit": 2,
-          "supplyRisk": 1,
-          "chartLocation": 2,
-          "riskReward": 2,
-          "executionFit": 2,
-          "pdcaEvidenceFit": 1
-        },
-        "positives": "小型回転枠",
-        "risks": "流動性低下、物語の薄さ",
-        "decision": "見送り",
-        "action": "Paper検証のみ。追加しない",
-        "totalScore": 37.2,
-        "band": "見送り"
-      }
+      {"symbol":"PUMP","type":"Meme","scores":{"marketGate":4,"liquidity":4,"volumeAcceleration":4,"momentum":5,"relativeStrength":5,"narrative":4,"listingExit":4,"supplyRisk":3,"chartLocation":3,"riskReward":4,"executionFit":4,"pdcaEvidenceFit":4},"positives":"Pump.fun本体性。24h/7dとも強い。","risks":"急騰後反落、出来高30M未満","decision":"Hold","action":"既存Paper Hold","totalScore":81.2,"band":"Entry可"},
+      {"symbol":"HYPE","type":"Infra","scores":{"marketGate":3,"liquidity":5,"volumeAcceleration":4,"momentum":3,"relativeStrength":4,"narrative":4,"listingExit":4,"supplyRisk":3,"chartLocation":3,"riskReward":3,"executionFit":4,"pdcaEvidenceFit":2},"positives":"perp/infraの大型流動性。","risks":"33 USD割れ、または出来高100M USD割れ","decision":"小さく/Watch","action":"35 USD維持で小口候補","totalScore":72.4,"band":"小さく/Watch"},
+      {"symbol":"PEPE","type":"Meme","scores":{"marketGate":3,"liquidity":5,"volumeAcceleration":3,"momentum":2,"relativeStrength":3,"narrative":3,"listingExit":5,"supplyRisk":4,"chartLocation":3,"riskReward":3,"executionFit":5,"pdcaEvidenceFit":3},"positives":"大型ミーム流動性枠。","risks":"大型ミーム全体の地合い悪化","decision":"Hold","action":"既存Paper Hold","totalScore":70.4,"band":"小さく/Watch"},
+      {"symbol":"BANK","type":"DeFi","scores":{"marketGate":3,"liquidity":5,"volumeAcceleration":4,"momentum":3,"relativeStrength":4,"narrative":4,"listingExit":5,"supplyRisk":2,"chartLocation":2,"riskReward":3,"executionFit":4,"pdcaEvidenceFit":2},"positives":"出来高と7d勢いは強いが24h -12%。","risks":"0.235 USD割れ、急騰後清算ニュース継続","decision":"Watch継続","action":"0.27 USD回復待ち","totalScore":70.0,"band":"小さく/Watch"},
+      {"symbol":"WIF","type":"Meme","scores":{"marketGate":3,"liquidity":4,"volumeAcceleration":3,"momentum":3,"relativeStrength":3,"narrative":3,"listingExit":4,"supplyRisk":3,"chartLocation":3,"riskReward":3,"executionFit":3,"pdcaEvidenceFit":3},"positives":"Solana Meme高ベータ。","risks":"高ボラ。7d弱い","decision":"Hold","action":"既存Paper Hold","totalScore":65.6,"band":"小さく/Watch"},
+      {"symbol":"PLUME","type":"RWA","scores":{"marketGate":3,"liquidity":4,"volumeAcceleration":3,"momentum":3,"relativeStrength":3,"narrative":4,"listingExit":3,"supplyRisk":2,"chartLocation":3,"riskReward":3,"executionFit":3,"pdcaEvidenceFit":1},"positives":"RWAテーマ。FDVが重い。","risks":"0.090 USD割れ","decision":"Watch継続","action":"0.098 USD回復待ち","totalScore":61.6,"band":"小さく/Watch"},
+      {"symbol":"PENGU","type":"Meme","scores":{"marketGate":3,"liquidity":4,"volumeAcceleration":3,"momentum":2,"relativeStrength":2,"narrative":4,"listingExit":4,"supplyRisk":3,"chartLocation":2,"riskReward":3,"executionFit":4,"pdcaEvidenceFit":3},"positives":"ブランド/NFT認知。","risks":"7d弱い。材料剥落","decision":"Reduce Watch","action":"既存Paper Reduce Watch","totalScore":61.2,"band":"小さく/Watch"},
+      {"symbol":"SKYAI","type":"AI","scores":{"marketGate":3,"liquidity":3,"volumeAcceleration":3,"momentum":3,"relativeStrength":3,"narrative":4,"listingExit":3,"supplyRisk":2,"chartLocation":3,"riskReward":3,"executionFit":3,"pdcaEvidenceFit":1},"positives":"AI枠だが小型で出来高が薄い。","risks":"0.027 USD割れ、出来高5M USD割れ","decision":"Watch継続","action":"AI小型としてWatch","totalScore":58.4,"band":"Watch継続"},
+      {"symbol":"FARTCOIN","type":"Meme","scores":{"marketGate":3,"liquidity":3,"volumeAcceleration":3,"momentum":3,"relativeStrength":3,"narrative":3,"listingExit":3,"supplyRisk":2,"chartLocation":3,"riskReward":3,"executionFit":3,"pdcaEvidenceFit":2},"positives":"値幅検証枠。","risks":"出口劣化、ボラ","decision":"Hold","action":"既存Paper Hold","totalScore":57.2,"band":"Watch継続"},
+      {"symbol":"BONK","type":"Meme","scores":{"marketGate":3,"liquidity":4,"volumeAcceleration":2,"momentum":2,"relativeStrength":2,"narrative":3,"listingExit":4,"supplyRisk":3,"chartLocation":2,"riskReward":3,"executionFit":3,"pdcaEvidenceFit":3},"positives":"Solana Meme代表枠。","risks":"7d弱い。Solana Meme弱含み","decision":"Reduce Watch","action":"既存Paper Reduce Watch","totalScore":56.8,"band":"Watch継続"},
+      {"symbol":"SPX","type":"Meme","scores":{"marketGate":3,"liquidity":2,"volumeAcceleration":2,"momentum":2,"relativeStrength":2,"narrative":4,"listingExit":4,"supplyRisk":3,"chartLocation":2,"riskReward":3,"executionFit":3,"pdcaEvidenceFit":1},"positives":"物語は強いが足元の出来高と7dが弱い。","risks":"0.316 USD割れ","decision":"見送り","action":"見送りControl","totalScore":55.6,"band":"Watch継続"},
+      {"symbol":"ANSEM","type":"Meme","scores":{"marketGate":2,"liquidity":3,"volumeAcceleration":2,"momentum":3,"relativeStrength":3,"narrative":3,"listingExit":2,"supplyRisk":1,"chartLocation":2,"riskReward":2,"executionFit":2,"pdcaEvidenceFit":2},"positives":"7dは強いが24h急落。","risks":"集中/FDV/下落継続","decision":"Reduce Watch","action":"既存Paper Reduce Watch","totalScore":45.2,"band":"Watch継続"},
+      {"symbol":"CASHCAT","type":"Meme","scores":{"marketGate":2,"liquidity":3,"volumeAcceleration":2,"momentum":1,"relativeStrength":1,"narrative":3,"listingExit":3,"supplyRisk":2,"chartLocation":1,"riskReward":2,"executionFit":2,"pdcaEvidenceFit":1},"positives":"ATHから大幅下落、7d -57.2%。Control群。","risks":"現時点はEntryしない","decision":"見送り","action":"見送りControl","totalScore":42.8,"band":"見送り"},
+      {"symbol":"USELESS","type":"Meme","scores":{"marketGate":2,"liquidity":2,"volumeAcceleration":2,"momentum":2,"relativeStrength":2,"narrative":2,"listingExit":2,"supplyRisk":1,"chartLocation":2,"riskReward":2,"executionFit":2,"pdcaEvidenceFit":2},"positives":"BONK.fun回転枠。","risks":"小型、7d弱い、流動性半減","decision":"Reduce Watch","action":"既存Paper Reduce Watch","totalScore":39.6,"band":"見送り"}
     ],
     "improvementLoop": [
       "Entry前に、T+1/T+3/T+7の予測レンジ、Stop条件、利確条件、失敗仮説を必ず書く。",
@@ -613,7 +153,7 @@
     ]
   },
   "predictionImprovement": {
-    "summary": "予測精度は、Entry前仮説、見送り候補、T+1/T+3/T+7結果、False Positive/False Negativeを同じ形式で蓄積すると上げやすい。",
-    "nextAction": "次回PDCAから、全候補をEntry Matrixで採点し、結果をdata.jsonと日次ログに残す。"
+    "summary": "2026-08-05はMeme優位だが勝ちはPUMP/WIFに偏る。False Negative検証用にHYPE/BANK/SKYAI/PLUME、見送りControlにSPX/CASHCATを残す。",
+    "nextAction": "2026-08-06にT+1として、PUMP/WIFの優位継続とBANK/HYPEのEntry条件到達を確認する。重み変更は週次まで保留。"
   }
 }
