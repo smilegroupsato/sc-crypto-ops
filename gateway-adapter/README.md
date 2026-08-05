@@ -1,7 +1,7 @@
 # Gateway Adapter v0.1 全体構想
 
 ページ作成日時：2026-08-05 09:43 JST
-最終更新日時：2026-08-05 10:21 JST
+最終更新日時：2026-08-05 12:02 JST
 
 ## 目的
 
@@ -117,6 +117,27 @@ flowchart TD
 8. 実発注は `live_confirmed` から開始し、すべて元帳・証憑に反映する。
 9. DApp任意実行は最後に扱う。
 
+## 操作用Web Tool v0.1
+
+汎用Shell Consoleではなく、`gateway-adapter` のpaper実行だけを操作する簡易Web UIを `gateway-adapter/tool/` に置く。
+
+| Path | 内容 |
+|---|---|
+| `gateway-adapter/tool/server.py` | 標準Pythonだけで起動するWeb UI / API。ValidateとRun Paperを提供 |
+| `gateway-adapter/tool/README.md` | 起動手順、安全制約、できること/できないこと |
+| `gateway-adapter/examples/paper-buy-intent-v0.1.json` | 動作確認用sample Intent |
+| `gateway-adapter/records/paper-executions/` | 実行時にpaper Execution Report JSONを保存 |
+
+起動例。
+
+```bash
+cd /srv/sgos/repos/sc-crypto-ops
+GATEWAY_UI_TOKEN='長めのランダム文字列' \
+python3 gateway-adapter/tool/server.py --host 0.0.0.0 --port 8765
+```
+
+v0.1では実発注・送金・署名・取引所API・DeFi/DApp実行は行わない。
+
 ## 未確定事項
 
 - Google Sheets元帳へ直接追記する実装をGoogle Sheets APIで行うか、CSV/JSON出力を人間確認後に取り込むか。
@@ -127,5 +148,6 @@ flowchart TD
 
 ## 更新履歴
 
+- 2026-08-05 12:02 JST：gateway-adapter操作用の最小Web Toolとpaper実行レポート保存先を追加。
 - 2026-08-05 10:21 JST：Gateway Adapter配下へ移動し、関連仕様への参照パスを更新。
 - 2026-08-05 09:43 JST：ChatGPT経由の取引・送金システム全体構想を作成。
