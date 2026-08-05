@@ -1,7 +1,7 @@
 # SC Crypto Ops
 
 ページ作成日時：2026-08-02 08:04 JST
-最終更新日時：2026-08-05 09:43 JST
+最終更新日時：2026-08-05 10:21 JST
 
 SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理する private repository。
 
@@ -33,7 +33,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | 基準通貨 | JPY |
 | 時刻基準 | JST |
 | 会計方針 | 移動平均法を前提。最終判断は税理士確認を優先 |
-| 運用ステータス | v0.1 計算補助ロジック追加済、Research Routine追加済、Research Experiment開始、Order Gateway設計追加 |
+| 運用ステータス | v0.1 計算補助ロジック追加済、Research Routine追加済、Research Experiment開始、Gateway Adapter設計追加 |
 
 ## 公開画面
 
@@ -58,14 +58,14 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 | `docs/research_experiment_design_v0.1.md` | 複数profileでPaper Planを作り、Watch検証する実験設計 |
 | `docs/research_profiles_v0.1.md` | 銘柄選定profileの定義 |
 | `docs/onchain_tx_evidence_v0.1.md` | MetaMask/DEX transaction証憑ルール |
-| `docs/chatgpt_trade_execution_system_concept_v0.1.md` | ChatGPT経由の取引・送金システム全体構想 |
-| `docs/order_gateway_v0.1.md` | paper / CEX / Wallet / DeFi / DAppを共通Intentで流す発注ゲートウェイ仕様 |
+| `gateway-adapter/README.md` | ChatGPT経由の取引・送金システム全体構想とGateway Adapter索引 |
+| `gateway-adapter/order-gateway-spec-v0.1.md` | paper / CEX / Wallet / DeFi / DAppを共通Intentで流すOrder Gateway仕様 |
 | `templates/trade_plan_template.md` | 取引前プラン / Paper Trade Plan |
 | `templates/research_note_template.md` | リサーチメモ |
 | `templates/daily_research_log_template.md` | 日次リサーチログ |
 | `templates/candidate_batch_template.md` | profile別候補バッチ |
 | `templates/watch_log_template.md` | Watch検証ログ |
-| `templates/intent_schema_v0.1.json` | ChatGPT / Paper Plan / Web UIからOrder Gatewayへ渡すIntent JSON Schema |
+| `gateway-adapter/intent-schema-v0.1.json` | ChatGPT / Paper Plan / Web UIからOrder Gatewayへ渡すIntent JSON Schema |
 | `records/operations/` | 運用ログ置き場 |
 | `records/research/` | GitHubに残す必要がある調査メモ置き場 |
 | `records/trade_plans/` | Paper Plan / 取引前プラン |
@@ -86,8 +86,8 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 
 ## 次の一手
 
-1. 別チャットで作成したPaper Planを `templates/intent_schema_v0.1.json` に従うIntent JSONへ変換する。
-2. `docs/order_gateway_v0.1.md` に従い、まず `execution_mode=paper` のGateway stubを作る。
+1. 別チャットで作成したPaper Planを `gateway-adapter/intent-schema-v0.1.json` に従うIntent JSONへ変換する。
+2. `gateway-adapter/order-gateway-spec-v0.1.md` に従い、まず `execution_mode=paper` のGateway stubを作る。
 3. 実行結果JSONをGoogle Sheets元帳の `01_取引明細` と `06_証憑管理` に対応付けるwriter設計を作る。
 4. DeFiはquote取得までを先に作り、MetaMask署名・実Swapは `live_confirmed` で後続実装にする。
 5. 日次PDCA後に `dashboard/crypto-pdca/data.json` を更新し、Pages画面へ最新状態を反映する。
@@ -100,6 +100,7 @@ SC法人の暗号資産短期売買・会計元帳・リサーチ運用を管理
 
 ## 更新履歴
 
+- 2026-08-05 10:21 JST：Gateway Adapter関連文書を `gateway-adapter/` に集約し、ファイル名とREADME索引を整理。
 - 2026-08-05 09:43 JST：ChatGPT発注・送金システム全体構想、Order Gateway仕様、Intent JSON Schemaを追加。
 - 2026-08-04 21:01 JST：Entry判定マトリクス専用Pageを追加し、公開画面一覧に追記。
 - 2026-08-04 19:16 JST：Dashboard data.jsonを追加し、日次PDCAからPagesへ反映する運用を追記。
