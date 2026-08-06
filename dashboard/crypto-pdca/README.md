@@ -1,7 +1,7 @@
 # SC Crypto Dashboard
 
 ページ作成日時：2026-08-04 18:44 JST
-最終更新日時：2026-08-04 21:01 JST
+最終更新日時：2026-08-06 18:33 JST
 
 暗号資産 Paper / Watch ダッシュボードです。ローカル、devbox HTTPサーバ、GitHub Pages、FTP配布のどれでも静的ファイルとして表示できます。
 
@@ -57,6 +57,18 @@ devbox側にFTPで配置したあと、devboxのHTTPサーバから同じディ�
 - `entryEvaluation`
 - `predictionImprovement`
 
+## X Account Watchlist
+
+Xアカウントは銘柄ではなく「情報源」として扱います。投稿で出た銘柄は、そのままEntry扱いにせず、価格・出来高・流動性・市場ゲートを確認してからNew Entry WatchまたはEntry Matrixに移します。
+
+現在の追加ログ：`records/watch/2026.08.06_01_x_account_watchlist_crypto_sources.md`
+
+初期追加対象：
+
+- `@crypton98`
+- `@farokh`
+- `@lowkeyfr`
+
 ## Entry Matrix / 予測精度改善
 
 投機的銘柄は、`dashboard/crypto-pdca/data.json` の `entryEvaluation` を正本として評価します。
@@ -83,6 +95,7 @@ Meme BasketのEntry価格は、`records/pdca/2026.08.04_02_speculative_meme_para
 
 ## 更新履歴
 
+- 2026-08-06 18:33 JST：X Account Watchlistの運用ルールと追加ログ参照を追記。
 - 2026-08-04 21:01 JST：Entry判定マトリクス専用Page `matrix.html` を追加し、Dashboardからの導線を追加。
 - 2026-08-04 20:48 JST：Entry Matrixと予測精度改善ループを追加し、data.json更新対象にentryEvaluation/predictionImprovementを追加。
 - 2026-08-04 19:16 JST：画面データ正本としてdata.jsonを追加し、日次PDCA後のPages反映手順を追記。
