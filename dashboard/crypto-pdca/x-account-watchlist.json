@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "2026.08.06.x-account-watchlist.v1",
+  "updatedAtJst": "2026-08-06 18:33 JST",
+  "sourceLog": "records/watch/2026.08.06_01_x_account_watchlist_crypto_sources.md",
+  "notionDatabase": "https://app.notion.com/p/4208a975403d4c0cb2506fc693ba9d67",
+  "accounts": [
+    {
+      "handle": "@crypton98",
+      "url": "https://x.com/crypton98",
+      "status": "Watch",
+      "priority": "Medium",
+      "type": "X Source",
+      "role": "Alt / meme candidate discovery source",
+      "notionUrl": "https://app.notion.com/p/3b4aef03314281f8872df53997251081",
+      "nextCheckJst": "2026-08-07 13:00 JST",
+      "checks": [
+        "mentioned tickers",
+        "repeated themes",
+        "engagement change",
+        "cross-source overlap",
+        "CoinGecko price and volume confirmation before any Entry Watch promotion"
+      ]
+    },
+    {
+      "handle": "@farokh",
+      "url": "https://x.com/farokh",
+      "status": "Watch",
+      "priority": "Medium",
+      "type": "X Source",
+      "role": "NFT / crypto culture and market psychology source",
+      "notionUrl": "https://app.notion.com/p/3b4aef0331428174b4eae0f2db9ee4ab",
+      "nextCheckJst": "2026-08-07 13:00 JST",
+      "checks": [
+        "NFT and crypto themes",
+        "market psychology signal",
+        "engagement change",
+        "cross-source overlap",
+        "Entry Matrix scoring before treating any mentioned asset as tradable"
+      ]
+    },
+    {
+      "handle": "@lowkeyfr",
+      "url": "https://x.com/lowkeyfr",
+      "status": "Watch",
+      "priority": "Medium",
+      "type": "X Source",
+      "role": "Trader / influencer narrative source",
+      "notionUrl": "https://app.notion.com/p/3b4aef0331428127a432db442acac74d",
+      "nextCheckJst": "2026-08-07 13:00 JST",
+      "checks": [
+        "mentioned tickers",
+        "position/narrative hints",
+        "engagement change",
+        "cross-source overlap",
+        "risk signals after pumps"
+      ]
+    }
+  ],
+  "rules": [
+    "Accounts are sources, not assets.",
+    "Do not treat a post as an Entry signal until market gate, price, volume, liquidity, listing/exit, and risk signals are checked.",
+    "Promote repeated or high-quality mentions to New Entry Watch, then score with the 12-part Entry Matrix."
+  ]
+}
