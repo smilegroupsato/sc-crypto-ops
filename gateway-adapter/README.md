@@ -1,7 +1,7 @@
 # Gateway Adapter v0.1 全体構想
 
 ページ作成日時：2026-08-05 09:43 JST
-最終更新日時：2026-08-05 12:02 JST
+最終更新日時：2026-08-08 15:05 JST
 
 ## 目的
 
@@ -138,6 +138,19 @@ python3 gateway-adapter/tool/server.py --host 0.0.0.0 --port 8765
 
 v0.1では実発注・送金・署名・取引所API・DeFi/DApp実行は行わない。
 
+## Portfolio Stateful Paper v0.1
+
+暗号資産プロジェクト全体の基本単位を `portfolio` にする。Intentは `portfolio_id` と `idempotency_key` を必須で持ち、Gatewayは `gateway-adapter/config/portfolios.v0.1.json` を上位正本として、Intentから実行モード・承認ポリシー・risk limitsを緩めることを拒否する。
+
+| Path | 内容 |
+|---|---|
+| `gateway-adapter/portfolio-stateful-paper-v0.1.md` | portfolio stateful paperの仕様 |
+| `gateway-adapter/config/portfolios.v0.1.json` | portfolio config |
+| `gateway-adapter/state/portfolio-state.v0.1.json` | portfolio state |
+| `gateway-adapter/tool/portfolio_engine.py` | Stateful Paper Executor / Dashboard Projector |
+
+初期portfolioは `core45_cash55` と `speculative_meme_parallel`。どちらもcash 55%、investment 45%、`execution_mode=paper`、`approval_policy=auto` で開始する。
+
 ## 未確定事項
 
 - Google Sheets元帳へ直接追記する実装をGoogle Sheets APIで行うか、CSV/JSON出力を人間確認後に取り込むか。
@@ -148,6 +161,7 @@ v0.1では実発注・送金・署名・取引所API・DeFi/DApp実行は行わ�
 
 ## 更新履歴
 
+- 2026-08-08 15:05 JST：portfolio config/state、Stateful Paper Executor、Dashboard Projectorを追加。
 - 2026-08-05 12:02 JST：gateway-adapter操作用の最小Web Toolとpaper実行レポート保存先を追加。
 - 2026-08-05 10:21 JST：Gateway Adapter配下へ移動し、関連仕様への参照パスを更新。
 - 2026-08-05 09:43 JST：ChatGPT経由の取引・送金システム全体構想を作成。
