@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "updated_at_jst": "2026-08-08 15:05 JST",
+  "description": "Portfolio config is the upper policy source for Gateway execution. Intent JSON may choose a portfolio, but may not loosen portfolio execution mode, approval policy, cash reserve, or risk limits.",
+  "portfolios": [
+    {
+      "portfolio_id": "core45_cash55",
+      "name": "Core 45 / Cash 55",
+      "description": "Core basket paper experiment. Cash reserve 55%, investment frame 45%.",
+      "initial_capital_jpy": 1000000,
+      "cash_reserve_ratio": 0.55,
+      "investment_ratio": 0.45,
+      "entry_matrix_profile": "core_45_cash_55",
+      "execution_mode": "paper",
+      "approval_policy": "auto",
+      "risk_limits": {
+        "max_order_jpy": 100000,
+        "max_position_cost_jpy": 100000,
+        "max_loss_jpy": 10000,
+        "daily_order_limit_jpy": 150000,
+        "max_total_investment_jpy": 450000,
+        "min_cash_jpy": 550000,
+        "slippage_bps_max": 100,
+        "gas_jpy_max": 0,
+        "fee_jpy_max": 1000,
+        "allowed_execution_modes": [
+          "paper"
+        ],
+        "allowed_venue_types": [
+          "cex",
+          "manual"
+        ],
+        "allowed_venues": [
+          "paper",
+          "manual"
+        ],
+        "allowed_assets": [
+          "AAVE",
+          "UNI",
+          "AERO",
+          "ONDO",
+          "ENA",
+          "SOL",
+          "BTC",
+          "ETH",
+          "JPY"
+        ]
+      }
+    },
+    {
+      "portfolio_id": "speculative_meme_parallel",
+      "name": "Speculative / Meme Parallel",
+      "description": "Speculative and meme paper experiment. Cash reserve 55%, investment frame 45%.",
+      "initial_capital_jpy": 1000000,
+      "cash_reserve_ratio": 0.55,
+      "investment_ratio": 0.45,
+      "entry_matrix_profile": "speculative_meme_parallel",
+      "execution_mode": "paper",
+      "approval_policy": "auto",
+      "risk_limits": {
+        "max_order_jpy": 80000,
+        "max_position_cost_jpy": 80000,
+        "max_loss_jpy": 10000,
+        "daily_order_limit_jpy": 150000,
+        "max_total_investment_jpy": 450000,
+        "min_cash_jpy": 550000,
+        "slippage_bps_max": 100,
+        "gas_jpy_max": 0,
+        "fee_jpy_max": 1000,
+        "allowed_execution_modes": [
+          "paper"
+        ],
+        "allowed_venue_types": [
+          "cex",
+          "manual"
+        ],
+        "allowed_venues": [
+          "paper",
+          "manual"
+        ],
+        "allowed_assets": [
+          "PUMP",
+          "PEPE",
+          "PENGU",
+          "BONK",
+          "WIF",
+          "FARTCOIN",
+          "ANSEM",
+          "USELESS",
+          "HYPE",
+          "TAO",
+          "VIRTUAL",
+          "RENDER",
+          "PLUME",
+          "KMNO",
+          "SKYAI",
+          "CYS",
+          "SPX",
+          "BANK",
+          "JPY"
+        ]
+      }
+    }
+  ]
+}
