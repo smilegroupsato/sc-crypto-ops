@@ -1,9 +1,9 @@
 {
-  "schemaVersion": "2026.08.07.dashboard.v5",
-  "updatedAtJst": "2026-08-07 13:00 JST",
+  "schemaVersion": "2026.08.08.dashboard.v6",
+  "updatedAtJst": "2026-08-08 13:01 JST",
   "source": {
-    "currentDailyLog": "records/pdca/2026.08.07_02_daily_crypto_pdca_simulation.md",
-    "previousDailyLog": "records/pdca/2026.08.07_01_daily_crypto_pdca_simulation.md",
+    "currentDailyLog": "records/pdca/2026.08.08_01_daily_crypto_pdca_simulation.md",
+    "previousDailyLog": "records/pdca/2026.08.07_02_daily_crypto_pdca_simulation.md",
     "entryMatrixPage": "dashboard/crypto-pdca/matrix.html",
     "entryMatrixLog": "records/pdca/2026.08.04_04_entry_matrix_prediction_improvement.md",
     "xAccountWatchlist": "dashboard/crypto-pdca/x-account-watchlist.json",
@@ -28,118 +28,1174 @@
     ]
   },
   "positions": [
-    {"scenario":"Core","symbol":"AAVE","id":"aave","amountJpy":75000,"entryUsd":91.85,"currentUsd":90.48,"valueJpy":73881,"pnlJpy":-1119,"pnlPct":-1.49,"decision":"Hold"},
-    {"scenario":"Core","symbol":"UNI","id":"uniswap","amountJpy":75000,"entryUsd":4.14,"currentUsd":4.02,"valueJpy":72826,"pnlJpy":-2174,"pnlPct":-2.90,"decision":"Hold"},
-    {"scenario":"Core","symbol":"AERO","id":"aerodrome-finance","amountJpy":75000,"entryUsd":0.4056,"currentUsd":0.4315,"valueJpy":79789,"pnlJpy":4789,"pnlPct":6.39,"decision":"Hold"},
-    {"scenario":"Core","symbol":"ONDO","id":"ondo","amountJpy":75000,"entryUsd":0.3925,"currentUsd":0.3508,"valueJpy":67032,"pnlJpy":-7968,"pnlPct":-10.62,"decision":"Reduce Watch"},
-    {"scenario":"Core","symbol":"ENA","id":"ethena","amountJpy":75000,"entryUsd":0.08482,"currentUsd":0.09281,"valueJpy":82065,"pnlJpy":7065,"pnlPct":9.42,"decision":"Hold"},
-    {"scenario":"Core","symbol":"SOL","id":"solana","amountJpy":75000,"entryUsd":73.12,"currentUsd":72.68,"valueJpy":74549,"pnlJpy":-451,"pnlPct":-0.60,"decision":"Hold"},
-    {"scenario":"Meme","symbol":"PUMP","id":"pump-fun","amountJpy":80000,"entryUsd":0.002236,"currentUsd":0.002411,"valueJpy":86261,"pnlJpy":6261,"pnlPct":7.83,"decision":"Hold"},
-    {"scenario":"Meme","symbol":"PEPE","id":"pepe","amountJpy":70000,"entryUsd":0.000002912,"currentUsd":0.000002803,"valueJpy":67380,"pnlJpy":-2620,"pnlPct":-3.74,"decision":"Hold"},
-    {"scenario":"Meme","symbol":"PENGU","id":"pudgy-penguins","amountJpy":60000,"entryUsd":0.006143,"currentUsd":0.005996,"valueJpy":58564,"pnlJpy":-1436,"pnlPct":-2.39,"decision":"Hold / no add"},
-    {"scenario":"Meme","symbol":"BONK","id":"bonk","amountJpy":50000,"entryUsd":0.000002858,"currentUsd":0.000002840,"valueJpy":49685,"pnlJpy":-315,"pnlPct":-0.63,"decision":"Reduce Watch"},
-    {"scenario":"Meme","symbol":"WIF","id":"dogwifhat","amountJpy":35000,"entryUsd":0.1408,"currentUsd":0.1398,"valueJpy":34751,"pnlJpy":-249,"pnlPct":-0.71,"decision":"Caution"},
-    {"scenario":"Meme","symbol":"FARTCOIN","id":"fartcoin","amountJpy":25000,"entryUsd":0.1311,"currentUsd":0.1279,"valueJpy":24390,"pnlJpy":-610,"pnlPct":-2.44,"decision":"Hold small"},
-    {"scenario":"Meme","symbol":"ANSEM","id":"the-black-bull","amountJpy":15000,"entryUsd":0.1764,"currentUsd":0.1782,"valueJpy":15153,"pnlJpy":153,"pnlPct":1.02,"decision":"Reduce Watch"},
-    {"scenario":"Meme","symbol":"USELESS","id":"useless-3","amountJpy":15000,"entryUsd":0.04869,"currentUsd":0.04341,"valueJpy":13373,"pnlJpy":-1627,"pnlPct":-10.84,"decision":"Reduce Watch / Stop close"}
+    {
+      "scenario": "Core",
+      "symbol": "AAVE",
+      "id": "aave",
+      "amountJpy": 75000,
+      "entryUsd": 91.85,
+      "currentUsd": 89.86,
+      "valueJpy": 73375,
+      "pnlJpy": -1625,
+      "pnlPct": -2.17,
+      "volumeUsd": 137759489,
+      "change24h": -0.8,
+      "change7d": -3.4,
+      "decision": "Hold",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Core",
+      "symbol": "UNI",
+      "id": "uniswap",
+      "amountJpy": 75000,
+      "entryUsd": 4.14,
+      "currentUsd": 4.03,
+      "valueJpy": 73007,
+      "pnlJpy": -1993,
+      "pnlPct": -2.66,
+      "volumeUsd": 158660747,
+      "change24h": 0.1,
+      "change7d": -6.3,
+      "decision": "Hold",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Core",
+      "symbol": "AERO",
+      "id": "aerodrome-finance",
+      "amountJpy": 75000,
+      "entryUsd": 0.4056,
+      "currentUsd": 0.443171,
+      "valueJpy": 81947,
+      "pnlJpy": 6947,
+      "pnlPct": 9.26,
+      "volumeUsd": 14351755,
+      "change24h": 2.6,
+      "change7d": 5.6,
+      "decision": "Hold",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Core",
+      "symbol": "ONDO",
+      "id": "ondo-finance",
+      "amountJpy": 75000,
+      "entryUsd": 0.3925,
+      "currentUsd": 0.35265,
+      "valueJpy": 67385,
+      "pnlJpy": -7615,
+      "pnlPct": -10.15,
+      "volumeUsd": 123013247,
+      "change24h": 0,
+      "change7d": -10,
+      "decision": "Reduce Watch",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Core",
+      "symbol": "ENA",
+      "id": "ethena",
+      "amountJpy": 75000,
+      "entryUsd": 0.08482,
+      "currentUsd": 0.090536,
+      "valueJpy": 80054,
+      "pnlJpy": 5054,
+      "pnlPct": 6.74,
+      "volumeUsd": 134200216,
+      "change24h": -1.9,
+      "change7d": 12.8,
+      "decision": "Hold",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Core",
+      "symbol": "SOL",
+      "id": "solana",
+      "amountJpy": 75000,
+      "entryUsd": 73.12,
+      "currentUsd": 74.89,
+      "valueJpy": 76816,
+      "pnlJpy": 1816,
+      "pnlPct": 2.42,
+      "volumeUsd": 1570355877,
+      "change24h": 3.1,
+      "change7d": 2.6,
+      "decision": "Hold",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Meme",
+      "symbol": "PUMP",
+      "id": "pump-fun",
+      "amountJpy": 80000,
+      "entryUsd": 0.002236,
+      "currentUsd": 0.00228931,
+      "valueJpy": 81907,
+      "pnlJpy": 1907,
+      "pnlPct": 2.38,
+      "volumeUsd": 63148399,
+      "change24h": -4.5,
+      "change7d": 6.8,
+      "decision": "Hold",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Meme",
+      "symbol": "PEPE",
+      "id": "pepe",
+      "amountJpy": 80000,
+      "entryUsd": 0.000002906682897139379,
+      "currentUsd": 0.00000287,
+      "valueJpy": 78990,
+      "pnlJpy": -1010,
+      "pnlPct": -1.26,
+      "volumeUsd": 100361781,
+      "change24h": 2.3,
+      "change7d": 3.3,
+      "decision": "Hold after Paper Add 10,000 JPY",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Meme",
+      "symbol": "PENGU",
+      "id": "pudgy-penguins",
+      "amountJpy": 60000,
+      "entryUsd": 0.006143,
+      "currentUsd": 0.00615736,
+      "valueJpy": 60140,
+      "pnlJpy": 140,
+      "pnlPct": 0.23,
+      "volumeUsd": 35956001,
+      "change24h": 2.7,
+      "change7d": 1,
+      "decision": "Hold / no add",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Meme",
+      "symbol": "BONK",
+      "id": "bonk",
+      "amountJpy": 0,
+      "entryUsd": 0.000002858,
+      "currentUsd": 0.00000249,
+      "valueJpy": 0,
+      "pnlJpy": 0,
+      "pnlPct": 0,
+      "volumeUsd": 80017254,
+      "change24h": -12.8,
+      "change7d": -12.1,
+      "decision": "Paper Stop executed",
+      "originalAmountJpy": 50000,
+      "positionStatus": "Closed",
+      "closedAtJst": "2026-08-08 13:01 JST",
+      "exitUsd": 0.00000249,
+      "realizedPnlJpy": -6438
+    },
+    {
+      "scenario": "Meme",
+      "symbol": "WIF",
+      "id": "dogwifcoin",
+      "amountJpy": 35000,
+      "entryUsd": 0.1408,
+      "currentUsd": 0.140108,
+      "valueJpy": 34828,
+      "pnlJpy": -172,
+      "pnlPct": -0.49,
+      "volumeUsd": 28107515,
+      "change24h": 0,
+      "change7d": -3.5,
+      "decision": "Caution",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Meme",
+      "symbol": "FARTCOIN",
+      "id": "fartcoin",
+      "amountJpy": 25000,
+      "entryUsd": 0.1311,
+      "currentUsd": 0.12871,
+      "valueJpy": 24544,
+      "pnlJpy": -456,
+      "pnlPct": -1.82,
+      "volumeUsd": 13826152,
+      "change24h": 0.2,
+      "change7d": 0.7,
+      "decision": "Hold small",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Meme",
+      "symbol": "ANSEM",
+      "id": "the-black-bull",
+      "amountJpy": 15000,
+      "entryUsd": 0.1764,
+      "currentUsd": 0.17966,
+      "valueJpy": 15277,
+      "pnlJpy": 277,
+      "pnlPct": 1.85,
+      "volumeUsd": 5449774,
+      "change24h": -0.2,
+      "change7d": -0.6,
+      "decision": "Reduce Watch",
+      "positionStatus": "Open"
+    },
+    {
+      "scenario": "Meme",
+      "symbol": "USELESS",
+      "id": "useless-3",
+      "amountJpy": 15000,
+      "entryUsd": 0.04869,
+      "currentUsd": 0.03969495,
+      "valueJpy": 12229,
+      "pnlJpy": -2771,
+      "pnlPct": -18.47,
+      "volumeUsd": 6521635,
+      "change24h": -9.8,
+      "change7d": -24.3,
+      "decision": "Reduce Watch / Stop close",
+      "positionStatus": "Open"
+    }
   ],
   "scenarioSummary": {
-    "core45Cash55": {"totalCapitalJpy":1000000,"fixedCashJpy":550000,"investmentFrameJpy":450000,"paperPurchaseJpy":450000,"tacticalCashJpy":0,"investmentValueJpy":450142,"totalValueInclCashJpy":1000142,"investmentPnlPct":0.03,"totalAssetPnlPct":0.01,"decision":"Hold / no add"},
-    "memeParallel": {"totalCapitalJpy":1000000,"fixedCashJpy":550000,"investmentFrameJpy":450000,"paperPurchaseJpy":350000,"tacticalCashJpy":100000,"totalCashJpy":650000,"investmentValueJpy":349558,"totalValueInclCashJpy":999558,"investmentPnlPct":-0.13,"totalAssetPnlPct":-0.04,"decision":"No add, no take profit, no stop yet; USELESS stop watch"},
-    "intradayDiffFrom0848": {"coreTotalValueDeltaJpy":-577,"memeTotalValueDeltaJpy":3275,"note":"Meme improved from 996,283 to 999,558 JPY; no rule-based trade trigger."}
+    "core45Cash55": {
+      "totalCapitalJpy": 1000000,
+      "fixedCashJpy": 550000,
+      "investmentFrameJpy": 450000,
+      "paperPurchaseJpy": 450000,
+      "tacticalCashJpy": 0,
+      "investmentValueJpy": 452584,
+      "totalValueInclCashJpy": 1002584,
+      "investmentPnlPct": 0.57,
+      "totalAssetPnlPct": 0.26,
+      "decision": "Hold / no add"
+    },
+    "memeParallel": {
+      "totalCapitalJpy": 1000000,
+      "fixedCashJpy": 550000,
+      "investmentFrameJpy": 450000,
+      "grossPaperPurchaseJpy": 360000,
+      "initialPaperPurchaseJpy": 350000,
+      "activePaperCostJpy": 310000,
+      "tacticalCashJpy": 133562,
+      "totalCashJpy": 683562,
+      "realizedPnlJpy": -6438,
+      "activeInvestmentValueJpy": 307915,
+      "investmentFrameValueJpy": 441477,
+      "totalValueInclCashJpy": 991477,
+      "investmentPnlPct": -1.89,
+      "totalAssetPnlPct": -0.85,
+      "decision": "BONK Stop executed; PEPE Paper Add 10,000 JPY; no take profit"
+    }
   },
   "fallbackPrices": {
-    "aave":{"usd":90.48,"jpy":14273.22,"usd_24h_change":1.8,"usd_7d_change":9.1,"usd_24h_vol":160000000,"source":"https://www.coingecko.com/en/coins/aave"},
-    "uniswap":{"usd":4.02,"jpy":634.155,"usd_24h_change":-1.6,"usd_7d_change":-10.0,"usd_24h_vol":193365365,"source":"https://www.coingecko.com/en/coins/uniswap"},
-    "aerodrome-finance":{"usd":0.4315,"jpy":68.069125,"usd_24h_change":3.2,"usd_7d_change":1.0,"usd_24h_vol":20296396,"source":"https://www.coingecko.com/en/coins/aerodrome-finance"},
-    "ondo":{"usd":0.3508,"jpy":55.3387,"usd_24h_change":4.7,"usd_7d_change":-14.6,"usd_24h_vol":80800130,"source":"https://www.coingecko.com/en/coins/ondo"},
-    "ethena":{"usd":0.09281,"jpy":14.6407775,"usd_24h_change":2.0,"usd_7d_change":14.9,"usd_24h_vol":91338309,"source":"https://www.coingecko.com/en/coins/ethena"},
-    "solana":{"usd":72.68,"jpy":11465.27,"usd_24h_change":1.4,"usd_7d_change":2.3,"usd_24h_vol":1397015776,"source":"https://www.coingecko.com/en/coins/solana"},
-    "pump-fun":{"usd":0.002411,"jpy":0.38033525,"usd_24h_change":3.7,"usd_7d_change":20.4,"usd_24h_vol":71239492,"source":"https://www.coingecko.com/en/coins/pump-fun"},
-    "pepe":{"usd":0.000002803,"jpy":0.00044217325,"usd_24h_change":-1.5,"usd_7d_change":1.5,"usd_24h_vol":109289313,"source":"https://www.coingecko.com/en/coins/pepe"},
-    "pudgy-penguins":{"usd":0.005996,"jpy":0.945869,"usd_24h_change":3.4,"usd_7d_change":1.2,"usd_24h_vol":51360000,"source":"https://www.coingecko.com/en/coins/pudgy-penguins"},
-    "bonk":{"usd":0.000002840,"jpy":0.00044801,"usd_24h_change":1.7,"usd_7d_change":-2.2,"usd_24h_vol":26787499,"source":"https://www.coingecko.com/en/coins/bonk"},
-    "dogwifhat":{"usd":0.1398,"jpy":22.05345,"usd_24h_change":-0.3,"usd_7d_change":-1.9,"usd_24h_vol":20520047,"source":"https://www.coingecko.com/en/coins/dogwifhat"},
-    "fartcoin":{"usd":0.1279,"jpy":20.176225,"usd_24h_change":-4.0,"usd_7d_change":4.6,"usd_24h_vol":14168187,"source":"https://www.coingecko.com/en/coins/fartcoin"},
-    "the-black-bull":{"usd":0.1782,"jpy":28.11105,"usd_24h_change":5.8,"usd_7d_change":4.2,"usd_24h_vol":10494000,"source":"https://www.coingecko.com/en/coins/the-black-bull"},
-    "useless-3":{"usd":0.04341,"jpy":6.8479275,"usd_24h_change":-5.3,"usd_7d_change":-15.2,"usd_24h_vol":6011852,"source":"https://www.coingecko.com/en/coins/useless-3"},
-    "hyperliquid":{"usd":55.56,"jpy":8765.58,"usd_24h_change":-1.1,"usd_7d_change":0.9,"usd_24h_vol":240947166,"source":"https://www.coingecko.com/en/coins/hyperliquid"},
-    "plume":{"usd":0.01263,"jpy":1.9914825,"usd_24h_change":17.4,"usd_7d_change":7.7,"usd_24h_vol":27595441,"source":"https://www.coingecko.com/en/coins/plume"},
-    "skyai":{"usd":0.09821,"jpy":15.4906275,"usd_24h_change":39.1,"usd_7d_change":258.4,"usd_24h_vol":44587000,"source":"https://www.coingecko.com/en/coins/skyai"},
-    "cysic":{"usd":0.6648,"jpy":104.8806,"usd_24h_change":-12.6,"usd_7d_change":143.9,"usd_24h_vol":72611569,"source":"https://www.coingecko.com/en/coins/cysic"},
-    "lorenzo-protocol":{"usd":0.04244,"jpy":6.69491,"usd_24h_change":-1.1,"usd_7d_change":-40.6,"usd_24h_vol":41752006,"source":"https://www.coingecko.com/en/coins/lorenzo-protocol"},
-    "spx6900":{"usd":0.3313,"jpy":52.265575,"usd_24h_change":1.9,"usd_7d_change":-0.3,"usd_24h_vol":4589276,"source":"https://www.coingecko.com/en/coins/spx6900"}
+    "AAVE": {
+      "usd": 89.86,
+      "volumeUsd": 137759489,
+      "change24hPct": -0.8,
+      "change7dPct": -3.4
+    },
+    "UNI": {
+      "usd": 4.03,
+      "volumeUsd": 158660747,
+      "change24hPct": 0.1,
+      "change7dPct": -6.3
+    },
+    "AERO": {
+      "usd": 0.443171,
+      "volumeUsd": 14351755,
+      "change24hPct": 2.6,
+      "change7dPct": 5.6
+    },
+    "ONDO": {
+      "usd": 0.35265,
+      "volumeUsd": 123013247,
+      "change24hPct": 0,
+      "change7dPct": -10
+    },
+    "ENA": {
+      "usd": 0.090536,
+      "volumeUsd": 134200216,
+      "change24hPct": -1.9,
+      "change7dPct": 12.8
+    },
+    "SOL": {
+      "usd": 74.89,
+      "volumeUsd": 1570355877,
+      "change24hPct": 3.1,
+      "change7dPct": 2.6
+    },
+    "PUMP": {
+      "usd": 0.00228931,
+      "volumeUsd": 63148399,
+      "change24hPct": -4.5,
+      "change7dPct": 6.8
+    },
+    "PEPE": {
+      "usd": 0.00000287,
+      "volumeUsd": 100361781,
+      "change24hPct": 2.3,
+      "change7dPct": 3.3
+    },
+    "PENGU": {
+      "usd": 0.00615736,
+      "volumeUsd": 35956001,
+      "change24hPct": 2.7,
+      "change7dPct": 1
+    },
+    "BONK": {
+      "usd": 0.00000249,
+      "volumeUsd": 80017254,
+      "change24hPct": -12.8,
+      "change7dPct": -12.1
+    },
+    "WIF": {
+      "usd": 0.140108,
+      "volumeUsd": 28107515,
+      "change24hPct": 0,
+      "change7dPct": -3.5
+    },
+    "FARTCOIN": {
+      "usd": 0.12871,
+      "volumeUsd": 13826152,
+      "change24hPct": 0.2,
+      "change7dPct": 0.7
+    },
+    "ANSEM": {
+      "usd": 0.17966,
+      "volumeUsd": 5449774,
+      "change24hPct": -0.2,
+      "change7dPct": -0.6
+    },
+    "USELESS": {
+      "usd": 0.03969495,
+      "volumeUsd": 6521635,
+      "change24hPct": -9.8,
+      "change7dPct": -24.3
+    },
+    "BTC": {
+      "usd": 64983,
+      "volumeUsd": 21553417233,
+      "change24hPct": 1.1,
+      "change7dPct": 3.1
+    },
+    "ETH": {
+      "usd": 1917.14,
+      "volumeUsd": 7704536229,
+      "change24hPct": 0.9,
+      "change7dPct": 2.7
+    },
+    "HYPE": {
+      "usd": 54.35,
+      "volumeUsd": 325578188,
+      "change24hPct": -2.2,
+      "change7dPct": 4
+    },
+    "TAO": {
+      "usd": 196.13,
+      "volumeUsd": 89091818,
+      "change24hPct": 2.3,
+      "change7dPct": 0
+    },
+    "VIRTUAL": {
+      "usd": 0.568291,
+      "volumeUsd": 30473433,
+      "change24hPct": 0.4,
+      "change7dPct": 3.1
+    },
+    "PLUME": {
+      "usd": 0.01216128,
+      "volumeUsd": 13523411,
+      "change24hPct": -2.6,
+      "change7dPct": 11
+    },
+    "KMNO": {
+      "usd": 0.01904696,
+      "volumeUsd": 25882118,
+      "change24hPct": -10.1,
+      "change7dPct": 5.1
+    },
+    "RENDER": {
+      "usd": 1.32,
+      "volumeUsd": 17943747,
+      "change24hPct": -1.7,
+      "change7dPct": -4.7
+    },
+    "SKYAI": {
+      "usd": 0.119279,
+      "volumeUsd": 59347217,
+      "change24hPct": 21.6,
+      "change7dPct": 363
+    },
+    "CYS": {
+      "usd": 0.956835,
+      "volumeUsd": 66003661,
+      "change24hPct": 38.3,
+      "change7dPct": 230.2
+    },
+    "SPX": {
+      "usd": 0.338017,
+      "volumeUsd": 3384347,
+      "change24hPct": 2.2,
+      "change7dPct": 4.6
+    },
+    "BANK": {
+      "usd": 0.03998009,
+      "volumeUsd": 17919476,
+      "change24hPct": -6,
+      "change7dPct": -32.1
+    }
   },
   "recommendations": [
-    {"symbol":"Core Basket","type":"Core","action":"Hold / no add","note":"総資産1,000,142円。ONDOのみReduce Watch。"},
-    {"symbol":"Meme Basket","type":"Meme","action":"No add / no TP / no stop yet","note":"総資産999,558円。08:48 JST比で改善。"},
-    {"symbol":"PUMP","type":"Meme","action":"Hold","note":"+7.83%。利確+25%未到達、出来高71.239M USD。"},
-    {"symbol":"USELESS","type":"Meme","action":"Reduce Watch / Stop close","note":"-10.84%。Stop -12%未到達、出来高6.012M USD。"},
-    {"symbol":"BONK","type":"Meme","action":"Reduce Watch","note":"材料リスクと7d弱さで追加禁止。"},
-    {"symbol":"PLUME","type":"RWA","action":"Watch","note":"24h +17.4%、出来高加速。追撃ではなく0.012台維持確認。"},
-    {"symbol":"SKYAI","type":"AI","action":"Watch","note":"24h +39.1%、7d +258.4%。過熱で追撃禁止。"},
-    {"symbol":"CYS","type":"Infra/ZK","action":"Watch","note":"24h -12.6%、7d +143.9%。下げ止まり確認までEntry不可。"},
-    {"symbol":"BANK","type":"DeFi/BTCfi","action":"見送りControl","note":"7d -40.6%、pump-and-dump系警戒。"},
-    {"symbol":"SPX","type":"Meme","action":"見送りControl","note":"出来高4.589M USDで不足。"}
+    {
+      "symbol": "Core Basket",
+      "type": "Core",
+      "action": "Hold / no add",
+      "note": "総資産1,002,584円。AERO +9.26%、ENA +6.74%、ONDOはReduce Watch。"
+    },
+    {
+      "symbol": "BONK",
+      "type": "Meme",
+      "action": "Paper Stop executed",
+      "note": "Entry比-12.88%。43,562円でPaper売却、実現損失-6,438円。"
+    },
+    {
+      "symbol": "PEPE",
+      "type": "Meme",
+      "action": "Paper Add 10,000 JPY",
+      "note": "Matrix 76.8点、出来高100.4M USD。合計元本80,000円に増額。"
+    },
+    {
+      "symbol": "USELESS",
+      "type": "Meme",
+      "action": "Reduce Watch / Stop close",
+      "note": "Entry比-18.47%。-20% Stopまで近い。追加禁止。"
+    },
+    {
+      "symbol": "HYPE",
+      "type": "Infra/Perp",
+      "action": "Watch",
+      "note": "74.0点。$52近辺まで押し待ち。"
+    },
+    {
+      "symbol": "TAO",
+      "type": "AI/Infra",
+      "action": "Watch",
+      "note": "72.4点。$190-$195で反発確認。"
+    },
+    {
+      "symbol": "VIRTUAL",
+      "type": "AI",
+      "action": "Watch",
+      "note": "70.8点。$0.54-$0.56押し待ち。"
+    },
+    {
+      "symbol": "SKYAI/CYS",
+      "type": "Control",
+      "action": "No chase",
+      "note": "T+1上昇はFalse Negative候補として記録。ただし過熱位置の成行Entryは禁止継続。"
+    }
   ],
   "newEntryWatch": [
-    {"symbol":"HYPE","type":"Infra / Perp","score":69.6,"action":"Watch継続","basis":"流動性240.947M USD。価格$55.56で追撃位置ではない。","entryCondition":"$52近辺まで押し、出来高200M USD維持","stopCondition":"$50割れ","nextCheck":"2026-08-08","url":"https://www.coingecko.com/en/coins/hyperliquid"},
-    {"symbol":"PLUME","type":"RWA","score":68.4,"action":"Watch継続","basis":"DTCC Tokenization Working Group材料、24h +17.4%、出来高27.595M USD。","entryCondition":"$0.012台維持、出来高20M USD維持","stopCondition":"$0.0118割れ","nextCheck":"2026-08-08","url":"https://www.coingecko.com/en/coins/plume"},
-    {"symbol":"SKYAI","type":"AI","score":61.2,"action":"Watch継続","basis":"24h +39.1%、7d +258.4%、出来高44.587M USD。","entryCondition":"$0.085-$0.095へ押して出来高40M USD維持","stopCondition":"$0.080割れ","nextCheck":"2026-08-08","url":"https://www.coingecko.com/en/coins/skyai"},
-    {"symbol":"CYS","type":"Infra / ZK","score":52.8,"action":"Watch継続","basis":"24h -12.6%、7d +143.9%、出来高72.612M USD。","entryCondition":"$0.65-$0.70で下げ止まり、出来高50M USD維持","stopCondition":"$0.62割れ","nextCheck":"2026-08-08","url":"https://www.coingecko.com/en/coins/cysic"},
-    {"symbol":"BANK","type":"DeFi / BTCfi","score":42.8,"action":"見送りControl","basis":"7d -40.6%、pump-and-dump系警戒。","entryCondition":"$0.050再奪回","stopCondition":"$0.041割れ","nextCheck":"2026-08-08","url":"https://www.coingecko.com/en/coins/lorenzo-protocol"},
-    {"symbol":"SPX","type":"Meme","score":49.0,"action":"見送りControl","basis":"出来高4.589M USDでEntry不足。","entryCondition":"$0.34回復かつ出来高10M USD超","stopCondition":"$0.316割れ","nextCheck":"2026-08-08","url":"https://www.coingecko.com/en/coins/spx6900"},
-    {"symbol":"KMNO","type":"Solana DeFi","score":55.0,"action":"Watch候補","basis":"CoinGecko Trendingで$0.02149、+20.2%。個別確認前の暫定。","entryCondition":"個別ページで出来高・上場・材料確認後","stopCondition":"追撃禁止","nextCheck":"2026-08-08","url":"https://www.coingecko.com/"},
-    {"symbol":"WHATIF/OVERTAKE/HFT","type":"Top Gainers Control","score":38.0,"action":"見送り","basis":"24h +65%から+100%台。急騰後の追撃対象外。","entryCondition":"翌日も出来高維持し、半値戻しで耐える場合のみ再確認","stopCondition":"追撃禁止","nextCheck":"2026-08-08","url":"https://www.coingecko.com/"}
+    {
+      "symbol": "HYPE",
+      "type": "Infra / Perp",
+      "score": 74,
+      "action": "Watch継続",
+      "basis": "$54.35、出来高325.6M、24h -2.2%、7d +4.0%。",
+      "entryCondition": "$52近辺、出来高200M USD以上",
+      "stopCondition": "$50割れ",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/hyperliquid"
+    },
+    {
+      "symbol": "TAO",
+      "type": "AI / Infra",
+      "score": 72.4,
+      "action": "Watch継続",
+      "basis": "$196.13、出来高89.1M、24h +2.3%。",
+      "entryCondition": "$190-$195で反発、出来高80M USD以上",
+      "stopCondition": "$185割れ",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/bittensor"
+    },
+    {
+      "symbol": "VIRTUAL",
+      "type": "AI",
+      "score": 70.8,
+      "action": "Watch継続",
+      "basis": "$0.5683、出来高30.5M、7d +3.1%。",
+      "entryCondition": "$0.54-$0.56、出来高25M USD以上",
+      "stopCondition": "$0.52割れ",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/virtual-protocol"
+    },
+    {
+      "symbol": "RENDER",
+      "type": "AI / DePIN",
+      "score": 66.8,
+      "action": "Watch継続",
+      "basis": "$1.32、出来高17.9M、7d -4.7%。",
+      "entryCondition": "$1.27-$1.30で反発、出来高18M USD以上",
+      "stopCondition": "$1.22割れ",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/render"
+    },
+    {
+      "symbol": "PLUME",
+      "type": "RWA",
+      "score": 63.2,
+      "action": "Watch継続",
+      "basis": "$0.01216、出来高13.5M。前日Entry出来高条件20M未達。",
+      "entryCondition": "$0.0120-$0.0124維持かつ出来高20M USD以上",
+      "stopCondition": "$0.0118割れ",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/plume"
+    },
+    {
+      "symbol": "KMNO",
+      "type": "Solana DeFi",
+      "score": 62.8,
+      "action": "Watch継続",
+      "basis": "$0.01905、24h -10.1%、出来高25.9M。",
+      "entryCondition": "$0.0195回復、出来高25M USD以上",
+      "stopCondition": "$0.0180割れ",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/kamino"
+    },
+    {
+      "symbol": "SKYAI",
+      "type": "AI",
+      "score": 65.6,
+      "action": "見送りControl",
+      "basis": "24h +21.6%、7d +363%。",
+      "entryCondition": "$0.09-$0.10へ押して横ばい化",
+      "stopCondition": "成行追撃禁止",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/skyai"
+    },
+    {
+      "symbol": "CYS",
+      "type": "Infra / ZK",
+      "score": 62.4,
+      "action": "見送りControl",
+      "basis": "24h +38.3%、7d +230%、ATH近辺。",
+      "entryCondition": "$0.70-$0.75以下で再構築",
+      "stopCondition": "成行追撃禁止",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/cysic"
+    },
+    {
+      "symbol": "SPX",
+      "type": "Meme",
+      "score": 58.4,
+      "action": "見送りControl",
+      "basis": "出来高3.38M USDで不足。",
+      "entryCondition": "出来高10M USD超かつ$0.34維持",
+      "stopCondition": "$0.316割れ",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/spx6900"
+    },
+    {
+      "symbol": "BANK",
+      "type": "DeFi / BTCfi",
+      "score": 36.8,
+      "action": "見送りControl",
+      "basis": "24h -6.0%、7d -32.1%。",
+      "entryCondition": "$0.05再奪回",
+      "stopCondition": "$0.038割れ",
+      "nextCheck": "2026-08-09",
+      "url": "https://www.coingecko.com/en/coins/lorenzo-protocol"
+    }
   ],
   "pdca": [
-    {"phase":"Plan","text":"現金55%固定。Meme戦術現金100,000円は温存。新規候補は追撃せず押し目条件でWatch。"},
-    {"phase":"Do","text":"Core 6銘柄、Meme 8銘柄、新規/継続候補12件をCoinGeckoで価格・出来高・市場ゲート確認。"},
-    {"phase":"Check","text":"Core総資産1,000,142円（+0.01%）。Meme総資産999,558円（-0.04%）。08:48 JST比でMeme改善。"},
-    {"phase":"Act","text":"追加Entryなし、利確なし、損切りなし。USELESS Stop近接、PLUME Watch上位、CYSは下げ止まり待ち。"}
+    {
+      "phase": "Plan",
+      "text": "現金55%固定。Stopを機械執行し、Entry可でも1銘柄上限8万円と分割Entryを守る。"
+    },
+    {
+      "phase": "Do",
+      "text": "BONKを43,562円でPaper Stop、PEPEを10,000円Paper追加。実取引・送金なし。"
+    },
+    {
+      "phase": "Check",
+      "text": "Core総資産1,002,584円（+0.26%）。Meme総資産991,477円（-0.85%）。SKYAI/CYSはT+1で急騰しFalse Negative候補。"
+    },
+    {
+      "phase": "Act",
+      "text": "Meme戦術現金133,562円を温存。明日のT+7でEntry位置と出来高加速の重みを週次レビュー。"
+    }
   ],
   "entryEvaluation": {
-    "updatedAtJst": "2026-08-07 13:00 JST",
+    "updatedAtJst": "2026-08-08 13:01 JST",
     "scoreScale": "各項目0-5点。重み付き100点満点。",
     "decisionBands": [
-      {"min":75,"label":"Entry可","rule":"分割Entryのみ"},
-      {"min":60,"max":74.9,"label":"小さく/Watch","rule":"小口または押し目待ち"},
-      {"min":45,"max":59.9,"label":"Watch継続","rule":"Paper検証のみ"},
-      {"max":44.9,"label":"見送り","rule":"実弾禁止、Control群"}
+      {
+        "min": 75,
+        "label": "Entry可",
+        "rule": "分割Entryのみ"
+      },
+      {
+        "min": 60,
+        "max": 74.9,
+        "label": "小さく/Watch",
+        "rule": "小口または押し目待ち"
+      },
+      {
+        "min": 45,
+        "max": 59.9,
+        "label": "Watch継続",
+        "rule": "Paper検証のみ"
+      },
+      {
+        "max": 44.9,
+        "label": "見送り",
+        "rule": "実弾禁止、Control群"
+      }
     ],
     "criteria": [
-      {"key":"marketGate","label":"市場ゲート","weight":8},
-      {"key":"liquidity","label":"流動性","weight":12},
-      {"key":"volumeAcceleration","label":"出来高加速","weight":8},
-      {"key":"momentum","label":"価格モメンタム","weight":10},
-      {"key":"relativeStrength","label":"相対強度","weight":8},
-      {"key":"narrative","label":"材料/物語","weight":10},
-      {"key":"listingExit","label":"上場/出口","weight":8},
-      {"key":"supplyRisk","label":"供給/集中リスク","weight":8},
-      {"key":"chartLocation","label":"Entry位置","weight":8},
-      {"key":"riskReward","label":"損益設計","weight":8},
-      {"key":"executionFit","label":"執行適合","weight":6},
-      {"key":"pdcaEvidenceFit","label":"PDCA一致","weight":6}
+      {
+        "key": "marketGate",
+        "label": "市場ゲート",
+        "weight": 8
+      },
+      {
+        "key": "liquidity",
+        "label": "流動性",
+        "weight": 12
+      },
+      {
+        "key": "volumeAcceleration",
+        "label": "出来高加速",
+        "weight": 8
+      },
+      {
+        "key": "momentum",
+        "label": "価格モメンタム",
+        "weight": 10
+      },
+      {
+        "key": "relativeStrength",
+        "label": "相対強度",
+        "weight": 8
+      },
+      {
+        "key": "narrative",
+        "label": "材料/物語",
+        "weight": 10
+      },
+      {
+        "key": "listingExit",
+        "label": "上場/出口",
+        "weight": 8
+      },
+      {
+        "key": "supplyRisk",
+        "label": "供給/集中リスク",
+        "weight": 8
+      },
+      {
+        "key": "chartLocation",
+        "label": "Entry位置",
+        "weight": 8
+      },
+      {
+        "key": "riskReward",
+        "label": "損益設計",
+        "weight": 8
+      },
+      {
+        "key": "executionFit",
+        "label": "執行適合",
+        "weight": 6
+      },
+      {
+        "key": "pdcaEvidenceFit",
+        "label": "PDCA一致",
+        "weight": 6
+      }
     ],
     "matrix": [
-      {"symbol":"PUMP","type":"Meme","totalScore":80.0,"band":"Entry可","decision":"Hold","scores":{"marketGate":3,"liquidity":4,"volumeAcceleration":3,"momentum":4,"relativeStrength":5,"narrative":4,"listingExit":4,"supplyRisk":3,"chartLocation":3,"riskReward":4,"executionFit":4,"pdcaEvidenceFit":5},"risks":"social frenzy fade / treasury SOL transfer"},
-      {"symbol":"HYPE","type":"Infra","totalScore":69.6,"band":"小さく/Watch","decision":"Watch","scores":{"marketGate":3,"liquidity":5,"volumeAcceleration":2,"momentum":3,"relativeStrength":4,"narrative":4,"listingExit":4,"supplyRisk":3,"chartLocation":2,"riskReward":3,"executionFit":4,"pdcaEvidenceFit":3},"risks":"FDV high, no chase"},
-      {"symbol":"PLUME","type":"RWA","totalScore":68.4,"band":"小さく/Watch","decision":"Watch","scores":{"marketGate":3,"liquidity":3,"volumeAcceleration":5,"momentum":4,"relativeStrength":4,"narrative":4,"listingExit":3,"supplyRisk":2,"chartLocation":2,"riskReward":3,"executionFit":3,"pdcaEvidenceFit":3},"risks":"news priced intraday"},
-      {"symbol":"SKYAI","type":"AI","totalScore":61.2,"band":"小さく/Watch","decision":"Watch","scores":{"marketGate":3,"liquidity":4,"volumeAcceleration":4,"momentum":5,"relativeStrength":5,"narrative":4,"listingExit":3,"supplyRisk":2,"chartLocation":1,"riskReward":2,"executionFit":3,"pdcaEvidenceFit":2},"risks":"24h +39.1%, 7d +258.4% overheat"},
-      {"symbol":"CYS","type":"Infra/ZK","totalScore":52.8,"band":"Watch継続","decision":"Watch","scores":{"marketGate":3,"liquidity":4,"volumeAcceleration":1,"momentum":2,"relativeStrength":4,"narrative":4,"listingExit":3,"supplyRisk":1,"chartLocation":1,"riskReward":2,"executionFit":3,"pdcaEvidenceFit":2},"risks":"24h -12.6%, post-pump unwind"},
-      {"symbol":"SPX","type":"Meme","totalScore":49.0,"band":"Watch継続","decision":"見送りControl","scores":{"marketGate":3,"liquidity":2,"volumeAcceleration":2,"momentum":2,"relativeStrength":2,"narrative":4,"listingExit":4,"supplyRisk":3,"chartLocation":2,"riskReward":2,"executionFit":3,"pdcaEvidenceFit":1},"risks":"volume only 4.589M"},
-      {"symbol":"BANK","type":"DeFi/BTCfi","totalScore":42.8,"band":"見送り","decision":"見送りControl","scores":{"marketGate":2,"liquidity":3,"volumeAcceleration":2,"momentum":1,"relativeStrength":1,"narrative":2,"listingExit":3,"supplyRisk":2,"chartLocation":1,"riskReward":2,"executionFit":3,"pdcaEvidenceFit":1},"risks":"7d -40.6%, pump-and-dump reports"},
-      {"symbol":"USELESS","type":"Meme","totalScore":38.0,"band":"見送り","decision":"Reduce Watch / Stop close","scores":{"marketGate":2,"liquidity":2,"volumeAcceleration":2,"momentum":1,"relativeStrength":1,"narrative":2,"listingExit":2,"supplyRisk":1,"chartLocation":1,"riskReward":1,"executionFit":2,"pdcaEvidenceFit":2},"risks":"-10.84%, 7d -15.2%, whale exit warning"}
+      {
+        "symbol": "PUMP",
+        "type": "Meme",
+        "totalScore": 71.2,
+        "band": "小さく/Watch",
+        "decision": "Hold",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 4,
+          "volumeAcceleration": 2,
+          "momentum": 3,
+          "relativeStrength": 3,
+          "narrative": 4,
+          "listingExit": 4,
+          "supplyRisk": 3,
+          "chartLocation": 3,
+          "riskReward": 4,
+          "executionFit": 4,
+          "pdcaEvidenceFit": 5
+        },
+        "risks": "出来高63.1M、24h -4.5%。利確未到達。"
+      },
+      {
+        "symbol": "PEPE",
+        "type": "Meme",
+        "totalScore": 76.8,
+        "band": "Entry可",
+        "decision": "Hold",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 5,
+          "volumeAcceleration": 3,
+          "momentum": 3,
+          "relativeStrength": 3,
+          "narrative": 4,
+          "listingExit": 5,
+          "supplyRisk": 3,
+          "chartLocation": 3,
+          "riskReward": 4,
+          "executionFit": 5,
+          "pdcaEvidenceFit": 4
+        },
+        "risks": "出来高100.4M、Entry比-1.44%。"
+      },
+      {
+        "symbol": "PENGU",
+        "type": "Meme",
+        "totalScore": 68.8,
+        "band": "小さく/Watch",
+        "decision": "Hold/no add",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 4,
+          "volumeAcceleration": 3,
+          "momentum": 3,
+          "relativeStrength": 3,
+          "narrative": 4,
+          "listingExit": 4,
+          "supplyRisk": 3,
+          "chartLocation": 3,
+          "riskReward": 3,
+          "executionFit": 4,
+          "pdcaEvidenceFit": 3
+        },
+        "risks": "横ばい、追加の優位性不足。"
+      },
+      {
+        "symbol": "BONK",
+        "type": "Meme",
+        "totalScore": 45.6,
+        "band": "Watch継続",
+        "decision": "Paper Stop",
+        "scores": {
+          "marketGate": 2,
+          "liquidity": 5,
+          "volumeAcceleration": 5,
+          "momentum": 0,
+          "relativeStrength": 0,
+          "narrative": 1,
+          "listingExit": 5,
+          "supplyRisk": 0,
+          "chartLocation": 0,
+          "riskReward": 1,
+          "executionFit": 4,
+          "pdcaEvidenceFit": 5
+        },
+        "risks": "Entry比-12.88%でStop、DAO treasury流出材料。"
+      },
+      {
+        "symbol": "WIF",
+        "type": "Meme",
+        "totalScore": 64.8,
+        "band": "小さく/Watch",
+        "decision": "Caution",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 4,
+          "volumeAcceleration": 4,
+          "momentum": 2,
+          "relativeStrength": 2,
+          "narrative": 3,
+          "listingExit": 4,
+          "supplyRisk": 3,
+          "chartLocation": 3,
+          "riskReward": 3,
+          "executionFit": 4,
+          "pdcaEvidenceFit": 3
+        },
+        "risks": "Entry近辺だが7d弱い。"
+      },
+      {
+        "symbol": "FARTCOIN",
+        "type": "Meme",
+        "totalScore": 60,
+        "band": "小さく/Watch",
+        "decision": "Hold small",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 3,
+          "volumeAcceleration": 3,
+          "momentum": 3,
+          "relativeStrength": 3,
+          "narrative": 3,
+          "listingExit": 3,
+          "supplyRisk": 2,
+          "chartLocation": 3,
+          "riskReward": 3,
+          "executionFit": 3,
+          "pdcaEvidenceFit": 3
+        },
+        "risks": "小口維持、出来高13.8M。"
+      },
+      {
+        "symbol": "ANSEM",
+        "type": "Meme",
+        "totalScore": 44.8,
+        "band": "見送り",
+        "decision": "Reduce Watch",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 2,
+          "volumeAcceleration": 1,
+          "momentum": 2,
+          "relativeStrength": 2,
+          "narrative": 3,
+          "listingExit": 2,
+          "supplyRisk": 1,
+          "chartLocation": 3,
+          "riskReward": 2,
+          "executionFit": 2,
+          "pdcaEvidenceFit": 3
+        },
+        "risks": "出来高5.45MでHold条件8M未達。"
+      },
+      {
+        "symbol": "USELESS",
+        "type": "Meme",
+        "totalScore": 32,
+        "band": "見送り",
+        "decision": "Stop close",
+        "scores": {
+          "marketGate": 3,
+          "liquidity": 2,
+          "volumeAcceleration": 3,
+          "momentum": 0,
+          "relativeStrength": 0,
+          "narrative": 2,
+          "listingExit": 2,
+          "supplyRisk": 1,
+          "chartLocation": 0,
+          "riskReward": 1,
+          "executionFit": 2,
+          "pdcaEvidenceFit": 4
+        },
+        "risks": "Entry比-18.47%、Stop -20%接近。"
+      },
+      {
+        "symbol": "HYPE",
+        "type": "Infra/Perp",
+        "totalScore": 74,
+        "band": "小さく/Watch",
+        "decision": "Watch",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 5,
+          "volumeAcceleration": 4,
+          "momentum": 3,
+          "relativeStrength": 4,
+          "narrative": 4,
+          "listingExit": 4,
+          "supplyRisk": 3,
+          "chartLocation": 2,
+          "riskReward": 3,
+          "executionFit": 4,
+          "pdcaEvidenceFit": 4
+        },
+        "risks": "流動性325.6M。52USD押し待ち。"
+      },
+      {
+        "symbol": "TAO",
+        "type": "AI/Infra",
+        "totalScore": 72.4,
+        "band": "小さく/Watch",
+        "decision": "Watch",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 4,
+          "volumeAcceleration": 3,
+          "momentum": 3,
+          "relativeStrength": 3,
+          "narrative": 5,
+          "listingExit": 5,
+          "supplyRisk": 3,
+          "chartLocation": 3,
+          "riskReward": 3,
+          "executionFit": 4,
+          "pdcaEvidenceFit": 3
+        },
+        "risks": "AI分散計算のCore候補、現値追撃なし。"
+      },
+      {
+        "symbol": "VIRTUAL",
+        "type": "AI",
+        "totalScore": 70.8,
+        "band": "小さく/Watch",
+        "decision": "Watch",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 4,
+          "volumeAcceleration": 3,
+          "momentum": 3,
+          "relativeStrength": 3,
+          "narrative": 5,
+          "listingExit": 4,
+          "supplyRisk": 3,
+          "chartLocation": 3,
+          "riskReward": 3,
+          "executionFit": 4,
+          "pdcaEvidenceFit": 3
+        },
+        "risks": "出来高30.5M、7d +3.1%。"
+      },
+      {
+        "symbol": "PLUME",
+        "type": "RWA",
+        "totalScore": 63.2,
+        "band": "小さく/Watch",
+        "decision": "Watch",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 3,
+          "volumeAcceleration": 1,
+          "momentum": 3,
+          "relativeStrength": 4,
+          "narrative": 4,
+          "listingExit": 3,
+          "supplyRisk": 2,
+          "chartLocation": 3,
+          "riskReward": 4,
+          "executionFit": 3,
+          "pdcaEvidenceFit": 4
+        },
+        "risks": "価格条件内だが出来高13.5Mで20M条件未達。"
+      },
+      {
+        "symbol": "KMNO",
+        "type": "Solana DeFi",
+        "totalScore": 62.8,
+        "band": "小さく/Watch",
+        "decision": "Watch",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 3,
+          "volumeAcceleration": 4,
+          "momentum": 1,
+          "relativeStrength": 3,
+          "narrative": 4,
+          "listingExit": 4,
+          "supplyRisk": 3,
+          "chartLocation": 3,
+          "riskReward": 3,
+          "executionFit": 3,
+          "pdcaEvidenceFit": 3
+        },
+        "risks": "24h -10.1%の押し、下げ止まり未確認。"
+      },
+      {
+        "symbol": "RENDER",
+        "type": "AI/DePIN",
+        "totalScore": 66.8,
+        "band": "小さく/Watch",
+        "decision": "Watch",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 4,
+          "volumeAcceleration": 2,
+          "momentum": 2,
+          "relativeStrength": 2,
+          "narrative": 4,
+          "listingExit": 5,
+          "supplyRisk": 4,
+          "chartLocation": 3,
+          "riskReward": 3,
+          "executionFit": 4,
+          "pdcaEvidenceFit": 3
+        },
+        "risks": "大型AI/DePIN、7d -4.7%。"
+      },
+      {
+        "symbol": "SKYAI",
+        "type": "AI",
+        "totalScore": 65.6,
+        "band": "小さく/Watch",
+        "decision": "見送りControl",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 4,
+          "volumeAcceleration": 5,
+          "momentum": 5,
+          "relativeStrength": 5,
+          "narrative": 4,
+          "listingExit": 3,
+          "supplyRisk": 2,
+          "chartLocation": 0,
+          "riskReward": 1,
+          "executionFit": 3,
+          "pdcaEvidenceFit": 2
+        },
+        "risks": "24h +21.6%、7d +363%。過熱。"
+      },
+      {
+        "symbol": "CYS",
+        "type": "Infra/ZK",
+        "totalScore": 62.4,
+        "band": "小さく/Watch",
+        "decision": "見送りControl",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 4,
+          "volumeAcceleration": 4,
+          "momentum": 5,
+          "relativeStrength": 5,
+          "narrative": 4,
+          "listingExit": 3,
+          "supplyRisk": 1,
+          "chartLocation": 0,
+          "riskReward": 1,
+          "executionFit": 3,
+          "pdcaEvidenceFit": 2
+        },
+        "risks": "ATH近辺、24h +38.3%、7d +230%。"
+      },
+      {
+        "symbol": "SPX",
+        "type": "Meme",
+        "totalScore": 58.4,
+        "band": "Watch継続",
+        "decision": "見送りControl",
+        "scores": {
+          "marketGate": 4,
+          "liquidity": 2,
+          "volumeAcceleration": 1,
+          "momentum": 3,
+          "relativeStrength": 3,
+          "narrative": 4,
+          "listingExit": 4,
+          "supplyRisk": 3,
+          "chartLocation": 3,
+          "riskReward": 3,
+          "executionFit": 3,
+          "pdcaEvidenceFit": 2
+        },
+        "risks": "出来高3.38Mで不足。"
+      },
+      {
+        "symbol": "BANK",
+        "type": "DeFi/BTCfi",
+        "totalScore": 36.8,
+        "band": "見送り",
+        "decision": "見送りControl",
+        "scores": {
+          "marketGate": 3,
+          "liquidity": 3,
+          "volumeAcceleration": 2,
+          "momentum": 0,
+          "relativeStrength": 0,
+          "narrative": 2,
+          "listingExit": 3,
+          "supplyRisk": 2,
+          "chartLocation": 1,
+          "riskReward": 2,
+          "executionFit": 3,
+          "pdcaEvidenceFit": 1
+        },
+        "risks": "24h -6.0%、7d -32.1%。"
+      }
     ],
-    "metricsToTrack": ["T+1/T+3/T+7 PnL","maximum adverse excursion","maximum favorable excursion","stop hit","take profit hit","false positive","false negative"]
+    "metricsToTrack": [
+      "T+1/T+3/T+7 PnL",
+      "maximum adverse excursion",
+      "maximum favorable excursion",
+      "stop hit",
+      "take profit hit",
+      "false positive",
+      "false negative"
+    ],
+    "timingValidation": [
+      {
+        "symbol": "HYPE",
+        "horizon": "T+1",
+        "returnPct": -2.18,
+        "maePct": -2.83,
+        "mfePct": 2.4,
+        "outcome": "Watch妥当"
+      },
+      {
+        "symbol": "PLUME",
+        "horizon": "T+1",
+        "returnPct": -3.71,
+        "maePct": -6.16,
+        "mfePct": -0.3,
+        "outcome": "出来高条件未達でWatch妥当"
+      },
+      {
+        "symbol": "SKYAI",
+        "horizon": "T+1",
+        "returnPct": 21.45,
+        "maePct": -8.13,
+        "mfePct": 23.78,
+        "outcome": "False Negative候補 / 追撃リスクは残る"
+      },
+      {
+        "symbol": "CYS",
+        "horizon": "T+1",
+        "returnPct": 43.93,
+        "maePct": -4.31,
+        "mfePct": 43.98,
+        "outcome": "False Negative候補 / ATH追撃不可"
+      },
+      {
+        "symbol": "BANK",
+        "horizon": "T+1",
+        "returnPct": -5.8,
+        "maePct": -5.8,
+        "mfePct": 0.68,
+        "outcome": "True Negative"
+      },
+      {
+        "symbol": "SPX",
+        "horizon": "T+1",
+        "returnPct": 2.03,
+        "maePct": -0.89,
+        "mfePct": 2.19,
+        "outcome": "Neutral Control"
+      },
+      {
+        "symbol": "KMNO",
+        "horizon": "T+1",
+        "returnPct": -11.37,
+        "maePct": -13.57,
+        "mfePct": -1.05,
+        "outcome": "Watch妥当"
+      }
+    ]
   },
   "predictionImprovement": {
-    "summary": "13:00 JST時点では売買判断を変える条件なし。PUMP継続、USELESS Stop監視、PLUME Watch上位。SKYAI/CYSは値幅が大きく追撃不可。",
-    "dataQualityNotes": ["CoinGecko page内で一部トップ表示とFAQ表示に差異がある場合は、個別ページのprice summaryと24h volume欄を優先", "未精査のTop GainersはControl群として残し、翌日に出来高維持を確認"],
-    "nextAction": "2026-08-08にUSELESS Stop判定、PUMP出来高70M維持、PLUME $0.012台維持、CYS $0.65-$0.70下げ止まりを確認。重み変更は週次まで保留。"
+    "summary": "BONK StopとPEPE小口追加をルール通り実行。SKYAI/CYSの急騰をFalse Negative候補として保持し、翌日T+7で重みを検証する。",
+    "dataQualityNotes": [
+      "価格・24h出来高・24h/7d変化はCoinGecko APIの2026-08-08 13:00 JST取得値",
+      "MFE/MAEはCoinGecko market_chart/rangeの概算で、取引所個別約定値ではない",
+      "X watchlist 3件は補助観測先。未検証投稿を売買根拠には使用しない"
+    ],
+    "nextAction": "2026-08-09にT+7評価。volumeAccelerationとchartLocationの重みを、False NegativeとStop回避効果の両方で見直す。"
   },
   "xAccountWatchlist": {
     "status": "registered in GitHub watchlist; not directly used as a source in this run",
-    "accounts": ["@crypton98", "@farokh", "@lowkeyfr"]
+    "accounts": [
+      "@crypton98",
+      "@farokh",
+      "@lowkeyfr"
+    ]
   }
 }
