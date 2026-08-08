@@ -289,161 +289,197 @@
     }
   },
   "fallbackPrices": {
-    "AAVE": {
+    "aave": {
       "usd": 89.86,
-      "volumeUsd": 137759489,
-      "change24hPct": -0.8,
-      "change7dPct": -3.4
+      "jpy": 14175.414999999999,
+      "usd_24h_change": -0.8,
+      "usd_7d_change": -3.4,
+      "usd_24h_vol": 137759489,
+      "source": "https://www.coingecko.com/en/coins/aave"
     },
-    "UNI": {
+    "uniswap": {
       "usd": 4.03,
-      "volumeUsd": 158660747,
-      "change24hPct": 0.1,
-      "change7dPct": -6.3
+      "jpy": 635.7325000000001,
+      "usd_24h_change": 0.1,
+      "usd_7d_change": -6.3,
+      "usd_24h_vol": 158660747,
+      "source": "https://www.coingecko.com/en/coins/uniswap"
     },
-    "AERO": {
+    "aerodrome-finance": {
       "usd": 0.443171,
-      "volumeUsd": 14351755,
-      "change24hPct": 2.6,
-      "change7dPct": 5.6
+      "jpy": 69.91022525,
+      "usd_24h_change": 2.6,
+      "usd_7d_change": 5.6,
+      "usd_24h_vol": 14351755,
+      "source": "https://www.coingecko.com/en/coins/aerodrome-finance"
     },
-    "ONDO": {
+    "ondo-finance": {
       "usd": 0.35265,
-      "volumeUsd": 123013247,
-      "change24hPct": 0,
-      "change7dPct": -10
+      "jpy": 55.6305375,
+      "usd_24h_change": 0,
+      "usd_7d_change": -10,
+      "usd_24h_vol": 123013247,
+      "source": "https://www.coingecko.com/en/coins/ondo-finance"
     },
-    "ENA": {
+    "ethena": {
       "usd": 0.090536,
-      "volumeUsd": 134200216,
-      "change24hPct": -1.9,
-      "change7dPct": 12.8
+      "jpy": 14.282054,
+      "usd_24h_change": -1.9,
+      "usd_7d_change": 12.8,
+      "usd_24h_vol": 134200216,
+      "source": "https://www.coingecko.com/en/coins/ethena"
     },
-    "SOL": {
+    "solana": {
       "usd": 74.89,
-      "volumeUsd": 1570355877,
-      "change24hPct": 3.1,
-      "change7dPct": 2.6
+      "jpy": 11813.897500000001,
+      "usd_24h_change": 3.1,
+      "usd_7d_change": 2.6,
+      "usd_24h_vol": 1570355877,
+      "source": "https://www.coingecko.com/en/coins/solana"
     },
-    "PUMP": {
+    "pump-fun": {
       "usd": 0.00228931,
-      "volumeUsd": 63148399,
-      "change24hPct": -4.5,
-      "change7dPct": 6.8
+      "jpy": 0.36113865250000005,
+      "usd_24h_change": -4.5,
+      "usd_7d_change": 6.8,
+      "usd_24h_vol": 63148399,
+      "source": "https://www.coingecko.com/en/coins/pump-fun"
     },
-    "PEPE": {
+    "pepe": {
       "usd": 0.00000287,
-      "volumeUsd": 100361781,
-      "change24hPct": 2.3,
-      "change7dPct": 3.3
+      "jpy": 0.0004527425,
+      "usd_24h_change": 2.3,
+      "usd_7d_change": 3.3,
+      "usd_24h_vol": 100361781,
+      "source": "https://www.coingecko.com/en/coins/pepe"
     },
-    "PENGU": {
+    "pudgy-penguins": {
       "usd": 0.00615736,
-      "volumeUsd": 35956001,
-      "change24hPct": 2.7,
-      "change7dPct": 1
+      "jpy": 0.97132354,
+      "usd_24h_change": 2.7,
+      "usd_7d_change": 1,
+      "usd_24h_vol": 35956001,
+      "source": "https://www.coingecko.com/en/coins/pudgy-penguins"
     },
-    "BONK": {
+    "bonk": {
       "usd": 0.00000249,
-      "volumeUsd": 80017254,
-      "change24hPct": -12.8,
-      "change7dPct": -12.1
+      "jpy": 0.00039279749999999997,
+      "usd_24h_change": -12.8,
+      "usd_7d_change": -12.1,
+      "usd_24h_vol": 80017254,
+      "source": "https://www.coingecko.com/en/coins/bonk"
     },
-    "WIF": {
+    "dogwifcoin": {
       "usd": 0.140108,
-      "volumeUsd": 28107515,
-      "change24hPct": 0,
-      "change7dPct": -3.5
+      "jpy": 22.102037000000003,
+      "usd_24h_change": 0,
+      "usd_7d_change": -3.5,
+      "usd_24h_vol": 28107515,
+      "source": "https://www.coingecko.com/en/coins/dogwifcoin"
     },
-    "FARTCOIN": {
+    "fartcoin": {
       "usd": 0.12871,
-      "volumeUsd": 13826152,
-      "change24hPct": 0.2,
-      "change7dPct": 0.7
+      "jpy": 20.3040025,
+      "usd_24h_change": 0.2,
+      "usd_7d_change": 0.7,
+      "usd_24h_vol": 13826152,
+      "source": "https://www.coingecko.com/en/coins/fartcoin"
     },
-    "ANSEM": {
+    "the-black-bull": {
       "usd": 0.17966,
-      "volumeUsd": 5449774,
-      "change24hPct": -0.2,
-      "change7dPct": -0.6
+      "jpy": 28.341364999999996,
+      "usd_24h_change": -0.2,
+      "usd_7d_change": -0.6,
+      "usd_24h_vol": 5449774,
+      "source": "https://www.coingecko.com/en/coins/the-black-bull"
     },
-    "USELESS": {
+    "useless-3": {
       "usd": 0.03969495,
-      "volumeUsd": 6521635,
-      "change24hPct": -9.8,
-      "change7dPct": -24.3
+      "jpy": 6.2618783625,
+      "usd_24h_change": -9.8,
+      "usd_7d_change": -24.3,
+      "usd_24h_vol": 6521635,
+      "source": "https://www.coingecko.com/en/coins/useless-3"
     },
-    "BTC": {
-      "usd": 64983,
-      "volumeUsd": 21553417233,
-      "change24hPct": 1.1,
-      "change7dPct": 3.1
-    },
-    "ETH": {
-      "usd": 1917.14,
-      "volumeUsd": 7704536229,
-      "change24hPct": 0.9,
-      "change7dPct": 2.7
-    },
-    "HYPE": {
+    "hyperliquid": {
       "usd": 54.35,
-      "volumeUsd": 325578188,
-      "change24hPct": -2.2,
-      "change7dPct": 4
+      "jpy": 8573.7125,
+      "usd_24h_change": -2.2,
+      "usd_7d_change": 4,
+      "usd_24h_vol": 325578188,
+      "source": "https://www.coingecko.com/en/coins/hyperliquid"
     },
-    "TAO": {
+    "bittensor": {
       "usd": 196.13,
-      "volumeUsd": 89091818,
-      "change24hPct": 2.3,
-      "change7dPct": 0
+      "jpy": 30939.5075,
+      "usd_24h_change": 2.3,
+      "usd_7d_change": 0,
+      "usd_24h_vol": 89091818,
+      "source": "https://www.coingecko.com/en/coins/bittensor"
     },
-    "VIRTUAL": {
+    "virtual-protocol": {
       "usd": 0.568291,
-      "volumeUsd": 30473433,
-      "change24hPct": 0.4,
-      "change7dPct": 3.1
+      "jpy": 89.64790525,
+      "usd_24h_change": 0.4,
+      "usd_7d_change": 3.1,
+      "usd_24h_vol": 30473433,
+      "source": "https://www.coingecko.com/en/coins/virtual-protocol"
     },
-    "PLUME": {
+    "plume": {
       "usd": 0.01216128,
-      "volumeUsd": 13523411,
-      "change24hPct": -2.6,
-      "change7dPct": 11
+      "jpy": 1.91844192,
+      "usd_24h_change": -2.6,
+      "usd_7d_change": 11,
+      "usd_24h_vol": 13523411,
+      "source": "https://www.coingecko.com/en/coins/plume"
     },
-    "KMNO": {
+    "kamino": {
       "usd": 0.01904696,
-      "volumeUsd": 25882118,
-      "change24hPct": -10.1,
-      "change7dPct": 5.1
+      "jpy": 3.0046579400000004,
+      "usd_24h_change": -10.1,
+      "usd_7d_change": 5.1,
+      "usd_24h_vol": 25882118,
+      "source": "https://www.coingecko.com/en/coins/kamino"
     },
-    "RENDER": {
+    "render-token": {
       "usd": 1.32,
-      "volumeUsd": 17943747,
-      "change24hPct": -1.7,
-      "change7dPct": -4.7
+      "jpy": 208.23000000000002,
+      "usd_24h_change": -1.7,
+      "usd_7d_change": -4.7,
+      "usd_24h_vol": 17943747,
+      "source": "https://www.coingecko.com/en/coins/render-token"
     },
-    "SKYAI": {
+    "skyai": {
       "usd": 0.119279,
-      "volumeUsd": 59347217,
-      "change24hPct": 21.6,
-      "change7dPct": 363
+      "jpy": 18.816262249999998,
+      "usd_24h_change": 21.6,
+      "usd_7d_change": 363,
+      "usd_24h_vol": 59347217,
+      "source": "https://www.coingecko.com/en/coins/skyai"
     },
-    "CYS": {
+    "cysic": {
       "usd": 0.956835,
-      "volumeUsd": 66003661,
-      "change24hPct": 38.3,
-      "change7dPct": 230.2
+      "jpy": 150.94072125,
+      "usd_24h_change": 38.3,
+      "usd_7d_change": 230.2,
+      "usd_24h_vol": 66003661,
+      "source": "https://www.coingecko.com/en/coins/cysic"
     },
-    "SPX": {
+    "spx6900": {
       "usd": 0.338017,
-      "volumeUsd": 3384347,
-      "change24hPct": 2.2,
-      "change7dPct": 4.6
+      "jpy": 53.32218175,
+      "usd_24h_change": 2.2,
+      "usd_7d_change": 4.6,
+      "usd_24h_vol": 3384347,
+      "source": "https://www.coingecko.com/en/coins/spx6900"
     },
-    "BANK": {
+    "lorenzo-protocol": {
       "usd": 0.03998009,
-      "volumeUsd": 17919476,
-      "change24hPct": -6,
-      "change7dPct": -32.1
+      "jpy": 6.306859197500001,
+      "usd_24h_change": -6,
+      "usd_7d_change": -32.1,
+      "usd_24h_vol": 17919476,
+      "source": "https://www.coingecko.com/en/coins/lorenzo-protocol"
     }
   },
   "recommendations": [
