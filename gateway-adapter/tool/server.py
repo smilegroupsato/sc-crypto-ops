@@ -24,8 +24,10 @@ from urllib.parse import parse_qs, urlparse
 from portfolio_engine import (
     load_config as load_portfolio_config,
     load_state as load_portfolio_state,
+    mark_to_market,
     project_dashboard_data,
     run_paper as run_stateful_paper,
+    run_self_tests,
     validate_intent as validate_portfolio_intent,
     write_dashboard_data,
 )
@@ -89,14 +91,14 @@ DEFAULT_INTENT = {
         "fee_jpy_max": 1000,
         "daily_limit_jpy_group": "default",
         "cash_reserve_ratio_min": 0.55,
-        "requires_manual_confirm": True,
+        "requires_manual_confirm": False,
         "stop_loss_condition": "最大損失10,000円以内で撤退",
         "take_profit_condition": "Paper検証後に判断",
     },
     "safety": {
         "safety_profile": "strict",
         "toggles": {
-            "require_manual_confirm": True,
+            "require_manual_confirm": False,
             "enable_market_order": False,
             "enforce_max_order_jpy": True,
             "enforce_daily_limit_jpy": True,
@@ -288,6 +290,9 @@ class GatewayHandler(BaseHTTPRequestHandler):
         elif parsed.path == "/api/run-paper":
             result = run_paper(payload)
             json_response(self, result, 200 if result["status"] == "paper_recorded" else 400)
+        elif parsed.path == "/api/mark-to-market":
+            result = mark_to_market(payload)
+            json_response(self, {key: value for key, value in result.items() if key != "state"})
         elif parsed.path == "/api/project-dashboard":
             data = write_dashboard_data()
             json_response(self, {"ok": True, "updatedAtJst": data.get("updatedAtJst"), "path": "dashboard/crypto-pdca/data.json"})
@@ -316,7 +321,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--token", default=os.environ.get("GATEWAY_UI_TOKEN"))
     parser.add_argument("--unsafe-no-token", action="store_true")
-    parser.add_argument("--self-test", action="store_true", help="Validate and paper-run the built-in sample, then exit.")
+    parser.add_argument("--self-test", action="store_true", help="Run non-mutating executor self-tests with temp state, then exit.")
+    parser.add_argument("--mark-to-market", metavar="SNAPSHOT_JSON", help="Apply a price snapshot JSON to Portfolio State, then exit.")
     parser.add_argument("--project-dashboard", action="store_true", help="Project Portfolio State into dashboard/crypto-pdca/data.json, then exit.")
     return parser.parse_args()
 
@@ -324,9 +330,14 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     if args.self_test:
-        result = run_paper(DEFAULT_INTENT)
+        result = run_self_tests()
         print(json.dumps(result, ensure_ascii=False, indent=2))
-        return 0 if result.get("status") == "paper_recorded" else 1
+        return 0 if result.get("ok") else 1
+    if args.mark_to_market:
+        snapshot = json.loads(Path(args.mark_to_market).read_text(encoding="utf-8"))
+        result = mark_to_market(snapshot)
+        print(json.dumps({key: value for key, value in result.items() if key != "state"}, ensure_ascii=False, indent=2))
+        return 0
     if args.project_dashboard:
         data = write_dashboard_data()
         print(json.dumps({"ok": True, "updatedAtJst": data.get("updatedAtJst"), "path": "dashboard/crypto-pdca/data.json"}, ensure_ascii=False, indent=2))
