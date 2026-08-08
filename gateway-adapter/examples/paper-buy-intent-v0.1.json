@@ -1,7 +1,9 @@
 {
   "schema_version": "0.1",
-  "intent_id": "INT-20260805-001",
-  "created_at_jst": "2026-08-05 12:02 JST",
+  "intent_id": "INT-20260808-001",
+  "idempotency_key": "speculative_meme_parallel:INT-20260808-001",
+  "portfolio_id": "speculative_meme_parallel",
+  "created_at_jst": "2026-08-08 15:05 JST",
   "created_by": "web_ui",
   "source": {
     "chat_title": "SC Crypto Gateway Web Tool",
@@ -18,14 +20,15 @@
   "asset_flow": {
     "side": "BUY",
     "from_asset": "JPY",
-    "to_asset": "BTC",
+    "to_asset": "HYPE",
+    "coingecko_id": "hyperliquid",
     "from_contract_address": null,
     "to_contract_address": null,
     "amount_type": "jpy_budget",
-    "amount_jpy": 50000,
+    "amount_jpy": 10000,
     "from_amount": null,
     "to_amount_min": null,
-    "price_limit": null,
+    "price_limit": 8573.7125,
     "price_limit_currency": "JPY"
   },
   "risk": {
@@ -67,6 +70,6 @@
     "evidence_id": null,
     "check_status_default": "対象外"
   },
-  "reason": "Gateway Adapterのpaper実行テスト。",
+  "reason": "speculative_meme_parallelでHYPEを小口paper追加するテスト。",
   "notes": null
 }
