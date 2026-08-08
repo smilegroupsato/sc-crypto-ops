@@ -1,7 +1,7 @@
 # Portfolio Stateful Paper v0.1
 
 ページ作成日時：2026-08-08 15:05 JST
-最終更新日時：2026-08-08 15:05 JST
+最終更新日時：2026-08-08 15:29 JST
 
 ## 目的
 
@@ -35,6 +35,8 @@ GatewayはIntentを直接実行するのではなく、必ず `portfolio_id` を
 
 `execution_mode` と `approval_policy` はIntentにも現れるが、portfolio configより緩い方向には変更できない。例えばportfolioが `paper` の場合、Intentが `live_confirmed` や `live_auto` を要求しても拒否する。
 
+approval policyは実行時にも強制する。portfolio configが `manual` の場合、またはIntentが `approval_policy=manual` / `risk.requires_manual_confirm=true` / `safety.toggles.require_manual_confirm=true` を要求した場合は、実効policyを `manual` とし、Gatewayは `pending_approval` を返す。この場合、Portfolio Stateは変更しない。
+
 ## Stateful Paper Executor
 
 v0.1では `BUY` / `SELL` のpaper実行だけを扱う。
@@ -58,7 +60,8 @@ v0.1では `BUY` / `SELL` のpaper実行だけを扱う。
 - `asset_flow.amount_jpy` をpaper購入額として扱う。
 - `asset_flow.price_limit` が `JPY` のとき、paper約定価格として扱う。
 - portfolioの `min_cash_jpy` を割る場合は拒否する。
-- portfolioの `max_order_jpy` / `max_position_cost_jpy` を超える場合は拒否する。
+- portfolioの `max_order_jpy` / `max_position_cost_jpy` / `max_total_investment_jpy` を超える場合は拒否する。
+- portfolioの `daily_order_limit_jpy` を、JST日付単位の実行済notional合計で超える場合は拒否する。
 - 手数料見込みは `fee_jpy_max` を上限にpaper現金から差し引く。
 
 ### SELL
@@ -66,6 +69,28 @@ v0.1では `BUY` / `SELL` のpaper実行だけを扱う。
 - `amount_type=full_balance`、`from_amount`、または `amount_jpy` で売却数量を決める。
 - 平均Entryに基づいて実現損益を計算する。
 - 全数量を売却した場合はpositionを `Closed` にする。
+
+## Dashboard Projector
+
+## Mark to Market
+
+Scheduled Task等はPortfolio Stateを直接編集しない。最新価格snapshotをGatewayへ渡し、Gatewayの `mark_to_market` 経路が売買なしで次を更新する。
+
+| State | 内容 |
+|---|---|
+| `positions.*.current_price_jpy` | 最新JPY価格 |
+| `positions.*.current_price_usd` | 最新USD価格 |
+| `positions.*.current_valuation_jpy` | 数量 × 最新JPY価格 |
+| `positions.*.unrealized_pnl_jpy` | 現在評価額 - cost basis |
+| `current_valuation_jpy` | portfolio全体のopen position評価額 |
+| `total_asset_jpy` | cash + open position valuation |
+| `total_pnl_jpy` / `total_pnl_pct` | 初期資金比の総損益 |
+
+mark-to-marketは `cash_jpy` と `positions.*.quantity` を変更しない。
+
+```bash
+python3 gateway-adapter/tool/server.py --mark-to-market /path/to/price-snapshot.json
+```
 
 ## Dashboard Projector
 
@@ -84,4 +109,5 @@ Scheduled Task側の投資判断ロジックはここでは扱わない。判断
 
 ## 更新履歴
 
+- 2026-08-08 15:29 JST：approval policy強制、risk limits強制、mark-to-market、非破壊self-testの仕様を追記。
 - 2026-08-08 15:05 JST：portfolio config/state、Stateful Paper Executor、Dashboard Projectorの仕様を作成。
