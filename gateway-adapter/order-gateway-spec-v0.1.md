@@ -1,7 +1,7 @@
 # Gateway Adapter / Order Gateway v0.1 仕様
 
 ページ作成日時：2026-08-05 09:43 JST
-最終更新日時：2026-08-05 10:21 JST
+最終更新日時：2026-08-08 15:05 JST
 
 ## 目的
 
@@ -106,6 +106,18 @@ flowchart TD
 | `require_dapp_calldata_review` | Hard | true | 任意DApp calldataの人間確認を必須にする |
 
 Hard Guardは、ChatGPTからのIntentや通常の管理設定ではoffにしない。
+
+## Portfolio単位の状態管理
+
+GatewayはIntentの `portfolio_id` でportfolio configを読み、portfolio stateを更新する。Intentは `idempotency_key` を必須で持ち、同じkeyがすでに `executed_intents` に記録されている場合は状態を変更しない。
+
+| 項目 | 方針 |
+|---|---|
+| 設定正本 | `gateway-adapter/config/portfolios.v0.1.json` |
+| 状態正本 | `gateway-adapter/state/portfolio-state.v0.1.json` |
+| Intent必須 | `portfolio_id`、`idempotency_key` |
+| 安全設定 | Intentからportfolio configより緩められない |
+| Dashboard | Portfolio Stateから `dashboard/crypto-pdca/data.json` へ投影する |
 
 ## Risk Engine判定
 
@@ -257,6 +269,8 @@ Hard Guardは、ChatGPTからのIntentや通常の管理設定ではoffにしな
 - approval fee、gas fee、約定価格、TxHash、証憑IDの記録ルールが固定されている。
 
 ## 更新履歴
+
+- 2026-08-08 15:05 JST：Portfolio単位の状態管理とidempotency方針を追加。
 
 - 2026-08-05 10:21 JST：Gateway Adapter配下へ移動し、Intent Schema参照パスを更新。
 - 2026-08-05 09:43 JST：Order Gateway v0.1仕様を作成。
