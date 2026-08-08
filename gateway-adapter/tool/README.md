@@ -1,7 +1,7 @@
 # Gateway Adapter Web Tool v0.1
 
 ページ作成日時：2026-08-05 12:02 JST
-最終更新日時：2026-08-08 15:05 JST
+最終更新日時：2026-08-08 15:29 JST
 
 ## 目的
 
@@ -20,6 +20,7 @@ v0.2では、暗号資産プロジェクト全体の基本単位を `portfolio` 
 | Run Paper | 実発注せず、paper adapterとしてExecution Reportを作る |
 | Report保存 | `gateway-adapter/records/paper-executions/` にJSONを保存する |
 | Stateful Paper | portfolioごとにcash、保有数量、平均Entry、実現/未実現損益、実行済Intentを更新する |
+| Mark to Market | 価格snapshotから売買なしで現在価格、評価額、未実現損益、総資産、損益率を更新する |
 | Dashboard Project | `gateway-adapter/state/portfolio-state.v0.1.json` から `dashboard/crypto-pdca/data.json` を生成する |
 
 ## できないこと
@@ -39,6 +40,15 @@ v0.2では、暗号資産プロジェクト全体の基本単位を `portfolio` 
 ```bash
 cd /srv/sgos/repos/sc-crypto-ops
 python3 gateway-adapter/tool/server.py --self-test
+```
+
+`--self-test` はtemp state / temp configで実行し、正本の `gateway-adapter/state/portfolio-state.v0.1.json` は変更しない。
+
+価格snapshotでmark-to-marketする。
+
+```bash
+cd /srv/sgos/repos/sc-crypto-ops
+python3 gateway-adapter/tool/server.py --mark-to-market /path/to/price-snapshot.json
 ```
 
 Portfolio Stateからdashboard dataを生成する。
@@ -77,6 +87,8 @@ http://devboxのTailscaleまたはLAN IP:8765/?token=長めのランダム文字
 | 認証 | 外部bind時は `GATEWAY_UI_TOKEN` または `--token` 必須 |
 | 実行範囲 | `execution_mode=paper` のみ |
 | Portfolio設定 | Intentではなく `gateway-adapter/config/portfolios.v0.1.json` を上位正本にする |
+| 承認ポリシー | portfolioまたはIntentがmanualを要求した場合は `pending_approval` とし、stateを変更しない |
+| Risk Limits | `daily_order_limit_jpy` / `max_total_investment_jpy` / `max_position_cost_jpy` / `min_cash_jpy` / `max_order_jpy` をExecutorで強制 |
 | 二重実行防止 | `idempotency_key` をportfolio stateに記録し、同じkeyは再実行しない |
 | Hard Guard | `true` 固定。offのIntentは拒否 |
 | 記録 | paper Execution ReportをJSON保存 |
@@ -91,5 +103,6 @@ http://devboxのTailscaleまたはLAN IP:8765/?token=長めのランダム文字
 
 ## 更新履歴
 
+- 2026-08-08 15:29 JST：approval policy強制、risk limits強制、mark-to-market、非破壊self-testの説明を追加。
 - 2026-08-08 15:05 JST：portfolio config/state、Stateful Paper Executor、Dashboard Projectorの説明を追加。
 - 2026-08-05 12:02 JST：最小Web UIの説明を作成。
