@@ -38,14 +38,14 @@
     "fee_jpy_max": 1000,
     "daily_limit_jpy_group": "default",
     "cash_reserve_ratio_min": 0.55,
-    "requires_manual_confirm": true,
+    "requires_manual_confirm": false,
     "stop_loss_condition": "最大損失10,000円以内で撤退",
     "take_profit_condition": "Paper検証後に判断"
   },
   "safety": {
     "safety_profile": "strict",
     "toggles": {
-      "require_manual_confirm": true,
+      "require_manual_confirm": false,
       "enable_market_order": false,
       "enforce_max_order_jpy": true,
       "enforce_daily_limit_jpy": true,
