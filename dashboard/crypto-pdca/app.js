@@ -102,7 +102,9 @@ async function loadDashboardData() {
     if (!res.ok) throw new Error("data.json " + res.status);
     const data = await res.json();
     dashboardData = data;
-    positions = Array.isArray(data.positions) ? data.positions : positions;
+    positions = Array.isArray(data.positions)
+      ? data.positions.filter((position) => position.positionStatus !== "Closed")
+      : positions;
     fallbackPrices = data.fallbackPrices || fallbackPrices;
     recs = Array.isArray(data.recommendations) ? data.recommendations : recs;
     entryEvaluation = data.entryEvaluation || null;
@@ -205,6 +207,30 @@ function judge(p) {
 }
 
 function scenarioSummary(enriched) {
+  const savedCore = dashboardData?.scenarioSummary?.core45Cash55;
+  const savedMeme = dashboardData?.scenarioSummary?.memeParallel;
+
+  if (savedCore && savedMeme) {
+    return {
+      core: {
+        invested: savedCore.paperPurchaseJpy,
+        cash: savedCore.fixedCashJpy,
+        value: savedCore.investmentValueJpy,
+        total: savedCore.totalValueInclCashJpy,
+        pnl: savedCore.totalValueInclCashJpy - TOTAL_CAPITAL,
+        pnlPct: savedCore.totalAssetPnlPct,
+      },
+      meme: {
+        invested: savedMeme.activePaperCostJpy ?? savedMeme.paperPurchaseJpy,
+        cash: savedMeme.totalCashJpy ?? (savedMeme.fixedCashJpy + savedMeme.tacticalCashJpy),
+        value: savedMeme.activeInvestmentValueJpy ?? savedMeme.investmentValueJpy,
+        total: savedMeme.totalValueInclCashJpy,
+        pnl: savedMeme.totalValueInclCashJpy - TOTAL_CAPITAL,
+        pnlPct: savedMeme.totalAssetPnlPct,
+      },
+    };
+  }
+
   const corePositions = enriched.filter((p) => p.scenario === "Core");
   const memePositions = enriched.filter((p) => p.scenario === "Meme");
   const coreInvested = corePositions.reduce((sum, p) => sum + p.amountJpy, 0);
