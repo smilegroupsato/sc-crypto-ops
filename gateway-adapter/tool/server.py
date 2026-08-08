@@ -21,6 +21,15 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
+from portfolio_engine import (
+    load_config as load_portfolio_config,
+    load_state as load_portfolio_state,
+    project_dashboard_data,
+    run_paper as run_stateful_paper,
+    validate_intent as validate_portfolio_intent,
+    write_dashboard_data,
+)
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "intent-schema-v0.1.json"
@@ -42,8 +51,10 @@ HARD_GUARDS = {
 
 DEFAULT_INTENT = {
     "schema_version": "0.1",
-    "intent_id": "INT-20260805-001",
-    "created_at_jst": "2026-08-05 12:02 JST",
+    "intent_id": "INT-20260808-001",
+    "idempotency_key": "speculative_meme_parallel:INT-20260808-001",
+    "portfolio_id": "speculative_meme_parallel",
+    "created_at_jst": "2026-08-08 15:05 JST",
     "created_by": "web_ui",
     "source": {
         "chat_title": "SC Crypto Gateway Web Tool",
@@ -60,14 +71,15 @@ DEFAULT_INTENT = {
     "asset_flow": {
         "side": "BUY",
         "from_asset": "JPY",
-        "to_asset": "BTC",
+        "to_asset": "HYPE",
+        "coingecko_id": "hyperliquid",
         "from_contract_address": None,
         "to_contract_address": None,
         "amount_type": "jpy_budget",
-        "amount_jpy": 50000,
+        "amount_jpy": 10000,
         "from_amount": None,
         "to_amount_min": None,
-        "price_limit": None,
+        "price_limit": 8573.7125,
         "price_limit_currency": "JPY",
     },
     "risk": {
@@ -109,7 +121,7 @@ DEFAULT_INTENT = {
         "evidence_id": None,
         "check_status_default": "対象外",
     },
-    "reason": "Gateway Adapterのpaper実行テスト。",
+    "reason": "speculative_meme_parallelでHYPEを小口paper追加するテスト。",
     "notes": None,
 }
 
@@ -139,147 +151,11 @@ def walk_secret_like_keys(value: Any, path: str = "$") -> list[str]:
 
 
 def validate_intent(intent: dict[str, Any]) -> dict[str, Any]:
-    schema = load_schema()
-    errors: list[str] = []
-    warnings: list[str] = []
-
-    if not isinstance(intent, dict):
-        return {"ok": False, "errors": ["Intent must be a JSON object."], "warnings": []}
-
-    for field in schema.get("required", []):
-        if field not in intent:
-            errors.append(f"Missing required field: {field}")
-
-    if intent.get("schema_version") != "0.1":
-        errors.append("schema_version must be 0.1")
-
-    intent_id = intent.get("intent_id")
-    if not isinstance(intent_id, str) or not re.match(r"^INT-[0-9]{8}-[0-9]{3,6}$", intent_id):
-        errors.append("intent_id must match INT-YYYYMMDD-001 format.")
-
-    execution_mode = intent.get("execution_mode")
-    if execution_mode not in {"paper", "shadow", "live_confirmed", "live_auto"}:
-        errors.append("execution_mode is invalid.")
-
-    if intent.get("venue_type") not in {"cex", "wallet", "defi", "dapp", "manual"}:
-        errors.append("venue_type is invalid.")
-
-    secret_paths = walk_secret_like_keys(intent)
-    if secret_paths:
-        errors.append("Intent contains secret-like keys: " + ", ".join(secret_paths))
-
-    risk = intent.get("risk", {})
-    if isinstance(risk, dict):
-        max_loss = risk.get("max_loss_jpy")
-        if isinstance(max_loss, (int, float)) and max_loss > 10000:
-            errors.append("max_loss_jpy exceeds v0.1 upper limit of 10000.")
-        amount_jpy = intent.get("asset_flow", {}).get("amount_jpy") if isinstance(intent.get("asset_flow"), dict) else None
-        if isinstance(amount_jpy, (int, float)) and amount_jpy <= 0:
-            errors.append("amount_jpy must be greater than 0 when provided.")
-    else:
-        errors.append("risk must be an object.")
-
-    safety = intent.get("safety", {})
-    toggles = safety.get("toggles", {}) if isinstance(safety, dict) else {}
-    if not isinstance(toggles, dict):
-        errors.append("safety.toggles must be an object.")
-    else:
-        for guard in HARD_GUARDS:
-            if toggles.get(guard) is not True:
-                errors.append(f"Hard Guard must remain true: safety.toggles.{guard}")
-
-    if execution_mode != "paper":
-        warnings.append("This v0.1 web tool can validate this Intent, but can only run paper execution.")
-
-    if intent.get("venue_type") == "dapp":
-        warnings.append("DApp adapter is disabled in v0.1; validation only.")
-
-    ledger = intent.get("ledger", {})
-    if isinstance(ledger, dict) and ledger.get("ledger_target") != "paper_ledger":
-        warnings.append("Paper execution should normally use ledger.ledger_target=paper_ledger.")
-
-    return {"ok": not errors, "errors": errors, "warnings": warnings}
+    return validate_portfolio_intent(intent)
 
 
 def run_paper(intent: dict[str, Any]) -> dict[str, Any]:
-    validation = validate_intent(intent)
-    if not validation["ok"]:
-        return {
-            "status": "rejected",
-            "created_at_jst": now_jst(),
-            "validation": validation,
-            "report": None,
-        }
-
-    if intent.get("execution_mode") != "paper":
-        return {
-            "status": "rejected",
-            "created_at_jst": now_jst(),
-            "validation": validation,
-            "report": None,
-            "reason": "This tool only runs execution_mode=paper.",
-        }
-
-    asset_flow = intent.get("asset_flow", {})
-    risk = intent.get("risk", {})
-    report_id = f"PER-{dt.datetime.now(JST).strftime('%Y%m%d-%H%M%S')}-{secrets.token_hex(3)}"
-    amount_jpy = asset_flow.get("amount_jpy")
-
-    report = {
-        "report_id": report_id,
-        "schema_version": "0.1",
-        "created_at_jst": now_jst(),
-        "status": "paper_recorded",
-        "intent_id": intent.get("intent_id"),
-        "execution_mode": "paper",
-        "venue_type": intent.get("venue_type"),
-        "venue": intent.get("venue"),
-        "intent_summary": {
-            "intent_type": intent.get("intent_type"),
-            "side": asset_flow.get("side"),
-            "from_asset": asset_flow.get("from_asset"),
-            "to_asset": asset_flow.get("to_asset"),
-            "amount_jpy": amount_jpy,
-            "reason": intent.get("reason"),
-        },
-        "risk_result": {
-            "status": "passed",
-            "max_loss_jpy": risk.get("max_loss_jpy"),
-            "slippage_bps_max": risk.get("slippage_bps_max"),
-            "gas_jpy_max": risk.get("gas_jpy_max"),
-            "fee_jpy_max": risk.get("fee_jpy_max"),
-            "cash_reserve_ratio_min": risk.get("cash_reserve_ratio_min"),
-        },
-        "paper_execution": {
-            "executed_at_jst": now_jst(),
-            "paper_amount_jpy": amount_jpy,
-            "executed_price": None,
-            "executed_price_currency": None,
-            "fee_jpy_estimate": min(risk.get("fee_jpy_max", 0) or 0, amount_jpy * 0.01 if isinstance(amount_jpy, (int, float)) else 0),
-            "gas_jpy_estimate": 0 if intent.get("venue_type") == "cex" else risk.get("gas_jpy_max"),
-            "market_data_source": "not_connected_v0.1",
-            "note": "v0.1 paper adapter does not fetch market quotes or place live orders.",
-        },
-        "ledger_export": {
-            "target": "paper_ledger",
-            "google_sheet_direct_write": False,
-            "check_status": "対象外",
-            "evidence_required": intent.get("ledger", {}).get("evidence_required"),
-            "evidence_id": intent.get("ledger", {}).get("evidence_id"),
-        },
-        "events": [
-            {"event": "intent_received", "at_jst": now_jst()},
-            {"event": "schema_validated", "at_jst": now_jst()},
-            {"event": "risk_passed", "at_jst": now_jst()},
-            {"event": "paper_recorded", "at_jst": now_jst()},
-        ],
-    }
-
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    report_path = REPORT_DIR / f"{report_id}.json"
-    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    report["local_report_path"] = str(report_path)
-    return {"status": "paper_recorded", "created_at_jst": now_jst(), "validation": validation, "report": report}
+    return run_stateful_paper(intent)
 
 
 def json_response(handler: BaseHTTPRequestHandler, payload: dict[str, Any], status: int = 200) -> None:
@@ -391,6 +267,10 @@ class GatewayHandler(BaseHTTPRequestHandler):
             self.wfile.write(body)
         elif parsed.path == "/api/health":
             json_response(self, {"ok": True, "now_jst": now_jst(), "mode": "paper_only"})
+        elif parsed.path == "/api/portfolios":
+            json_response(self, load_portfolio_config())
+        elif parsed.path == "/api/portfolio-state":
+            json_response(self, load_portfolio_state())
         else:
             json_response(self, {"ok": False, "error": "Not found"}, 404)
 
@@ -408,6 +288,9 @@ class GatewayHandler(BaseHTTPRequestHandler):
         elif parsed.path == "/api/run-paper":
             result = run_paper(payload)
             json_response(self, result, 200 if result["status"] == "paper_recorded" else 400)
+        elif parsed.path == "/api/project-dashboard":
+            data = write_dashboard_data()
+            json_response(self, {"ok": True, "updatedAtJst": data.get("updatedAtJst"), "path": "dashboard/crypto-pdca/data.json"})
         else:
             json_response(self, {"ok": False, "error": "Not found"}, 404)
 
@@ -434,6 +317,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--token", default=os.environ.get("GATEWAY_UI_TOKEN"))
     parser.add_argument("--unsafe-no-token", action="store_true")
     parser.add_argument("--self-test", action="store_true", help="Validate and paper-run the built-in sample, then exit.")
+    parser.add_argument("--project-dashboard", action="store_true", help="Project Portfolio State into dashboard/crypto-pdca/data.json, then exit.")
     return parser.parse_args()
 
 
@@ -443,6 +327,10 @@ def main() -> int:
         result = run_paper(DEFAULT_INTENT)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0 if result.get("status") == "paper_recorded" else 1
+    if args.project_dashboard:
+        data = write_dashboard_data()
+        print(json.dumps({"ok": True, "updatedAtJst": data.get("updatedAtJst"), "path": "dashboard/crypto-pdca/data.json"}, ensure_ascii=False, indent=2))
+        return 0
 
     public_host = args.host not in {"127.0.0.1", "localhost", "::1"}
     if public_host and not args.token and not args.unsafe_no_token:
