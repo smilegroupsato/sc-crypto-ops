@@ -1,0 +1,223 @@
+{
+  "schema_version": "0.1",
+  "updated_at_jst": "2026-08-08 15:05 JST",
+  "source": {
+    "seeded_from": "dashboard/crypto-pdca/data.json",
+    "seeded_at_jst": "2026-08-08 15:05 JST",
+    "note": "Initial state mirrors the existing two paper experiments. It is paper-only and does not represent real exchange balances."
+  },
+  "portfolios": {
+    "core45_cash55": {
+      "portfolio_id": "core45_cash55",
+      "cash_jpy": 550000,
+      "realized_pnl_jpy": 0,
+      "executed_intents": [],
+      "idempotency_keys": {},
+      "positions": {
+        "AAVE": {
+          "symbol": "AAVE",
+          "coingecko_id": "aave",
+          "quantity": 5.1762201,
+          "average_entry_jpy": 14489.3375,
+          "average_entry_usd": 91.85,
+          "cost_basis_jpy": 75000,
+          "current_price_jpy": 14175.415,
+          "current_price_usd": 89.86,
+          "current_valuation_jpy": 73375,
+          "unrealized_pnl_jpy": -1625,
+          "decision": "Hold",
+          "position_status": "Open"
+        },
+        "UNI": {
+          "symbol": "UNI",
+          "coingecko_id": "uniswap",
+          "quantity": 114.83956912,
+          "average_entry_jpy": 653.085,
+          "average_entry_usd": 4.14,
+          "cost_basis_jpy": 75000,
+          "current_price_jpy": 635.7325,
+          "current_price_usd": 4.03,
+          "current_valuation_jpy": 73007,
+          "unrealized_pnl_jpy": -1993,
+          "decision": "Hold",
+          "position_status": "Open"
+        },
+        "AERO": {
+          "symbol": "AERO",
+          "coingecko_id": "aerodrome-finance",
+          "quantity": 1172.17903394,
+          "average_entry_jpy": 63.9834,
+          "average_entry_usd": 0.4056,
+          "cost_basis_jpy": 75000,
+          "current_price_jpy": 69.91022525,
+          "current_price_usd": 0.443171,
+          "current_valuation_jpy": 81947,
+          "unrealized_pnl_jpy": 6947,
+          "decision": "Hold",
+          "position_status": "Open"
+        },
+        "ONDO": {
+          "symbol": "ONDO",
+          "coingecko_id": "ondo-finance",
+          "quantity": 1211.30144246,
+          "average_entry_jpy": 61.916875,
+          "average_entry_usd": 0.3925,
+          "cost_basis_jpy": 75000,
+          "current_price_jpy": 55.6305375,
+          "current_price_usd": 0.35265,
+          "current_valuation_jpy": 67385,
+          "unrealized_pnl_jpy": -7615,
+          "decision": "Reduce Watch",
+          "position_status": "Open"
+        },
+        "ENA": {
+          "symbol": "ENA",
+          "coingecko_id": "ethena",
+          "quantity": 5605.23244712,
+          "average_entry_jpy": 13.380355,
+          "average_entry_usd": 0.08482,
+          "cost_basis_jpy": 75000,
+          "current_price_jpy": 14.282054,
+          "current_price_usd": 0.090536,
+          "current_valuation_jpy": 80054,
+          "unrealized_pnl_jpy": 5054,
+          "decision": "Hold",
+          "position_status": "Open"
+        },
+        "SOL": {
+          "symbol": "SOL",
+          "coingecko_id": "solana",
+          "quantity": 6.50213097,
+          "average_entry_jpy": 11534.68,
+          "average_entry_usd": 73.12,
+          "cost_basis_jpy": 75000,
+          "current_price_jpy": 11813.8975,
+          "current_price_usd": 74.89,
+          "current_valuation_jpy": 76816,
+          "unrealized_pnl_jpy": 1816,
+          "decision": "Hold",
+          "position_status": "Open"
+        }
+      }
+    },
+    "speculative_meme_parallel": {
+      "portfolio_id": "speculative_meme_parallel",
+      "cash_jpy": 683562,
+      "realized_pnl_jpy": -6438,
+      "executed_intents": [
+        {
+          "intent_id": "MIGRATED-BONK-STOP-20260808",
+          "idempotency_key": "migrated-bonk-stop-20260808",
+          "executed_at_jst": "2026-08-08 13:01 JST",
+          "status": "migrated_closed",
+          "symbol": "BONK",
+          "realized_pnl_jpy": -6438,
+          "note": "Migrated from existing dashboard closed BONK paper stop."
+        }
+      ],
+      "idempotency_keys": {
+        "migrated-bonk-stop-20260808": "MIGRATED-BONK-STOP-20260808"
+      },
+      "positions": {
+        "PUMP": {
+          "symbol": "PUMP",
+          "coingecko_id": "pump-fun",
+          "quantity": 226803.01307803,
+          "average_entry_jpy": 0.352729,
+          "average_entry_usd": 0.002236,
+          "cost_basis_jpy": 80000,
+          "current_price_jpy": 0.3611386525,
+          "current_price_usd": 0.00228931,
+          "current_valuation_jpy": 81907,
+          "unrealized_pnl_jpy": 1907,
+          "decision": "Hold",
+          "position_status": "Open"
+        },
+        "PEPE": {
+          "symbol": "PEPE",
+          "coingecko_id": "pepe",
+          "quantity": 174470884.9188769,
+          "average_entry_jpy": 0.000458529,
+          "average_entry_usd": 0.000002906682897139379,
+          "cost_basis_jpy": 80000,
+          "current_price_jpy": 0.0004527425,
+          "current_price_usd": 0.00000287,
+          "current_valuation_jpy": 78990,
+          "unrealized_pnl_jpy": -1010,
+          "decision": "Hold after Paper Add 10,000 JPY",
+          "position_status": "Open"
+        },
+        "PENGU": {
+          "symbol": "PENGU",
+          "coingecko_id": "pudgy-penguins",
+          "quantity": 61915.78266838,
+          "average_entry_jpy": 0.96905825,
+          "average_entry_usd": 0.006143,
+          "cost_basis_jpy": 60000,
+          "current_price_jpy": 0.97132354,
+          "current_price_usd": 0.00615736,
+          "current_valuation_jpy": 60140,
+          "unrealized_pnl_jpy": 140,
+          "decision": "Hold / no add",
+          "position_status": "Open"
+        },
+        "WIF": {
+          "symbol": "WIF",
+          "coingecko_id": "dogwifcoin",
+          "quantity": 1575.78158767,
+          "average_entry_jpy": 22.2112,
+          "average_entry_usd": 0.1408,
+          "cost_basis_jpy": 35000,
+          "current_price_jpy": 22.102037,
+          "current_price_usd": 0.140108,
+          "current_valuation_jpy": 34828,
+          "unrealized_pnl_jpy": -172,
+          "decision": "Caution",
+          "position_status": "Open"
+        },
+        "FARTCOIN": {
+          "symbol": "FARTCOIN",
+          "coingecko_id": "fartcoin",
+          "quantity": 1208.8375697,
+          "average_entry_jpy": 20.681025,
+          "average_entry_usd": 0.1311,
+          "cost_basis_jpy": 25000,
+          "current_price_jpy": 20.3040025,
+          "current_price_usd": 0.12871,
+          "current_valuation_jpy": 24544,
+          "unrealized_pnl_jpy": -456,
+          "decision": "Hold small",
+          "position_status": "Open"
+        },
+        "ANSEM": {
+          "symbol": "ANSEM",
+          "coingecko_id": "the-black-bull",
+          "quantity": 539.04287547,
+          "average_entry_jpy": 27.8271,
+          "average_entry_usd": 0.1764,
+          "cost_basis_jpy": 15000,
+          "current_price_jpy": 28.341365,
+          "current_price_usd": 0.17966,
+          "current_valuation_jpy": 15277,
+          "unrealized_pnl_jpy": 277,
+          "decision": "Reduce Watch",
+          "position_status": "Open"
+        },
+        "USELESS": {
+          "symbol": "USELESS",
+          "coingecko_id": "useless-3",
+          "quantity": 1952.90949339,
+          "average_entry_jpy": 7.6808475,
+          "average_entry_usd": 0.04869,
+          "cost_basis_jpy": 15000,
+          "current_price_jpy": 6.2618783625,
+          "current_price_usd": 0.03969495,
+          "current_valuation_jpy": 12229,
+          "unrealized_pnl_jpy": -2771,
+          "decision": "Reduce Watch / Stop close",
+          "position_status": "Open"
+        }
+      }
+    }
+  }
+}
